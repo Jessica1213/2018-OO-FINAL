@@ -1,0 +1,54 @@
+body {
+    background-image: url("wallpaper-grayjean.jpg");
+    background-repeat: initial;
+
+}
+
+div {
+ 	/*border: 3px solid #73AD21;*/
+}
+
+
+.catalog {
+    float: left;
+}
+
+.catalog2 {
+    margin-bottom: 5em;
+    float: left;
+}
+
+.icon {
+    width: 25em;
+    height: 25em;
+}
+#game{
+	margin-top: 8em;
+	margin-left: 2em;
+}
+#demo{
+	margin-top: 8em;
+	margin-left: 2em;
+}
+#homework{
+	margin-top: 8em;
+	margin-left: 2em;
+}
+
+#studenthw {
+    margin-top: 1em;
+    margin-left: 17em;
+}
+
+#exam {
+    margin-top: 1em;
+    margin-left: 2em;
+
+}
+
+#foot {
+    clear: both;
+    color: white;
+    text-align: center;
+    font-family: Chalkboard, serif;
+}

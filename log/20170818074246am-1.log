@@ -1,0 +1,2 @@
+2017-08-18 07:42:46am
+Database Connection Error:SQLSTATE[HY000] [1045] Access denied for user 'blockly'@'localhost' (using password: YES)
