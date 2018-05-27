@@ -9,11 +9,12 @@ class UserDAL extends DALBase
     public function getUID($account,$password)
     {
         $query="select ";
-        $query.=" uid ";
+        $query.=" UID ";
         $query.=" from user A ";
         $query.=" where A.account=? and A.password=?";
         $result=$this->exec($query,[$account,$password],true);
-        return $result?$result[0]["uid"]:false;
+        var_dump($result);
+        return $result?$result[0]["UID"]:false;
     }
 
     public function getAccount($uid)

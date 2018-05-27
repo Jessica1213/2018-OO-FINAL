@@ -5,7 +5,7 @@
     <?php require_once ("head.php")?>
     <meta http-equiv="imagetoolbar" content="no" />
     <script type="text/javascript" src="js/login_function.js"></script>
-    <link href="styles/index.css" rel="stylesheet"  type="text/css"/>
+    <link href="styles/layout.css" rel="stylesheet"  type="text/css"/>
 
 </head>
 <body>
@@ -15,7 +15,7 @@
         <form  action="index.php" name="loginForm" >
             <table>
                 <tr>
-                    <th>LOGIN</th>
+                    <th>Customer/Buyer</th>
                 </tr>
                 <tr>
                     <td><input class="customer" type="button" onclick="location.href='index.php'" value="我是顧客"></td>
@@ -25,8 +25,7 @@
                 </tr>
             </table>
         </form>
-        <div />
-        <div />
-        <!-- ####################################################################################################### -->
+    </div>
+</div>
 </body>
 </html>

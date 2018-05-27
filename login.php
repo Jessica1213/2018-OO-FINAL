@@ -13,7 +13,7 @@
 <?php require_once ("navbar.php")?>
 <div class="wrapper row5">
   <div  id="login">
-    <form  action="select_Login.php" name="loginForm" >
+    <form  action="" name="loginForm" method="post">
       <table>
         <tr>
           <th>LOGIN</th>
@@ -26,12 +26,14 @@
         </tr>
         <tr>
           <!--39 須將帳號密碼資訊與資料庫比對-->
-          <td><input class="button" formmethod="post" type="submit" name="submit"  onclick="return checkLogin();" value="登錄" >
-          <input class="button" type="button" onclick="location.href='register.php'" value="註冊"></td>
+          <td>
+              <input class="button" type="submit" name="submit"  onclick="return checkLogin();" value="登入" >
+              <input class="button" type="button" onclick="location.href='register.php'" value="註冊">
+          </td>
         </tr>
       </table>
     </form>
-  <div />
-<div />
+  </div>
+</div>
 </body>
 </html>

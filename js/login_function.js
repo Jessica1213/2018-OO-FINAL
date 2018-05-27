@@ -1,24 +1,43 @@
 //檢查輸入  
-function checkLogin(){  
-  if(checkUsername() && checkPassword()){  
-    return true;  
-  }          
-  return false;  
+function checkLogin(){
+    var username = document.loginForm.username.value;
+    var password = document.loginForm.password.value;
+    if(checkUsername(username) && checkPassword(password)){
+      var http = new XMLHttpRequest();
+      var login = "";
+      http.open("POST", "./dbrequest/checkLogin.php", false);
+      http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      http.onreadystatechange=function() {
+          if(this.readyState === 4 && this.status === 200) {
+              login = http.responseText;
+              console.log(login);
+          }
+      };
+
+      http.send("account="+username+"&password="+password);
+
+      if(login===true) {
+          document.getElementById("loginForm").action = "selectLogin.php";
+      }
+      else {
+          alert("帳號或密碼錯誤");
+      }
+
+    }
 }  
-//簡查帳號輸入
-function checkUsername(){  
-  var username = document.loginForm.username;  
-  if(username.value.length!=0){  
+//檢查帳號輸入
+function checkUsername(username){
+  if(username.length!==0){
     return true;  
-  }else{  
+  }
+  else{
       alert("請輸入帳號");  
-      return false;  
-      }  
+      return false;
+  }
 }  
 //檢查密碼輸入  
-function checkPassword(){  
-  var password = document.loginForm.password;  
-  if(password.value.length!=0){  
+function checkPassword(password){
+  if(password.length!==0){
     return true;  
   }else{  
     alert("請輸入密碼");  
@@ -36,8 +55,8 @@ function checkRegister(){
 
 //簡查帳號輸入
 function checkRegisterUsername(){  
-  var username = document.loginForm.username;  
-  if(username.value.length!=0){  
+  var username = document.loginForm.username.value;
+  if(username.length!==0){
     return true;  
   }else{  
       alert("請輸入帳號");  
@@ -46,11 +65,11 @@ function checkRegisterUsername(){
 }  
 //檢查密碼輸入  
 function checkRegisterPassword(){  
-  var password = document.loginForm.password;  
-  var password2 = document.loginForm.password2; 
-  if(password.value.length!=0 && password.value==password2.value){  
+  var password = document.loginForm.password.value;
+  var password2 = document.loginForm.password2.value;
+  if(password.length!==0 && password===password2){
     return true;  
-  }else if(password.value!=password2.value){  
+  }else if(password!==password2){
     alert("請確認密碼");  
     return false;  
   }  
