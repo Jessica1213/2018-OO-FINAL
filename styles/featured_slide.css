@@ -1,18 +1,22 @@
+#logo {
+	padding: auto;
+    margin-top: 15vh;
+
+}
 #picture{
 	display:block;
-	position:absolute; /* important */
-	left : 50%;
-	top: 20%;
-	margin-left: -272px;
-	width:544px;
-	height:184px;
+	position:relative; /* important */
+	margin: auto;
+	padding: 2vh;
+	/*width:544;*/
+	/*height:184px;*/
 	color:#FFFFFF;
 	background-color:#000000;
-	}
+}
 
 #product_picture_info{
 	width: 651px; 
-	top: 175;
+	top: 175px;
 	position:absolute; /* important */
 	top: 57%;
 	left: 50%;

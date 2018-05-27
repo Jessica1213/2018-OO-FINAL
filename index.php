@@ -5,7 +5,6 @@
 <head>
     <title>拼命買</title>
     <?php require_once ("head.php")?>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="imagetoolbar" content="no" />
     <script type="text/javascript" src="js/login_function.js"></script>
     <link href="styles/index.css" rel="stylesheet" type="text/css"/>
@@ -13,16 +12,16 @@
 
 <body>
     <?php require_once ("navbar.php")?>
-<div class="wrapper row1">
-</div>
-<div class="wrapper row2">
-    <div id="picture">
-        <img src="resource/images/googlelogo.png" alt="">
+    <div class="container">
+        <div id="logo">
+            <img id="picture" src="resource/images/googlelogo.png">
+        </div>
     </div>
-</div>
+
+
 
 <!-- 這邊插入搜尋欄 ，OOXX↑↓←→()  -->
-<div class="wrapper row3">
+<div class="container">
     <div id="search-box">
 <!--        <ul>-->
             <li>
