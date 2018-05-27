@@ -1,84 +1,48 @@
-<?php
-require_once("./autoload.php");
-SessionManager::start();
-if(BLL\UserBLL::isLogIn()) {
-    header("HTTP/1.1 302 Redirect");
-    header("Location: main.php");
-    exit;
-}
-$form=new FormVerification();
-$results=$form->getResult();
-if(isset($_POST["action"]) && $_POST["action"]=="log-in") {
-    $form->setRequired(array(
-        "account"=>"帳號",
-        "password"=>"密碼",
-    ));
-    $form->verify();
-    $log=$form->getErrorLog();
-    if($form->noError()) {
-        $bll=new BLL\UserBLL();
-        if($bll->logIn($results["account"],$results["password"])) {
-//            $date = date('Y-m-d H:i:s');
-//            $bll->timestamp('login', $date, '');
-            header("HTTP/1.1 302 Redirect");
-            header("Location: main.php");
-            exit;
-        } else {
-            $log->add("帳號或密碼不正確!");
-        }
-    }
-}
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php require_once("head.php");?>
-    <title>Shopping Website</title>
-    <link href="./css/general.css" rel="stylesheet">
-</head>
-<body>
-<main>
-    <div class="row">
-        <div class="col-lg-1">
-        </div>
-        <div class="col-lg-5">
-            <img id="logo" src="./resource/icon/logo_ch.png" style="width: 30em; height: 20em;">
-        </div>
-        <div class="col-lg-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3> 登入系統 </h3>
-                </div>
-                <div class="panel-body">
 
-                    <?=!empty($log)&&$log->logsCount()>0?$log->toString("log"):""?>
-                    <form action="" method="post">
-                        <div class="row">
-                            <div class="form-group form-inline col-lg-8">
-                                <label for="account">*帳號：</label>
-                                <input class="form-control" type="text" id="account" name="account" required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group form-inline col-lg-8">
-                                <label for="password">*密碼：</label>
-                                <input class="form-control" type="password" id="password" name="password" required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group form-inline col-lg-2">
-                                <input type="hidden" name="action" value="log-in">
-                                <button class="btn btn-primary" type="submit">登入</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <title>拼命買</title>
+    <?php require_once ("head.php")?>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <script type="text/javascript" src="js/login_function.js"></script>
+    <link href="styles/index.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+    <?php require_once ("navbar.php")?>
+<div class="wrapper row1">
+</div>
+<div class="wrapper row2">
+    <div id="picture">
+        <img src="resource/images/googlelogo.png" alt="">
     </div>
-</main>
-<footer>
-    <?php require_once("./footer.php");?>
-</footer>
+</div>
+
+<!-- 這邊插入搜尋欄 ，OOXX↑↓←→()  -->
+<div class="wrapper row3">
+    <div id="search-box">
+<!--        <ul>-->
+            <li>
+                <input class="sreachInput" type="text" name="searchText" />
+                <input class="sreachButton"  type="image" name="searchSubmit"  onclick="return //OOXX↑↓←→();//"  img src="resource/images/search.png" style="width: 50px">
+            </li>
+<!--        </ul>-->
+    </div>
+</div>
+
+<div class="wrapper row4">
+    <div id="product_picture_info">
+        <ul>
+            <li><a href="#.html"><img src="resource/images/VIGOR_series.jpg" alt="" /></a></li>
+            <li><a href="#.html"><img src="resource/images/clutch_series.jpg" alt="" /></a></li>
+        </ul>
+    </div>
+</div>
+<!--<footer>-->
+<!--    --><?php //require_once("./footer.php");?>
+<!--</footer>-->
 </body>
 </html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="cbc3e659-f1fb-4f5f-9a8c-cfad80500a8b" name="OOFINAL" url="http://140.122.184.50/~jessica/OOFinal">
+        <fileTransfer host="140.122.184.50" port="22" rootFolder="/home/jessica/public_html" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

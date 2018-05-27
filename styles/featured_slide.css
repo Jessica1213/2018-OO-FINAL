@@ -1,0 +1,33 @@
+#picture{
+	display:block;
+	position:absolute; /* important */
+	left : 50%;
+	top: 20%;
+	margin-left: -272px;
+	width:544px;
+	height:184px;
+	color:#FFFFFF;
+	background-color:#000000;
+	}
+
+#product_picture_info{
+	width: 651px; 
+	top: 175;
+	position:absolute; /* important */
+	top: 57%;
+	left: 50%;
+	margin-left: -326px;
+	display:block;
+	}
+
+#product_picture_info ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+	}
+
+#product_picture_info li{
+	display:inline;
+	width:317px;
+	margin-right:0px;
+	}

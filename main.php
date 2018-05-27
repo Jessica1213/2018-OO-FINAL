@@ -1,56 +1,271 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: jessica
- */
-?>
-<?php
-    require_once("autoload.php");
-    SessionManager::start();
-    require_once("checkLogin.php");
-?>
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-    <?php require_once("head.php"); ?>
-    <?php
-    $bll = new BLL\UserBLL();
-    ?>
-        <link rel="stylesheet" href = "./css/main.css" >
-    <title>Shopping Website</title>
+    <title>拼命買</title>
+    <?php require_once ("head.php")?>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <script type="text/javascript" src="js/login_function.js"></script>
+    <link rel="stylesheet" href="styles/index.css" type="text/css"/>
 </head>
 <body>
-    <?php require_once("navbar.php"); ?>
-    <div class="container">
-        <div class="catalog" id="game">
-            <a href="./blockly-games/"><img class="icon" src = "./resource/icon/icon_blockly.png"></a>
-        </div>
-        <div class="catalog" id="demo">
-            <a href="./examplecodeindex.php"><img class="icon" src = "./resource/icon/icon_example.png"></a>
-        </div>
-        <div class="catalog" id="homework">
-            <a href="./practiceindex.php"><img class="icon" src = "./resource/icon/icon_practice.png"></a>
-        </div>
-        <?php
-        if($userlevel==="student"){ ?>
-            <div class="catalog" id = "exam">
-                <a href="./examindex.php"><img class="icon" src = "./resource/icon/icon_exam.png"></a>
-            </div>
-        <?php } ?>
-    </div>
-        <?php
-        if($userlevel==="teacher" || $userlevel==="TA"){
-            ?>
+<?php require_once ("navbar.php")?>
+<div>
+    <section class="jumbotron text-center" >
         <div class="container">
-            <div class="catalog2" id = "studenthw">
-                <a href="./studenthw.php"><img class="icon" src = "./resource/icon/icon_student.png"></a>
+            <h1 class="jumbotron-heading">拼命買</h1>
+        </div>
+    </section>
+</div>
+<div class="album py-5 ">
+    <div class="container" align="center">
+        <section class="col-xs-12 col-xs-offset-3">
+            <form class="form-horizo​​ntal" role="form">
+                <div class="col-xs-6">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <select name="" class="form-control" >
+                                <option value="">種類</option>
+                                <option value="">名稱</option>
+                                <option value="">登刊時間</option>
+                            </select>
+                        </div>
+                        <input type="text" class="form-control" placeholder="請輸入...">
+                        <span class="input-group-btn"> 
+                            <button class="btn btn-default" type="button">search</button> 
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="database [100%x225]" style="height: 225px; width: 100%; display: block;" src="thing\文具\stationery.001.jpg" data-holder-rendered="true">
+                    <div class="card-body" align="left">
+                        <div class="row">
+                            <div class="col">
+                                <h4>商品名稱</h4>
+                            </div>
+                            <div class="col">
+                                <h4 color="success"align="right">售價：1000</h4>
+                            </div>
+                        </div>
+                        <h6>商品描述</h6>
+                        <p class="card-text">這是一個物品</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">瀏覽</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">加入購物車</button>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="catalog2" id = "exam">
-                <a href="./examindex.php"><img class="icon" src = "./resource/icon/icon_exam.png" style="width: 26em; height: 26em;"></a>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="database [100%x225]" style="height: 225px; width: 100%; display: block;"  src="thing\生活用品\daily.003.jpg"data-holder-rendered="true">
+                    <div class="card-body" align="left">
+                        <div class="row">
+                            <div class="col">
+                                <h4>商品名稱</h4>
+                            </div>
+                            <div class="col">
+                                <h4 color="success"align="right">售價：1000</h4>
+                            </div>
+                        </div>
+                        <h6>商品描述</h6>
+                        <p class="card-text">這是一個物品</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">瀏覽</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">加入購物車</button>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
             </div>
-        <div>
-        <?php } ?>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="database [100%x225]" style="height: 225px; width: 100%; display: block;"  src="thing\兒童用品\baby.001.jpg" data-holder-rendered="true">
+                    <div class="card-body" align="left">
+                        <div class="row">
+                            <div class="col">
+                                <h4>商品名稱</h4>
+                            </div>
+                            <div class="col">
+                                <h4 color="success"align="right">售價：1000</h4>
+                            </div>
+                        </div>
+                        <h6>商品描述</h6>
+                        <p class="card-text">這是一個物品</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">瀏覽</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">加入購物車</button>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="database [100%x225]" style="height: 225px; width: 100%; display: block;" src="thing\服裝\clothes.002.jpg" data-holder-rendered="true">
+                    <div class="card-body" align="left">
+                        <div class="row">
+                            <div class="col">
+                                <h4>商品名稱</h4>
+                            </div>
+                            <div class="col">
+                                <h4 color="success"align="right">售價：1000</h4>
+                            </div>
+                        </div>
+                        <h6>商品描述</h6>
+                        <p class="card-text">這是一個物品</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">瀏覽</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">加入購物車</button>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="database [100%x225]" style="height: 225px; width: 100%; display: block;" src="thing\美容保養\makeups.003.jpg" data-holder-rendered="true">
+                    <div class="card-body" align="left">
+                        <div class="row">
+                            <div class="col">
+                                <h4>商品名稱</h4>
+                            </div>
+                            <div class="col">
+                                <h4 color="success"align="right">售價：1000</h4>
+                            </div>
+                        </div>
+                        <h6>商品描述</h6>
+                        <p class="card-text">這是一個物品</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">瀏覽</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">加入購物車</button>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="database [100%x225]" style="height: 225px; width: 100%; display: block;" src="thing\玩具\toy.001.jpg" data-holder-rendered="true">
+                    <div class="card-body" align="left">
+                        <div class="row">
+                            <div class="col">
+                                <h4>商品名稱</h4>
+                            </div>
+                            <div class="col">
+                                <h4 color="success"align="right">售價：1000</h4>
+                            </div>
+                        </div>
+                        <h6>商品描述</h6>
+                        <p class="card-text">這是一個物品</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">瀏覽</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">加入購物車</button>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="database [100%x225]" style="height: 225px; width: 100%; display: block;" src="thing\家具\furniture.001.jpg" data-holder-rendered="true">
+                    <div class="card-body" align="left">
+                        <div class="row">
+                            <div class="col">
+                                <h4>商品名稱</h4>
+                            </div>
+                            <div class="col">
+                                <h4 color="success"align="right">售價：1000</h4>
+                            </div>
+                        </div>
+                        <h6>商品描述</h6>
+                        <p class="card-text">這是一個物品</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">瀏覽</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">加入購物車</button>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="database [100%x225]" style="height: 225px; width: 100%; display: block;" src="thing\書籍\book.002.jpg" data-holder-rendered="true">
+                    <div class="card-body" align="left">
+                        <div class="row">
+                            <div class="col">
+                                <h4>商品名稱</h4>
+                            </div>
+                            <div class="col">
+                                <h4 color="success"align="right">售價：1000</h4>
+                            </div>
+                        </div>
+                        <h6>商品描述</h6>
+                        <p class="card-text">這是一個物品</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">瀏覽</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">加入購物車</button>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="database [100%x225]" style="height: 225px; width: 100%; display: block;" src="thing\運動用品\sport.003.jpg" data-holder-rendered="true">
+                    <div class="card-body" align="left">
+                        <div class="row">
+                            <div class="col">
+                                <h4>商品名稱</h4>
+                            </div>
+                            <div class="col">
+                                <h4 color="success"align="right">售價：1000</h4>
+                            </div>
+                        </div>
+                        <h6>商品描述</h6>
+                        <p class="card-text">這是一個物品</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">瀏覽</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">加入購物車</button>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <?php require_once("footer.php");?>
+</div>
+</div>
+</div>
+
 </body>
 </html>

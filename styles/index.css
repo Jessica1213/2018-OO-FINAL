@@ -1,0 +1,29 @@
+@import url(topNavi.css);
+@import url(featured_slide.css);
+@import url(login.css);
+
+body{
+	margin:0;
+	padding:0;
+	font-size:14px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#333333;
+	background-color:#000000;
+}
+
+/* ----------------------------------------------Wrapper-------------------------------------*/
+
+div.wrapper{
+	/*margin:;*/
+	display:block;
+	width:100%;
+	text-align:left;
+	/*color: ;*/
+	/*background: ;*/
+
+	}
+
+.row1{color:#000000; background-color:#000000;}
+.row2, .row2 a{color:#E1E1E1; background-color:#000000;}
+.row3{color:#000000; background-color:#000000;}
+.row4{color:#000000; background-color:#232323;}
