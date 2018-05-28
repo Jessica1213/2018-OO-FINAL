@@ -13,7 +13,6 @@ class UserDAL extends DALBase
         $query.=" from user A ";
         $query.=" where A.account=? and A.password=?";
         $result=$this->exec($query,[$account,$password],true);
-        var_dump($result);
         return $result?$result[0]["UID"]:false;
     }
 

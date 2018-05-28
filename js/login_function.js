@@ -11,17 +11,16 @@ function checkLogin(){
           if(this.readyState === 4 && this.status === 200) {
               login = http.responseText;
               console.log(login);
+              if(login==="true") {
+                  window.location.href = "selectLogin.php";
+              }
+              else {
+                  alert("帳號或密碼錯誤");
+              }
           }
       };
 
       http.send("account="+username+"&password="+password);
-
-      if(login===true) {
-          document.getElementById("loginForm").action = "selectLogin.php";
-      }
-      else {
-          alert("帳號或密碼錯誤");
-      }
 
     }
 }  

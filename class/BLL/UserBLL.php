@@ -19,10 +19,10 @@ class UserBLL extends BLLBase
         $password=\StringFilter::hash($password);
         $uid = $this->dal->getUID($account,$password);
         if(!$uid) {
-            return false;
+            return "false";
         } else {
             SessionManager::set("UID",$uid);
-            return true;
+            return "true";
         }
     }
 

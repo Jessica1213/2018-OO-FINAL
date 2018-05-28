@@ -15,7 +15,6 @@ class ProductDAL extends DALBase
         $query = "select ";
         $query.= "PID, price, description, image, amount, category from product where name=?";
         $result=$this->exec($query, [$name], true);
-        var_dump($result);
         return $result;
     }
 }

@@ -13,7 +13,7 @@
 <?php require_once ("navbar.php")?>
 <div class="wrapper row5">
   <div  id="login">
-    <form  action="" name="loginForm" method="post">
+    <form  action="" name="loginForm" method="post" onsubmit="return false;">
       <table>
         <tr>
           <th>LOGIN</th>

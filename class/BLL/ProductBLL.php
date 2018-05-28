@@ -8,10 +8,10 @@
 
 namespace BLL;
 
-
+use BLL\BLLBase;
 use DAL\ProductDAL;
 
-class ProductBLL
+class ProductBLL extends BLLBase
 {
     public function __construct(&$dbm=null)
     {

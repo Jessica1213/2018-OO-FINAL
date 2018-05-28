@@ -5,6 +5,7 @@
  * Date: 27/05/2018
  * Time: 8:13 PM
  */
+require_once ("../autoload.php");
 if(isset($_POST["account"]) && isset($_POST["password"])) {
     $bll = new BLL\UserBLL();
     echo $bll->logIn($_POST["account"], $_POST["password"]);
