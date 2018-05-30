@@ -10,6 +10,7 @@ namespace BLL;
 
 use BLL\BLLBase;
 use DAL\ProductDAL;
+use \SessionManager;
 
 class ProductBLL extends BLLBase
 {

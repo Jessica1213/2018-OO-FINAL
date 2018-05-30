@@ -10,7 +10,8 @@ SessionManager::start();
 
 if(isset($_POST["name"])) {
     $bll = new BLL\ProductBLL();
-    echo $bll->searchProducts($_POST["name"])[0]["PID"];
+    echo json_encode($bll->searchProducts($_POST["name"]));
+//    echo $bll->searchProducts($_POST["name"])[0]["category"];
 }
 else {
     header("HTTP/1.1 500 error");

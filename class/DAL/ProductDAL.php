@@ -7,13 +7,13 @@
  */
 
 namespace DAL;
-
+use DAL\DALBase;
 
 class ProductDAL extends DALBase
 {
     public function getProducts($name) {
         $query = "select ";
-        $query.= "PID, price, description, image, amount, category from product where name=?";
+        $query.= "PID, name, price, description, amount, category from product where name=?";
         $result=$this->exec($query, [$name], true);
         return $result;
     }

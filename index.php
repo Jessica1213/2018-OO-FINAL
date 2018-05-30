@@ -7,7 +7,7 @@
     <?php require_once ("head.php")?>
     <meta http-equiv="imagetoolbar" content="no" />
     <script type="text/javascript" src="js/login_function.js"></script>
-    <script type="text/javascript" src="js/search_product.js"></script>
+    <script type="text/javascript" src="js/product.js"></script>
     <link href="styles/layout.css" rel="stylesheet" type="text/css">
 </head>
 
