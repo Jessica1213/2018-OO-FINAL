@@ -1,52 +1,17 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: jessica
- */
-?>
-<?php
-    // require_once("autoload.php");
-    // SessionManager::start();
-    // require_once("checkLogin.php");
-   
-?>
-
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-<html lang="en">
 <head>
     <title>拼命買</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <?php require_once ("head.php")?>
     <meta http-equiv="imagetoolbar" content="no" />
     <script type="text/javascript" src="js/login_function.js"></script>
-    <link rel="stylesheet" href="styles/layout.css" type="text/css"/>
-	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   
+    <script type="text/javascript" src="js/product.js"></script>
 </head>
 <body>
 
-
-<div>
-
-  <div id="topnav">
-    <ul>
-      <li><a href="index.php"><strong>首頁</strong></a></li>
-      <li><a href="#.php"><strong>購物車</strong></a></li>
-      <li><a href="select_Login.php"><strong>登入/註冊</strong></a></li>
-    </ul>
-  </div>
-    <section class="jumbotron text-center" >
-        <div class="container">
-            <h1 class="jumbotron-heading">***的賣場</h1>
-        </div>
-    </section>
-    
-</div>
+<?php require_once ("navbar.php")?>
 <div class="album py-5 ">
     <div class="container " align="center">
         <div class="row">
