@@ -30,7 +30,7 @@
                 <li><a href="register.php">Register</a></li>
                 <!-- 登入後-->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         使用者(連資料庫) <span class="caret"></span>
                     </a>
 
@@ -57,5 +57,3 @@
         </div>
     </div>
 </nav>
-
-
