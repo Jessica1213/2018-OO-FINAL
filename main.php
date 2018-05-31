@@ -9,6 +9,7 @@
     <meta http-equiv="imagetoolbar" content="no" />
     <script type="text/javascript" src="js/login_function.js"></script>
     <script type="text/javascript" src="js/product.js"></script>
+    <link href="styles/app.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/layout.css" type="text/css"/>
 
 </head>
@@ -28,7 +29,7 @@
                 <div class="col-xs-6">
                     <div class="input-group">
                         <div class="input-group-btn">
-                            <select name="" class="form-control" >
+                            <select name="test" class="form-control" >
                                 <option value="">種類</option>
                                 <option value="">名稱</option>
                                 <option value="">登刊時間</option>
