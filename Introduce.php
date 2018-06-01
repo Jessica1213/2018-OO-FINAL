@@ -18,25 +18,24 @@
     <div class="container " align="center">
 
         
-        
         <div class="row">
             <div class="col-md-2">
-                        <a href="Introduce.php" class="list-group-item list-group-item-action" style="wight:auto;" >介紹</a>
-                        <a href="commodity.php" class="list-group-item list-group-item-action list-group-item-warning" style="wight:auto;">商品</a>
-                        <a href="assess.php" class="list-group-item list-group-item-action list-group-item-info" style="wight:auto;">評價</a>
-                        <a href="wallet.php" class="list-group-item list-group-item-action list-group-item-success" style="wight:auto;">錢包</a>
-                        <a href="Sales.php" class="list-group-item list-group-item-action list-group-item-danger" style="wight:auto;">銷售</a>   
+                        <a href="Introduce.php" class="list-group-item list-group-item-action" style="width:auto;" >介紹</a>
+                        <a href="commodity.php" class="list-group-item list-group-item-action list-group-item-warning" style="width:auto;">商品</a>
+                        <a href="assess.php" class="list-group-item list-group-item-action list-group-item-info" style="width:auto;">評價</a>
+                        <a href="wallet.php" class="list-group-item list-group-item-action list-group-item-success" style="width:auto;">錢包</a>
+                        <a href="Sales.php" class="list-group-item list-group-item-action list-group-item-danger" style="width:auto;">銷售</a>
             </div>
             <div class="col-md-10">
                 <div class="row">
-                <div class="col" style="wight:auto;background:#eee">
+                <div class="col" style="width:auto;background:#eee">
                     <section class=" text-left " >
                         <div class="container">
-                            <h2 valign="top">***的檔案</h2>
+                            <h2 align="top">***的檔案</h2>
                             <input type="text" placeholder="賣場介紹" >
                         </div>
                     </section>
-                    <HR style="wight:auto;" size="10">
+                    <HR style="width:auto;" size="10">
                 </div>  
                 
                 </div>
@@ -101,8 +100,7 @@
 
         
     </div>  
-</div> 
-</div> 
+
     
 </body>
 </html>
