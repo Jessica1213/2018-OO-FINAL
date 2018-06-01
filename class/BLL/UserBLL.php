@@ -86,9 +86,9 @@ class UserBLL extends BLLBase
         return $this->islogIn()?$this->dal->checkUserlevel($uid):false;
     }
 
-    public  function addAccount($account, $password, $username, $department, $grade, $class)
+    public  function addAccount($account, $password, $username, $email)
     {
-        return $this->dal->setUser($account, $password, $username, $department, $grade, $class);
+        return $this->dal->setUser($account, $password, $username, $email);
     }
 
 }

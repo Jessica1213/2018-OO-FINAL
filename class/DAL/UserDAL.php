@@ -92,29 +92,28 @@ class UserDAL extends DALBase
 
     }
 
-    public function setUser($acoount, $password, $username, $department, $grade, $class) {
-
+    public function setUser($acoount, $password, $username, $email) {
+        $userlevel = "member";
         if($this->getUID($acoount,$password)){
             echo '<script language="javascript">';
-            echo 'alert("這個學號已經註冊過，請嘗試新的學號")';
+            echo 'alert("這個帳號已經註冊過，請使用新的帳號")';
             echo '</script>';
-            return;
+            return "false";
         }
         else {
-            $query="";
             $query = "insert ";
             $query.= "into ";
             $query.= "user ";
-            $query.= "(account, password, name, department, grade, class)";
-            $query.= " VALUES ('".$acoount."','".$password."','".$username."','". $department."','". $grade."','". $class."')";
+            $query.= "(account, password, email, name, userlevel)";
+            $query.= " VALUES ('".$acoount."','".$password."','".$email."','". $username."','". $userlevel."')";
             $this->exec($query, [
                 "account"=>$acoount,
                 "password"=>$password,
+                "email"=>$email,
                 "name"=>$username,
-                "department"=>$department,
-                "grade"=>$grade,
-                "class"=>$class
+                "userlevel"=>$userlevel
                 ],  false, true);
+            return "true";
         }
     }
 }

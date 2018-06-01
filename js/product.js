@@ -77,7 +77,7 @@ function showItems() {
     var products = findItem(params.keyword);
     var list = "";
     for (var i=0; i<products.length; i++){
-        list += '<div class="col-md-4" style="background:#eee; margin-left: 1vh"><div class="card mb-4 box-shadow">';
+        list += '<div class="col-md-4" style="background:#eee; margin-top: 1vh;"><div class="card mb-4 box-shadow">';
         list += '<img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="" style="height: 20%; width: 100%; display: block;" src="'+products[i]["image"]+'" data-holder-rendered="true">';
         list += '<div class="card-body" align="left"><div class="row"><div class="col">';
         list += '<h4 style="padding-left: 2vw">'+products[i]["name"]+'</h4></div>';

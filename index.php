@@ -6,7 +6,7 @@
     <title>拼命買</title>
     <?php require_once ("head.php")?>
     <meta http-equiv="imagetoolbar" content="no" />
-    <script type="text/javascript" src="js/login_function.js"></script>
+    <script type="text/javascript" src="js/user.js"></script>
     <script type="text/javascript" src="js/product.js"></script>
 </head>
 

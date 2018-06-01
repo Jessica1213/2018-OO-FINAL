@@ -5,7 +5,7 @@
     <?php require_once ("head.php")?>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="imagetoolbar" content="no" />
-    <script type="text/javascript" src="js/login_function.js"></script>
+    <script type="text/javascript" src="js/user.js"></script>
     <script type="text/javascript" src="js/product.js"></script>
 </head>
 <body>
@@ -14,9 +14,6 @@
     <div  id="login">
         <form  action="index.php" name="loginForm" >
             <table>
-                <tr>
-                    <th>Customer/Buyer</th>
-                </tr>
                 <tr>
                     <td><input class="customer" type="button" onclick="location.href='index.php'" value="我是顧客"></td>
                 </tr>
