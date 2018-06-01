@@ -1,9 +1,10 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
 <head>
     <title>拼命買</title>
     <?php require_once ("head.php")?>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="imagetoolbar" content="no" />
     <script type="text/javascript" src="js/login_function.js"></script>
     <script type="text/javascript" src="js/product.js"></script>
@@ -14,14 +15,14 @@
 <div class="album py-5 ">
     <div class="container " align="center">
         <div class="row">
-            <div class="col-md-2">
-            <section class="jumbotron text-center" >
-                        <a href="Introduce.php" class="list-group-item list-group-item-action">介紹</a>
-                        <a href="commodity.php" class="list-group-item list-group-item-action list-group-item-primary">商品</a>
-                        <a href="assess.php" class="list-group-item list-group-item-action list-group-item-secondary">評價</a>
-                        <a href="wallet.php" class="list-group-item list-group-item-action list-group-item-success">錢包</a>
-                        <a href="Sales.php" class="list-group-item list-group-item-action list-group-item-danger">銷售</a>   
-            </section>  
+            <div class="col-md-2" >
+            
+                        <a href="Introduce.php" class="list-group-item list-group-item-action" style="wight:auto;" >介紹</a>
+                        <a href="commodity.php" class="list-group-item list-group-item-action list-group-item-warning" style="wight:auto;">商品</a>
+                        <a href="assess.php" class="list-group-item list-group-item-action list-group-item-info" style="wight:auto;">評價</a>
+                        <a href="wallet.php" class="list-group-item list-group-item-action list-group-item-success" style="wight:auto;">錢包</a>
+                        <a href="Sales.php" class="list-group-item list-group-item-action list-group-item-danger" style="wight:auto;">銷售</a>   
+              
             </div>
             <div class="col-md-10">
                 <div class="row">

@@ -17,13 +17,11 @@
     <div class="container " align="center">
         <div class="row">
             <div class="col-md-2">
-            <section class="jumbotron text-center" >
-                        <a href="Introduce.php" class="list-group-item list-group-item-action">介紹</a>
-                        <a href="commodity.php" class="list-group-item list-group-item-action list-group-item-primary">商品</a>
-                        <a href="assess.php" class="list-group-item list-group-item-action list-group-item-secondary">評價</a>
-                        <a href="wallet.php" class="list-group-item list-group-item-action list-group-item-success">錢包</a>
-                        <a href="Sales.php" class="list-group-item list-group-item-action list-group-item-danger">銷售</a>   
-            </section>  
+                        <a href="Introduce.php" class="list-group-item list-group-item-action" style="wight:auto;" >介紹</a>
+                        <a href="commodity.php" class="list-group-item list-group-item-action list-group-item-warning" style="wight:auto;">商品</a>
+                        <a href="assess.php" class="list-group-item list-group-item-action list-group-item-info" style="wight:auto;">評價</a>
+                        <a href="wallet.php" class="list-group-item list-group-item-action list-group-item-success" style="wight:auto;">錢包</a>
+                        <a href="Sales.php" class="list-group-item list-group-item-action list-group-item-danger" style="wight:auto;">銷售</a>    
             </div>
             <div class="col-md-10">
                 <div class="row">

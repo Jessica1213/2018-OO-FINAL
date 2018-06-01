@@ -12,9 +12,12 @@ use DAL\DALBase;
 class ProductDAL extends DALBase
 {
     public function getProducts($name) {
+        $item="%";
+        $item.=$name;
+        $item.="%";
         $query = "select ";
-        $query.= "PID, name, price, description, amount, category from product where name=?";
-        $result=$this->exec($query, [$name], true);
+        $query.= "PID, name, price, description, image, amount, category from product where name like ?";
+        $result=$this->exec($query, [$item], true);
         return $result;
     }
 }
