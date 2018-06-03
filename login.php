@@ -1,7 +1,11 @@
 <?php
-//    SessionManager::start();
-//    require_once ("checkLogin.php");
-//?>
+require_once("./autoload.php");
+SessionManager::start();
+if(BLL\UserBLL::isLogIn()) {
+    header("HTTP/1.1 302 Redirect");
+    header("Location: index.php");
+    exit;
+}?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
@@ -24,10 +28,10 @@
           <th>LOGIN</th>
         </tr>
         <tr>
-          <td>顧客帳號 : <input class="text" type="text"  name="username"></td>
+          <td><label for="account">*帳號：</label><input class="text" type="text" id="account" name="username"></td>
         </tr>
         <tr>
-          <td>顧客密碼 : <input class="text" type="password"   name="password"></td>
+          <td><label for="password">*密碼：</label><input class="text" type="password" id="password" name="password"></td>
         </tr>
         <tr>
           <td>

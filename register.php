@@ -1,3 +1,8 @@
+<?php
+require_once ("autoload.php");
+SessionManager::start();
+//require_once ("checkLogin.php");
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
@@ -18,19 +23,19 @@
                     <th>Register</th>
                 </tr>
                 <tr>
-                    <td> *輸入帳號 : <input class="text" type="text" name="account"></td>
+                    <td><label for="account">*帳號：</label> <input class="text" type="text" id="account" name="account"></td>
                 </tr>
                 <tr>
-                    <td> *姓名 : <input class="text" type="text" name="username"></td>
+                    <td><label for="username">*姓名：</label> <input class="text" type="text" id="username" name="username"></td>
                 </tr>
                 <tr>
-                    <td> *輸入信箱 : <input class="text" type="text" name="email"></td>
+                    <td><label for="email">*信箱：</label> <input class="text" type="text" id="username" name="email"></td>
                 </tr>
                 <tr>
-                    <td> *輸入密碼 : <input class="text" type="password" name="password"></td>
+                    <td><label for="password">*密碼：</label> <input class="text" type="password" id="password" name="password"></td>
                 </tr>
                 <tr>
-                    <td> *確認密碼 : <input class="text" type="password" name="password2"></td>
+                    <td><label for="password2">*確認密碼：</label> <input class="text" type="password" id="password2" name="password2"></td>
                 </tr>
                 <tr>
                     <td><input class="button" type="submit" name="submit"onclick="return checkRegister();" value="確定"></td>

@@ -1,4 +1,9 @@
-
+<?php
+require_once ("autoload.php");
+SessionManager::start();
+require_once ("checkLogin.php");
+$bll = new BLL\UserBLL();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
@@ -15,7 +20,7 @@
 <?php require_once ("navbar.php")?>
 
 <div class="album py-5 ">
-    <div class="container " align="center">
+    <div class="container " align="center" style="margin-top: 15vh">
 
         <section class="col-xs-12 col-xs-offset-3">
             <form class="form-horizo​​ntal" role="form">
@@ -40,25 +45,25 @@
         <br>
         <div class="row">
             <div class="col-md-2">
-                        <a href="Introduce.php" class="list-group-item list-group-item-action" style="wight:auto;" >介紹</a>
-                        <a href="commodity.php" class="list-group-item list-group-item-action list-group-item-warning" style="wight:auto;">商品</a>
-                        <a href="assess.php" class="list-group-item list-group-item-action list-group-item-info" style="wight:auto;">評價</a>
-                        <a href="wallet.php" class="list-group-item list-group-item-action list-group-item-success" style="wight:auto;">錢包</a>
-                        <a href="Sales.php" class="list-group-item list-group-item-action list-group-item-danger" style="wight:auto;">銷售</a>   
+                        <a href="Introduce.php" class="list-group-item list-group-item-action" style="width:auto;" >介紹</a>
+                        <a href="commodity.php" class="list-group-item list-group-item-action list-group-item-warning" style="width:auto;">商品</a>
+                        <a href="assess.php" class="list-group-item list-group-item-action list-group-item-info" style="width:auto;">評價</a>
+                        <a href="wallet.php" class="list-group-item list-group-item-action list-group-item-success" style="width:auto;">錢包</a>
+                        <a href="Sales.php" class="list-group-item list-group-item-action list-group-item-danger" style="width:auto;">銷售</a>
             </div>
             <div class="col-md-10">
             <div class="row">
-                <div class="col" style="wight:auto;background:#eee">
+                <div class="col" style="width:auto;background:#eee">
                     <section class=" text-left " >
                         <div class="container">
-                            <h2 valign="top">***的商品</h2>
+                            <h2 valign="top"><?=$bll->getUsername(SessionManager::get("UID"))?>的商品</h2>
                         </div>
                     </section>
-                    <HR style="wight:auto;" size="10">
+                    <HR style="width:auto;" size="10">
                 </div>  
                 </div>  
 
-            <div class="row" style="wight:auto;background:#eee">
+            <div class="row" style="width:auto;background:#eee">
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
                 <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="database [100%x225]" style="height: 225px; width: 100%; display: block;" src="thing\文具\stationery.001.jpg" data-holder-rendered="true">

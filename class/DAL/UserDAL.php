@@ -18,46 +18,53 @@ class UserDAL extends DALBase
 
     public function getAccount($uid)
     {
-        $query="select account from user where uid=?";
+        $query="select ";
+        $query.="account from user where uid=?";
         $result=$this->exec($query,[$uid],true);
         return $result[0]["account"];
     }
 
     public function getUsername($uid)
     {
-        $query="select name from user where uid=?";
+        $query="select ";
+        $query.="name from user where uid=?";
         $result=$this->exec($query,[$uid],true);
         return $result[0]["name"];
     }
 
-    public function getDepartment($uid)
+    public function getEmail($uid)
     {
-        $query="select department from user where uid=?";
+        $query="select ";
+        $query.="email from user where uid=?";
         $result=$this->exec($query,[$uid],true);
-        return $result[0]["department"];
+        return $result[0]["email"];
     }
 
-    public function getGrade($uid)
+    public function getImage($uid)
     {
-        $query="select grade from user where uid=?";
+        $query="select ";
+        $query.="profile from user where uid=?";
         $result=$this->exec($query,[$uid],true);
-        return $result[0]["grade"];
+        return $result[0]["profile"];
     }
+
     public function checkUserlevel($uid)
     {
-        $query="select userlevel from user where uid=?";
+        $query="select ";
+        $query.="userlevel from user where uid=?";
         $result=$this->exec($query, [$uid], true);
         return $result[0]["userlevel"];
     }
-    public function updatePassword($uid, $newpwd)
+    public function updateInfo($uid, $newpwd, $email)
     {
         $query="";
         $query.="update user ";
-        $query.="SET password=:password ";
+        $query.="SET password=:password, email=:email";
         $query.="WHERE uid=:uid";
         $result=$this->exec($query,[
             ":uid"=>$uid,
-            ":password"=>$newpwd
+            ":password"=>$newpwd,
+            ":email"=>$email
         ],false,true);
 
     }
@@ -94,6 +101,7 @@ class UserDAL extends DALBase
 
     public function setUser($acoount, $password, $username, $email) {
         $userlevel = "member";
+        $userstate = "B";
         if($this->getUID($acoount,$password)){
             echo '<script language="javascript">';
             echo 'alert("這個帳號已經註冊過，請使用新的帳號")';
@@ -105,15 +113,36 @@ class UserDAL extends DALBase
             $query.= "into ";
             $query.= "user ";
             $query.= "(account, password, email, name, userlevel)";
-            $query.= " VALUES ('".$acoount."','".$password."','".$email."','". $username."','". $userlevel."')";
+            $query.= " VALUES ('".$acoount."','".$password."','".$email."','". $username."','". $userlevel."','". $userstate."')";
             $this->exec($query, [
                 "account"=>$acoount,
                 "password"=>$password,
                 "email"=>$email,
                 "name"=>$username,
-                "userlevel"=>$userlevel
+                "userlevel"=>$userlevel,
+                "userstate"=>$userstate
                 ],  false, true);
             return "true";
         }
+    }
+
+    public function updateState($uid, $state)
+    {
+        $query="";
+        $query.="update user ";
+        $query.="SET userstate=:userstate ";
+        $query.="WHERE uid=:uid";
+        $result=$this->exec($query,[
+            ":uid"=>$uid,
+            ":password"=>$state
+        ],false,true);
+    }
+
+    public function getState($uid)
+    {
+        $query = "select ";
+        $query.= "userstate from user where uid=?";
+        $class=$this->exec($query,[$uid],true);
+        return $class[0]["userstate"];
     }
 }

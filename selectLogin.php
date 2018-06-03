@@ -1,3 +1,8 @@
+<?php
+require_once ("autoload.php");
+SessionManager::start();
+require_once ("checkLogin.php");
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
@@ -15,10 +20,10 @@
         <form  action="index.php" name="loginForm" >
             <table>
                 <tr>
-                    <td><input class="customer" type="button" onclick="location.href='index.php'" value="我是顧客"></td>
+                    <td><input class="customer" type="button" onclick="location.href='index.php' " value="當顧客"></td>
                 </tr>
                 <tr>
-                    <td><input class="Manager" type="button" onclick="location.href='#.html'" value="我是賣家"></td>
+                    <td><input class="Manager" type="button" onclick="location.href='Introduce.php' " value="當賣家" ></td>
                 </tr>
             </table>
         </form>

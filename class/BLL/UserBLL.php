@@ -42,9 +42,9 @@ class UserBLL extends BLLBase
 //    {
 //        return $this->dal->getAccount($uid);
 //    }
-    public function updatePwd($newpwd)
+    public function updateInfo($id, $newpwd, $email)
     {
-        return $this->isLogIn()?$this->dal->updatePassword(SessionManager::get("UID"), $newpwd):false;
+        return $this->isLogIn()?$this->dal->updateInfo($id, $newpwd, $email):false;
     }
 
     public  function timestamp($action, $time, $ques)
@@ -62,14 +62,14 @@ class UserBLL extends BLLBase
         return $this->isLogIn()?$this->dal->getUsername($uid):false;
     }
 
-    public function getDepartment($uid)
+    public function getEmail($uid)
     {
-        return $this->isLogIn()?$this->dal->getDepartment($uid):false;
+        return $this->isLogIn()?$this->dal->getEmail($uid):false;
     }
 
-    public function getGrade($uid)
+    public function getImage($uid)
     {
-        return $this->isLogIn()?$this->dal->getGrade($uid):false;
+        return $this->isLogIn()?$this->dal->getImage($uid):false;
     }
 
     public function getClass($uid)
@@ -86,9 +86,17 @@ class UserBLL extends BLLBase
         return $this->islogIn()?$this->dal->checkUserlevel($uid):false;
     }
 
-    public  function addAccount($account, $password, $username, $email)
+    public function addAccount($account, $password, $username, $email)
     {
         return $this->dal->setUser($account, $password, $username, $email);
+    }
+
+    public function getState() {
+        return $this->islogIn()?$this->dal->getState(SessionManager::get("UID")):false;
+    }
+    public function updateState($uid,$state)
+    {
+        return $this->dal->updateState($uid,$state);
     }
 
 }
