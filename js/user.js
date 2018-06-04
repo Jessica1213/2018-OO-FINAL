@@ -12,7 +12,7 @@ function checkLogin(){
               login = http.responseText;
               console.log(login);
               if(login==="true") {
-                  window.location.href = "selectLogin.php";
+                  window.location.href = "index.php";
               }
           }
       };

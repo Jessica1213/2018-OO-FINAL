@@ -1,11 +1,11 @@
 @import url(topNavi.css);
-@import url(featured_slide.css);
+@import url(picture.css);
 @import url(login.css);
 @import url(search.css);
 
 body{
 	font-size:14px;
 	font-family:Georgia, "Times New Roman", Times, serif;
-	color:#000000;
-	background-color:#000000;
+	color:#FFFFFF;
+	background-color:#FFFFFF;
 }

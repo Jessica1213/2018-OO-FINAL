@@ -23,14 +23,14 @@
     <div class="container " align="center" style="margin-top: 15vh">
 
         <div class="row">
-            <div class="list-group col-md-2">
+            <div class="list-group col-md-2 col-xs-2">
                 <a href="Introduce.php" class="list-group-item list-group-item" style="width:auto;" >介紹</a>
                 <a href="commodity.php" class="list-group-item list-group-item-action list-group-item-warning" style="width:auto;">商品</a>
                 <a href="assess.php" class="list-group-item list-group-item-action list-group-item-info" style="width:auto;">評價</a>
                 <a href="wallet.php" class="list-group-item list-group-item-action list-group-item-success" style="width:auto;">錢包</a>
                 <a href="Sales.php" class="list-group-item list-group-item-action list-group-item-danger" style="width:auto;">銷售</a>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-10 col-xs-10">
                 <div class="row">
                     <div class="col" style="width:auto;background:#eee">
                         <section class=" text-left " >

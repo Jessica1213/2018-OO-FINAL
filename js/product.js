@@ -78,12 +78,14 @@ function showItems() {
     var list = "";
     for (var i=0; i<products.length; i++){
         list += '<div class="col-md-4" style="background:#eee; margin-top: 1vh;"><div class="card mb-4 box-shadow">';
-        list += '<img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="" style="height: 20%; width: 100%; display: block;" src="'+products[i]["image"]+'" data-holder-rendered="true">';
+        list += '<div class="panal" style="height: 300px; width:300px;">';
+        list += '<img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="" style="height: 100%; width:100%; display: block;" src="'+products[i]["image"]+'" data-holder-rendered="true"></div>';
         list += '<div class="card-body" align="left"><div class="row"><div class="col">';
         list += '<h4 style="padding-left: 2vw">'+products[i]["name"]+'</h4></div>';
         list += '<div class="col"><h4 style="padding-right:2vw;" color="success" align="right">售價：'+products[i]["price"]+'</h4></div></div>';
         list += '<h6>商品描述</h6>';
-        list += '<p class="card-text">'+products[i]["description"]+'</p>';
+        list += '<div class="panal" style="height: 80px; width:300px;">';
+        list += '<p class="card-text">'+products[i]["description"]+'</p></div>';
         list += '<div class="d-flex justify-content-between align-items-center">' +
             '<div class="btn-group">'+
             '<button type="button" class="btn btn-sm btn-outline-secondary">瀏覽</button>' +

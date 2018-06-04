@@ -15,19 +15,23 @@ SessionManager::start();
 
 <body>
     <?php require_once ("navbar.php")?>
-    <div class="container" id="logo">
-            <img id="picture" src="resource/images/googlelogo.png">
+    <div class="container" id="picture">
+            <img src="resource/images/googlelogo.png">
     </div>
 
     <div class="container" id="search-box">
-        <input id="search" class="searchInput" type="text" name="searchText">
-        <input class="searchButton" type="button" name="searchSubmit" onclick="searchItem()" style="">
+        <input id="search" class="sreachInput" type="text"placeholder="搜尋" name="searchText" >
+        <input class="sreachButton" type="image" name="searchSubmit" onclick="searchItem()" img src="resource/images/search.png" width="50">
     </div>
 
     <div id="product_picture_info">
         <ul>
-            <li><a href="#.html"><img src="resource/images/VIGOR_series.jpg" alt="" /></a></li>
-            <li><a href="#.html"><img src="resource/images/clutch_series.jpg" alt="" /></a></li>
+            <li><a href="#.html"><img src="resource/images/1-1.jpg" alt="" /></a></li>
+            <li><a href="#.html"><img src="resource/images/2-1.jpg" alt="" /></a></li>
+            <li><a href="#.html"><img src="resource/images/3-1.jpg" alt="" /></a></li>
+            <li><a href="#.html"><img src="resource/images/4-1.jpg" alt="" /></a></li>
+            <li><a href="#.html"><img src="resource/images/5-1.jpg" alt="" /></a></li>
+            <li><a href="#.html"><img src="resource/images/6-1.jpg" alt="" /></a></li>
         </ul>
     </div>
 
