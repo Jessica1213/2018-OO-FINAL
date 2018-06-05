@@ -31,10 +31,10 @@ SessionManager::start();
                 <div class="form-group col-xs-6">
                     <div class="input-group col-xs-12 ">
                         <div class="input-group-btn" >
-                            <select  class="form-control" style = "width: auto;" >
-                                <option selected>Choose...</option>
-                                <option value="name">名稱</option>
-                                <option value="category">種類</option>
+                            <select  id="choice" class="form-control" onchange="chooseType()" style = "width: auto;" >
+                                <option value="1">Choose...</option>
+                                <option value="2">名稱</option>
+                                <option value="3">種類</option>
                             </select>
                         </div>
                         <input id="search" type="text" class="form-control " placeholder="請輸入...">

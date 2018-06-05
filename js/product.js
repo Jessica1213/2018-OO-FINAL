@@ -1,4 +1,4 @@
-//var sortCategory = ["種類", "名稱", "登刊時間"];
+// var sortCategory = ["名稱", "種類"];
 
 function getAllUrlParams(url) {
     // get query string from url (optional) or window
@@ -53,7 +53,8 @@ function getAllUrlParams(url) {
     return obj;
 }
 
-function findItem(name) {
+function findItem(name, type) {
+    if(type==="Choose...") type="名稱";
     var http = new XMLHttpRequest();
     var products = "";
     http.open("POST", "./dbrequest/searchProduct.php", false);
@@ -64,22 +65,21 @@ function findItem(name) {
             products = JSON.parse(products);
         }
     };
-    http.send("name="+name);
+    http.send("name="+name+"&category="+type);
     return products;
 }
 function searchItem() {
     var key = document.getElementById("search").value;
-    if(key.length===0) window.location.href = "index.php";
+    if(key.length===0) return false;
     else window.location.href = "main.php?keyword="+key;
 }
 
 function showItems() {
     var params = getAllUrlParams(window.location.href);
-    console.log(params);
-    var products;
-    if (params!=="") {
-        products = findItem(params.keyword);
-    }
+    var e = document.getElementById("choice");
+    var type = e.options[e.selectedIndex].text;
+    console.log(type);
+    var products = findItem(params.keyword, type);
     var list = "";
     for (var i=0; i<products.length; i++){
         list += '<div class="col-md-4" style="background:#eee; margin-top: 1vh;"><div class="card mb-4 box-shadow">';
@@ -89,13 +89,18 @@ function showItems() {
         list += '<h4 style="padding-left: 2vw">'+products[i]["name"]+'</h4></div>';
         list += '<div class="col"><h4 style="padding-right:2vw;" color="success" align="right">售價：'+products[i]["price"]+'</h4></div></div>';
         list += '<h6>商品描述</h6>';
-        list += '<div class="panal" style="height: 80px; width:300px;">';
+        list += '<div class="panal" style="height:80px;width:300px;">';
         list += '<p class="card-text">'+products[i]["description"]+'</p></div>';
         list += '<div class="d-flex justify-content-between align-items-center">' +
             '<div class="btn-group">'+
             '<button type="button" class="btn btn-sm btn-outline-secondary">瀏覽</button>' +
-            '<button type="button" class="btn btn-sm btn-outline-secondary">加入購物車</button></div>' +
-            '<small class="text-muted">9 mins</small></div></div></div></div>';
+            '<button type="button" class="btn btn-sm btn-outline-secondary">加入購物車</button></div></div></div></div></div>';
     }
     return list;
+}
+
+function chooseType()
+{
+    var type = document.getElementById("choice");
+    console.log(type.options[type.selectedIndex].text);
 }
