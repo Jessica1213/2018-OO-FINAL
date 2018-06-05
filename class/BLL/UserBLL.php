@@ -47,10 +47,6 @@ class UserBLL extends BLLBase
         return $this->isLogIn()?$this->dal->updateInfo($id, $newpwd, $email):false;
     }
 
-    public  function timestamp($action, $time, $ques)
-    {
-        $this->dal->timestamp(SessionManager::get("UID"), $action, $time, $ques);
-    }
 
     public function getAccount($uid)
     {

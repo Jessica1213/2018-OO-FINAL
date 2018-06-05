@@ -33,12 +33,11 @@ SessionManager::start();
                         <div class="input-group-btn" >
                             <select  class="form-control" style = "width: auto;" >
                                 <option selected>Choose...</option>
-                                <option value="">種類</option>
-                                <option value="">名稱</option>
-                                <option value="">登刊時間</option>
+                                <option value="name">名稱</option>
+                                <option value="category">種類</option>
                             </select>
                         </div>
-                        <input id="search" type="text" class="form-control " placeholder="請輸入..." onkeypress="searchItem()">
+                        <input id="search" type="text" class="form-control " placeholder="請輸入...">
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="button" onclick="searchItem()">search</button>
                         </span>
@@ -46,7 +45,7 @@ SessionManager::start();
                 </div>
             </form>
         </section><br><br>
-        <div class="row" style="width:auto;" id="itemlist"></div>
+        <div class="row" style="width:auto; margin-bottom: 5vh;" id="itemlist"></div>
     </div>
 </div>
 <script type="text/javascript">

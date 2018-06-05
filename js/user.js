@@ -135,7 +135,7 @@ function changeUserState(state) {
 function UpdatePersonalInfo() {
     var email = document.InfoForm.email.value;
     var pwd = document.InfoForm.pwd.value;
-    var pwd2 = document.InfoForm.confrim.value;
+    var pwd2 = document.InfoForm.check.value;
     if(pwd.length!==0 && pwd2.length!==0 && pwd===pwd2) {
         var http = new XMLHttpRequest();
         var update = "";
@@ -144,7 +144,7 @@ function UpdatePersonalInfo() {
         http.onreadystatechange=function() {
             if(this.readyState === 4 && this.status === 200) {
                 update = http.responseText;
-                window.location.href = "Information.php";
+                window.location.href = 'Introduce.php';
             }
         };
 

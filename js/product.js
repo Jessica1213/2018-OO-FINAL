@@ -69,12 +69,17 @@ function findItem(name) {
 }
 function searchItem() {
     var key = document.getElementById("search").value;
-    window.location.href = "main.php?keyword="+key;
+    if(key.length===0) window.location.href = "index.php";
+    else window.location.href = "main.php?keyword="+key;
 }
 
 function showItems() {
     var params = getAllUrlParams(window.location.href);
-    var products = findItem(params.keyword);
+    console.log(params);
+    var products;
+    if (params!=="") {
+        products = findItem(params.keyword);
+    }
     var list = "";
     for (var i=0; i<products.length; i++){
         list += '<div class="col-md-4" style="background:#eee; margin-top: 1vh;"><div class="card mb-4 box-shadow">';

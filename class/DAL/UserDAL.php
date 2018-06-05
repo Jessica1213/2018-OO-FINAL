@@ -55,11 +55,11 @@ class UserDAL extends DALBase
         $result=$this->exec($query, [$uid], true);
         return $result[0]["userlevel"];
     }
+
     public function updateInfo($uid, $newpwd, $email)
     {
-        $query="";
-        $query.="update user ";
-        $query.="SET password=:password, email=:email";
+        $query="update user ";
+        $query.="SET password=:password, email=:email ";
         $query.="WHERE uid=:uid";
         $result=$this->exec($query,[
             ":uid"=>$uid,
@@ -68,28 +68,6 @@ class UserDAL extends DALBase
         ],false,true);
 
     }
-    public function timestamp($uid, $action, $time, $question)
-    {
-        $query="";
-        $query = "insert ";
-        $query.= "into ";
-        $query.= "timestamp ";
-        $query.= "(uid, action, question, time)";
-        $query.= " VALUES ('".$uid."','".$action."','".$question."','".$time."')";
-        $this->exec($query, [
-            "uid"=>$uid,
-            "action"=>$action,
-            "question"=>$question,
-            "time"=>$time
-        ],  false, true);
-    }
-    public function getClass($uid) {
-        $query = "select ";
-        $query.= "class from user where uid=?";
-        $class=$this->exec($query,[$uid],true);
-        return $class[0]["class"];
-    }
-
 
     public function getStudentlist($classno) {
         $query = "select ";

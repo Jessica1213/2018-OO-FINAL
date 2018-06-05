@@ -20,8 +20,8 @@ SessionManager::start();
     </div>
 
     <div class="container" id="search-box">
-        <input id="search" class="sreachInput" type="text"placeholder="搜尋" name="searchText" >
-        <input class="sreachButton" type="image" name="searchSubmit" onclick="searchItem()" img src="resource/images/search.png" width="50">
+        <input id="search" class="sreachInput" type="text" placeholder="搜尋" name="searchText" >
+        <input class="sreachButton" type="image" name="searchSubmit" onclick="searchItem()" img src="resource/images/search.png" style="width:8%;" >
     </div>
 
     <div id="product_picture_info">
