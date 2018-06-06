@@ -20,75 +20,14 @@ SessionManager::start();
 
 <div class="album py-5 ">
     <div class="container " align="center" style="margin-top: 15vh">
+        <div id="product" class="row"></div>
+    </div>
+</div>
 
-        <div class="row">
-            
-          
-                <div class="row">
-                <div class="col-md-4 col-xs-4" style="background:#eee;height: 300px; width:100%;" >
-                    <img src="thing/賣家新增商品.png" alt="..." class="img-thumbnail" style="height: 100%; width:100%;">
-                </div>
-                <HR style="width:auto;" size="10">
-                </div>
-
-
-                <div class="row" style="width:auto;background:#eee">
-                    <form  action="" name="InfoForm" method="post" onsubmit="return false;">
-                    <div class="col">
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th scope="col">
-                                <h4>商品名稱</h4>
-                                <label> 商品名稱</label>
-                                </th>
-                                
-                            </tr>
-                            </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">
-                            <h4>商品介紹</h4>
-                            <label> 商品介紹</label>
-                            </th>  
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                            <h4>價格</h4>
-                            <label> 1000</label>
-                                </th>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                            <h4>類別</h4>
-                            <label> XXX</label>   
-                            </th>  
-                        </tr>
-                        
-                        
-                        </tbody>
-                        
-                        </table>
-                        <button class="btn "> 購買 </button>
-                        <button class="btn "> 加入購物車 </button>
-                    </div>
-                    
-                    </form>
-                    
-                </div>    
- 
-             
-
-            </div>
-           
-        </div>
-
-
-
-        
-    </div>  
-</div> 
-</div> 
+<script type="text/javascript">
+    var productID = "<?= $_GET["PID"]?>";
+    window.onload = viewProductInfo(productID);
+</script>
     
 </body>
 </html>

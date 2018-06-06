@@ -53,7 +53,8 @@ function getAllUrlParams(url) {
     return obj;
 }
 
-function findItem(name, type) {
+function findItem(name, type)
+{
     var http = new XMLHttpRequest();
     var products = "";
     http.open("POST", "./dbrequest/searchProduct.php", false);
@@ -66,6 +67,22 @@ function findItem(name, type) {
     };
     http.send("name="+name+"&searchby="+type);
     return products;
+}
+
+function findProduct(pid)
+{
+    var http = new XMLHttpRequest();
+    var product = "";
+    http.open("POST", "./dbrequest/findProduct.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            product = http.responseText;
+            product = JSON.parse(product);
+        }
+    };
+    http.send("PID="+pid);
+    return product;
 }
 
 function searchItemIndex() {
@@ -104,7 +121,7 @@ function showItems() {
         list += '<p class="card-text">'+products[i]["description"]+'</p></div>';
         list += '<div class="d-flex justify-content-between align-items-center">' +
             '<div class="btn-group">'+
-            '<button type="button" class="btn btn-sm btn-outline-secondary">瀏覽</button>' +
+            '<button type="button" class="btn btn-sm btn-outline-secondary" onclick="viewProduct('+products[i]["PID"]+')">瀏覽</button>' +
             '<button type="button" class="btn btn-sm btn-outline-secondary">加入購物車</button></div></div></div></div></div>';
     }
     return list;
@@ -114,4 +131,27 @@ function chooseType()
 {
     var type = document.getElementById("choice");
     console.log(type.options[type.selectedIndex].text);
+}
+
+function viewProduct(pid)
+{
+    window.location.href = "caption.php?PID="+pid;
+}
+
+function viewProductInfo(pid)
+{
+    var product = findProduct(pid);
+    var list = "";
+    list += '<div class="row"><div class="col-md-4 col-xs-4" style="background:#eee;height: 300px; width:100%;">';
+    list += '<img src="'+product["image"]+'" alt="..." class="img-thumbnail" style="height: 100%; width:100%;">';
+    list += '</div><HR style="width:auto;" size="10"></div>';
+    list += '<div class="row" style="width:auto;background:#eee">';
+    list += '<form  action="" name="InfoForm" method="post" onsubmit="return false;">';
+    list += '<div class="col"><table class="table table-striped"><thead><tr><th scope="col"><h4>商品名稱</h4> <label>'+product["name"]+'</label></th></tr></thead>';
+    list += '<tbody><tr><th scope="row"><h4>商品介紹</h4><label>'+product["description"]+'</label></th></tr><tr><th scope="row">';
+    list += '<h4>價格</h4><label>'+product["price"]+'</label></th></tr><tr><th scope="row">';
+    list += '<h4>類別</h4><label>'+product["category"]+'</label></th></tr></tbody></table>';
+    list += '<button class="btn "> 購買 </button><button class="btn "> 加入購物車 </button></div></form></div></div>';
+    document.getElementById("product").innerHTML+= list;
+    // console.log(product);
 }

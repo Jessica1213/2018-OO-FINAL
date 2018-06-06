@@ -29,4 +29,12 @@ class ProductDAL extends DALBase
 
         return $result;
     }
+
+    public function findProduct($pid)
+    {
+        $query = "select ";
+        $query.= "PID, name, price, description, image, amount, category from product where PID=?";
+        $result=$this->exec($query, [$pid], true);
+        return $result?$result[0]:false;
+    }
 }
