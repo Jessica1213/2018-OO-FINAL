@@ -29,7 +29,7 @@ SessionManager::start();
                     <td><label for="username">*姓名：</label> <input class="text" type="text" id="username" name="username"></td>
                 </tr>
                 <tr>
-                    <td><label for="email">*信箱：</label> <input class="text" type="text" id="username" name="email"></td>
+                    <td><label for="email">*信箱：</label> <input class="text" type="text" id="email" name="email"></td>
                 </tr>
                 <tr>
                     <td><label for="password">*密碼：</label> <input class="text" type="password" id="password" name="password"></td>

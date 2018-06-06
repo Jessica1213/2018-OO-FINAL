@@ -79,7 +79,7 @@ class UserDAL extends DALBase
 
     public function setUser($acoount, $password, $username, $email) {
         $userlevel = "member";
-        $userstate = "B";
+        $profile = "none";
         if($this->getUID($acoount,$password)){
             echo '<script language="javascript">';
             echo 'alert("這個帳號已經註冊過，請使用新的帳號")';
@@ -90,15 +90,15 @@ class UserDAL extends DALBase
             $query = "insert ";
             $query.= "into ";
             $query.= "user ";
-            $query.= "(account, password, email, name, userlevel)";
-            $query.= " VALUES ('".$acoount."','".$password."','".$email."','". $username."','". $userlevel."','". $userstate."')";
+            $query.= "(account, password, email, name, profile, userlevel)";
+            $query.= " VALUES ('".$acoount."','".$password."','".$email."','". $username."','".$profile."','". $userlevel."')";
             $this->exec($query, [
                 "account"=>$acoount,
                 "password"=>$password,
                 "email"=>$email,
                 "name"=>$username,
-                "userlevel"=>$userlevel,
-                "userstate"=>$userstate
+                "profile"=>$profile,
+                "userlevel"=>$userlevel
                 ],  false, true);
             return "true";
         }

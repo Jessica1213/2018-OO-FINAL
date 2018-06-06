@@ -6,7 +6,7 @@
 	margin-left: -225px;
 	width:450px;
 	height:600px;
-	color:#000000;
+	color:#FFFFFF;
 	background-color: transparent;
 }
 
@@ -14,8 +14,8 @@
 	border-radius:10px;
 	width:450px;
 	height:600px;
-	padding: 0 10px 10px 10px;
-	background-color:#000000;
+	padding: 0px 10px 10px 10px;
+	background-color:#f9f2f4;
 	text-align: center;"
 }
 
@@ -29,13 +29,14 @@
 }
 
 #login td{
-	color: #000000;
+	co_blocklor:#FFFFFF;
 	font-size: 24px;
 	padding :20px;
+	color:#000000;
 	font-family: 'Microsoft JhengHei';
 }
 
-/*#login input.customer{
+#login input.customer{
 	width: 300px;
 	height: 170px;
 	border-radius:5px;
@@ -43,9 +44,9 @@
 	color:#FFFFFF;
 	font-size: 24px;
 	font-family: 'Microsoft JhengHei';
-}*/
+}
 
-/*#login input.Manager{
+#login input.Manager{
 	width: 300px;
 	height: 170px;
 	border-radius:5px;
@@ -53,10 +54,10 @@
 	color:#FFFFFF;
 	font-size: 24px;
 	font-family: 'Microsoft JhengHei';
-}*/
+}
 
 #login input.text{
-	color:#000000;
+	co_blocklor:#FFFFFF;
 	width: 200px;
 	height: 30px;
 	border-radius:10px;
@@ -69,7 +70,7 @@
 #login input.button{
 	border-radius:5px;
 	background-color:	#CC0000 ;
-	color:#000000;
+	color:#FFFFFF;
 	font-size: 24px;
 	font-family: 'Microsoft JhengHei';
 }

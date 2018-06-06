@@ -25,17 +25,8 @@ SessionManager::start();
             
           
                 <div class="row">
-                <div class="col-md-4 col-xs-4" style="wight:auto;background:#eee"style="height: 300px; width:100%;" >
+                <div class="col-md-4 col-xs-4" style="background:#eee;height: 300px; width:100%;" >
                     <img src="thing/賣家新增商品.png" alt="..." class="img-thumbnail" style="height: 100%; width:100%;">
-                    
-                </div>  
-                <div class="col-md-4 col-xs-4" style="wight:auto;background:#eee" style="height: 400px; width:100%;">
-                    <img src="thing/賣家新增商品.png" alt="..." class="img-thumbnail" style="height: 100%; width:100%;">
-                    
-                </div>
-                <div class="col-md-4 col-xs-4" style="wight:auto;background:#eee" style="height: 300px; width:100%;">
-                    <img src="thing/賣家新增商品.png" alt="..." class="img-thumbnail" style="height: 100%; width:100%;">
-                    
                 </div>
                 <HR style="width:auto;" size="10">
                 </div>
