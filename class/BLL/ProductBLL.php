@@ -24,11 +24,15 @@ class ProductBLL extends BLLBase
         return $this->dal->SearchProducts($name, $type);
     }
 
-    public function getProductByID($PID) {
-        return $this->dal->getProductByID($PID);
+    public function getProductByID($pid) {
+        return $this->dal->getProductByID($pio);
     }
 
     public function getAllCategories() {
         return $this->dal->getAllCategories();
+    }
+
+    public function getProductByUserID($uid) {
+        return $this->dal->getProductByUseID($uid);
     }
 }

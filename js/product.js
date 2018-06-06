@@ -18,7 +18,7 @@ function findProduct(pid)
 {
     var http = new XMLHttpRequest();
     var product = "";
-    http.open("POST", "./dbrequest/findProduct.php", false);
+    http.open("POST", "./dbrequest/findProductByID.php", false);
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     http.onreadystatechange=function() {
         if(this.readyState === 4 && this.status === 200) {
@@ -50,8 +50,7 @@ function searchItemMain() {
     }
 }
 
-function showItems(keyword, cate) {
-    var products = findItem(keyword, cate);
+function showProduct(products) {
     var list = "";
     for (var i=0; i<products.length; i++){
         list += '<div class="col-md-4" style="background:#eee; margin-top: 1vh;"><div class="card mb-4 box-shadow">';
@@ -69,6 +68,11 @@ function showItems(keyword, cate) {
             '<button type="button" class="btn btn-sm btn-outline-secondary">加入購物車</button></div></div></div></div></div>';
     }
     return list;
+}
+
+function showItems(keyword, cate) {
+    var products = findItem(keyword, cate);
+    return showProduct(products);
 }
 
 function chooseType()
@@ -127,3 +131,25 @@ function listAllCategory()
 
 }
 
+function findPersonalProduct()
+{
+    var http = new XMLHttpRequest();
+    var products = "";
+    http.open("POST", "./dbrequest/findPersonalProducts.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            products = http.responseText;
+            products = JSON.parse(products);
+        }
+    };
+    http.send();
+    return products;
+}
+
+function showPersonalItems()
+{
+    var products = findPersonalProduct();
+    return showProduct(products);
+
+}
