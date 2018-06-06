@@ -54,7 +54,6 @@ function getAllUrlParams(url) {
 }
 
 function findItem(name, type) {
-    if(type==="Choose...") type="名稱";
     var http = new XMLHttpRequest();
     var products = "";
     http.open("POST", "./dbrequest/searchProduct.php", false);
@@ -65,21 +64,33 @@ function findItem(name, type) {
             products = JSON.parse(products);
         }
     };
-    http.send("name="+name+"&category="+type);
+    http.send("name="+name+"&searchby="+type);
     return products;
 }
-function searchItem() {
+
+function searchItemIndex() {
     var key = document.getElementById("search").value;
     if(key.length===0) return false;
-    else window.location.href = "main.php?keyword="+key;
+    else window.location.href = "main.php?keyword="+key+"&searchby=name";
+}
+
+function searchItemMain() {
+    var key = document.getElementById("search").value;
+    if(key.length===0) return false;
+    else {
+        var e = document.getElementById("choice");
+        var type = e.options[e.selectedIndex].value;
+        console.log(type);
+        var searchby;
+        if (type === '3') searchby = "cate";
+        else searchby = "name";
+        window.location.href = "main.php?keyword="+key+"&searchby="+searchby;
+    }
 }
 
 function showItems() {
     var params = getAllUrlParams(window.location.href);
-    var e = document.getElementById("choice");
-    var type = e.options[e.selectedIndex].text;
-    console.log(type);
-    var products = findItem(params.keyword, type);
+    var products = findItem(params.keyword, params.searchby);
     var list = "";
     for (var i=0; i<products.length; i++){
         list += '<div class="col-md-4" style="background:#eee; margin-top: 1vh;"><div class="card mb-4 box-shadow">';

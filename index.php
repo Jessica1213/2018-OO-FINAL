@@ -21,7 +21,7 @@ SessionManager::start();
 
     <div class="container" id="search-box">
         <input id="search" class="sreachInput" type="text" placeholder="搜尋" name="searchText" >
-        <input class="sreachButton" type="image" name="searchSubmit" onclick="searchItem()" img src="resource/images/search.png" style="width:8%;" >
+        <input class="sreachButton" type="image" name="searchSubmit" onclick="searchItemIndex()" img src="resource/images/search.png" style="width:8%;" >
     </div>
 
     <div id="product_picture_info">

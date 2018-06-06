@@ -1,0 +1,63 @@
+#shoppingCartList{
+	display:block;
+	position:relative; /* important */
+	left : 50%;
+	top: 125px;
+	margin-left: -300px;
+	width:600px;
+	height:auto;
+	color:#000000;
+	background-color: #f9f2f4;
+}
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+
+#shoppingCartList_Header{
+	position:relative; /* important */
+	width:600px;
+	height:auto;
+	padding: 0px 10px 10px 10px;
+	background-color:#f9f2f4;
+	text-align: center;"
+}
+
+#shoppingCartList_Header tr{
+	width:120px;
+	height:80px;
+	background-color:#02df82	;
+}
+
+#shoppingCartList_Header td{
+	width:120px;
+	border: 2px solid #FFFFFF;
+	font-size: 20px;
+	text-align: center;
+	font-family: 'Microsoft JhengHei';
+}
+
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+#shoppingCartList_Footer{
+	position:relative; /* important */
+	width:600px;
+	height:auto;
+	padding: 0px 10px 10px 10px;
+	background-color: #f9f2f4;
+	align-content: right;
+}
+
+#shoppingCartList_Footer td{
+	padding-right:2px;
+	width:600px;
+	font-size: 20px;
+	align-items: right;
+	font-family: 'Microsoft JhengHei';
+	text-align:right;
+}
+
+#shoppingCartList_Footer input.button{
+	border-radius:5px;
+	background-color:	#EE7700 ;
+	color:#FFFFFF;
+	font-size: 24px;
+	font-family: 'Microsoft JhengHei';
+}
+

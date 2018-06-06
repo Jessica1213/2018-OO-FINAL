@@ -31,7 +31,7 @@ SessionManager::start();
                 <div class="form-group col-xs-6">
                     <div class="input-group col-xs-12 ">
                         <div class="input-group-btn" >
-                            <select  id="choice" class="form-control" onchange="chooseType()" style = "width: auto;" >
+                            <select  id="choice" class="form-control" onchange="a = chooseType();" style = "width: auto;" >
                                 <option value="1">Choose...</option>
                                 <option value="2">名稱</option>
                                 <option value="3">種類</option>
@@ -39,7 +39,7 @@ SessionManager::start();
                         </div>
                         <input id="search" type="text" class="form-control " placeholder="請輸入...">
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button" onclick="searchItem()">search</button>
+                            <button class="btn btn-default" type="button" onclick="searchItemMain();">search</button>
                         </span>
                     </div>
                 </div>

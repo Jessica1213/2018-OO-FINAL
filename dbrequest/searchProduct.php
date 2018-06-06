@@ -8,9 +8,9 @@
 require_once ("../autoload.php");
 SessionManager::start();
 
-if(isset($_POST["name"])) {
+if(isset($_POST["name"]) && isset($_POST["searchby"])) {
     $bll = new BLL\ProductBLL();
-    echo json_encode($bll->searchProducts($_POST["name"]));
+    echo json_encode($bll->searchProducts($_POST["name"], $_POST["searchby"]));
 //    echo $bll->searchProducts($_POST["name"])[0]["category"];
 }
 else {

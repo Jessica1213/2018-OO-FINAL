@@ -20,7 +20,7 @@ class ProductBLL extends BLLBase
         $this->dal=new ProductDAL($this->db);
     }
 
-    public function searchProducts($name) {
-        return $this->dal->getProducts($name);
+    public function searchProducts($name, $type) {
+        return $this->dal->getProducts($name, $type);
     }
 }
