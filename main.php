@@ -49,7 +49,9 @@ SessionManager::start();
     </div>
 </div>
 <script type="text/javascript">
-    document.getElementById("itemlist").innerHTML += showItems()
+    var keyword = "<?= $_GET["keyword"]?>";
+    var cate = "<?= $_GET["searchby"]?>";
+    document.getElementById("itemlist").innerHTML += showItems(keyword, cate);
 </script>
 </body>
 </html>
