@@ -11,7 +11,7 @@ use DAL\DALBase;
 
 class ProductDAL extends DALBase
 {
-    public function getProducts($keyword, $type) {
+    public function SearchProducts($keyword, $type) {
         if($type == "name") {
             $item="%";
             $item.=$keyword;
@@ -30,11 +30,19 @@ class ProductDAL extends DALBase
         return $result;
     }
 
-    public function findProduct($pid)
+    public function getProductByID($pid)
     {
         $query = "select ";
         $query.= "PID, name, price, description, image, amount, category from product where PID=?";
         $result=$this->exec($query, [$pid], true);
         return $result?$result[0]:false;
+    }
+
+    public function getAllCategories()
+    {
+        $query = "select ";
+        $query.= "DISTINCT category from product";
+        $result = $this->exec($query, [], true);
+        return $result;
     }
 }

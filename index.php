@@ -25,15 +25,10 @@ SessionManager::start();
     </div>
 
     <div id="product_picture_info">
-        <ul>
-            <li><a href="#.html"><img src="resource/images/1-1.jpg" alt="" /></a></li>
-            <li><a href="#.html"><img src="resource/images/2-1.jpg" alt="" /></a></li>
-            <li><a href="#.html"><img src="resource/images/3-1.jpg" alt="" /></a></li>
-            <li><a href="#.html"><img src="resource/images/4-1.jpg" alt="" /></a></li>
-            <li><a href="#.html"><img src="resource/images/5-1.jpg" alt="" /></a></li>
-            <li><a href="#.html"><img src="resource/images/6-1.jpg" alt="" /></a></li>
-        </ul>
+        <ul id="allCategory"></ul>
     </div>
-
+<script type="text/javascript">
+    document.getElementById("allCategory").innerHTML+=listAllCategory();
+</script>
 </body>
 </html>

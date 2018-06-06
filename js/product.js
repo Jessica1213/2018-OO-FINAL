@@ -97,5 +97,33 @@ function viewProductInfo(pid)
     list += '<h4>類別</h4><label>'+product["category"]+'</label></th></tr></tbody></table>';
     list += '<button class="btn "> 購買 </button><button class="btn "> 加入購物車 </button></div></form></div></div>';
     document.getElementById("product").innerHTML+= list;
-    // console.log(product);
 }
+
+function findAllCategory()
+{
+    var http = new XMLHttpRequest();
+    var categories = "";
+    http.open("POST", "./dbrequest/findCategories.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            categories = http.responseText;
+            categories = JSON.parse(categories);
+        }
+    };
+    http.send();
+    return categories;
+}
+
+function listAllCategory()
+{
+    var categories = findAllCategory();
+    var list = "";
+    for (var i=0; i<categories.length; i++)
+    {
+        list += '<li><a href="main.php?keyword='+categories[i]["category"]+'&searchby=cate">'+categories[i]["category"]+'</a></li>&nbsp;&nbsp;&nbsp;';
+    }
+    return list;
+
+}
+

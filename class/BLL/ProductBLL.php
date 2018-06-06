@@ -21,10 +21,14 @@ class ProductBLL extends BLLBase
     }
 
     public function searchProducts($name, $type) {
-        return $this->dal->getProducts($name, $type);
+        return $this->dal->SearchProducts($name, $type);
     }
 
-    public function findProduct($PID) {
-        return $this->dal->findProduct($PID);
+    public function getProductByID($PID) {
+        return $this->dal->getProductByID($PID);
+    }
+
+    public function getAllCategories() {
+        return $this->dal->getAllCategories();
     }
 }
