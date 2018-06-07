@@ -30,21 +30,6 @@ function findProduct(pid)
     return product;
 }
 
-function getShoppingList(uid) {
-    var http = new XMLHttpRequest();
-    var products = "";
-    http.open("POST", "./dbrequest/getShoppingCart.php", false);
-    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    http.onreadystatechange=function() {
-        if(this.readyState === 4 && this.status === 200) {
-            products = http.responseText;
-            products = JSON.parse(products);
-        }
-    };
-    http.send("UID="+uid);
-    return products;
-}
-
 function searchItemIndex() {
     var key = document.getElementById("search").value;
     if(key.length===0) return false;
@@ -168,21 +153,33 @@ function showPersonalItems()
     return showProduct(products);
 }
 
+function getPersonalShoppingList(uid) {
+    // var http = new XMLHttpRequest();
+    // var products = "";
+    // http.open("POST", "./dbrequest/addToShoppingCart.php", false);
+    // http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // http.onreadystatechange=function() {
+    //     if(this.readyState === 4 && this.status === 200) {
+    //         products = http.responseText;
+    //         products = JSON.parse(products);
+    //     }
+    // };
+    // http.send("UID="+uid);
+    // return products;
+}
+
 function addToShoppingCart(pid)
 {
-    var amount = 1;
     var http = new XMLHttpRequest();
     var products = "";
-    http.open("POST", "./dbrequest/findPersonalProducts.php", false);
+    http.open("POST", "./dbrequest/addToShoppingCart.php", false);
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     http.onreadystatechange=function() {
         if(this.readyState === 4 && this.status === 200) {
             products = http.responseText;
-            products = JSON.parse(products);
         }
     };
-    http.send();
-    return products;
+    http.send("PID="+pid+"&amount=1");
 }
 
 function showShoppingCart()

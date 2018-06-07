@@ -26,6 +26,7 @@ SessionManager::start();
 
 <script type="text/javascript">
     var productID = "<?= $_GET["PID"]?>";
+    console.log(productID);
     window.onload = viewProductInfo(productID);
 </script>
     

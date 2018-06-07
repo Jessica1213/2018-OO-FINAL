@@ -25,7 +25,7 @@ class ProductBLL extends BLLBase
     }
 
     public function getProductByID($pid) {
-        return $this->dal->getProductByID($pio);
+        return $this->dal->getProductByID($pid);
     }
 
     public function getAllCategories() {
