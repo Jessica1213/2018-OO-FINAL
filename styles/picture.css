@@ -1,41 +1,36 @@
 #picture{
 	display:block;
 	position:relative; /* important */
-	left : 35%;
-	top: 125px;
-	margin-left: -272px;
-	width:50vw;
-	height:40vh;
+	top: 5em;
+	width:50em;
+	height:25em;
 	background-color:#FFFFFF;
 }
 
-#product_picture_info{
-	width: 760px;
+#allCategory{
+	width: 50em;
 	position:relative; /* important */
-	top: 200px;
-	left: 50%;
-	margin-left: -380px;
+	top: 15vh;
+	left: 10%;
 	display:block;
+	font-family: 'Microsoft JhengHei';
 }
 
-#product_picture_info ul{
-	margin:0;
-	padding:0;
+#allCategory ul{
 	list-style:none;
 }
 
-#product_picture_info li{
+#allCategory li{
 	display:inline;
-	margin-right:0;
+	font-size: xx-large;
 }
 
 #head {
 	display:block;
 	position:relative; /* important */
-	margin-top: 10vh;
-	margin-bottom: 3vh;
-	margin-left: 35vw;
-	width:30vw;
-	height:20vh;
+	margin-top: 5em;
+	margin-bottom: 3em;
+	width:30em;
+	height:15em;
 	background-color:#FFFFFF;
 }

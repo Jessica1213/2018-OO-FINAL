@@ -25,9 +25,7 @@ SessionManager::start();
         <input class="sreachButton" type="image" name="searchSubmit" onclick="searchItemIndex()" img src="resource/search.png" style="width:8%;" >
     </div>
 
-    <div id="product_picture_info">
-        <ul id="allCategory"></ul>
-    </div>
+    <div class="container" id="allCategory"></div>
 <script type="text/javascript">
     document.getElementById("allCategory").innerHTML+=listAllCategory();
 </script>

@@ -86,6 +86,7 @@ function listAllCategory()
     var list = "";
     for (var i=0; i<categories.length; i++)
     {
+        if(i===categories.length/2) list+='<br>';
         list += '<li><a href="main.php?keyword='+categories[i]["category"]+'&searchby=cate">'+categories[i]["category"]+'</a></li>&nbsp;&nbsp;&nbsp;';
     }
     return list;
