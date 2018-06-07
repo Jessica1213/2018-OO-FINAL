@@ -12,7 +12,6 @@ require_once ("autoload.php");
     <meta http-equiv="imagetoolbar" content="no" />
     <script type="text/javascript" src="js/user.js"></script>
     <script type="text/javascript" src="js/product.js"></script>
-    <script type="text/javascript" src="js/jsrequest.js"></script>
 </head>
 <body>
 
