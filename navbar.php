@@ -46,7 +46,7 @@
                                 <a href="Introduce.php">
                                     使用者
                                 </a>
-                                <a href="shopCart.php">
+                                <a id="cart" href="shopCart.php">
                                     購物車
                                 </a>
 
@@ -64,3 +64,4 @@
         </div>
     </div>
 </nav>
+<script>getShoppingCartLength()</script>

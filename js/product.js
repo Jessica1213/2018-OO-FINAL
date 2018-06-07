@@ -186,52 +186,103 @@ function addToShoppingCart(pid)
     http.send("PID="+pid+"&amount=1");
 }
 
+function updateShopAmount(pid, amount)
+{
+    var product = findProduct(pid);
+    if (amount > product["amount"]) {
+        alert("超過庫存數量，請重新選擇");
+        return false;
+    }
+    else {
+        var http = new XMLHttpRequest();
+        var products = "";
+        http.open("POST", "./dbrequest/updateShopAmount.php", false);
+        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        http.onreadystatechange=function() {
+            if(this.readyState === 4 && this.status === 200) {
+                products = http.responseText;
+            }
+        };
+        http.send("PID="+pid+"&amount="+amount);
+    }
+
+}
+
 function showShoppingCart()
 {
-    var products = getPersonalShoppingList(0);
-    var table = document.getElementById("shoppingCartList_Header");
-    var tOBj = table.tBodies[0];
-    var row  = document.createElement("tr");//產生一ROW;
-    var cell = document.createElement("td");//產生第一欄;
-    for (var i=1;i <= 2;i++) {    // '2' 改成購買商品數
-        row = document.createElement("tr");//產生一ROW
-        for (var j = 1; j <= 5; j++) {
-            cell = document.createElement("td");//產生第一欄
+    var productslist = getPersonalShoppingList(0);
+    var list="";
+    for (var i = 0;i < productslist.length; i++) {
+        var product = findProduct(productslist[i]["PID"]);
+        if (i%2 === 0) {
+            list += '<tr style="background-color: #f9f2f4">';
+        }
+        else list += '<tr style="background-color: #FFE5FF">';
+
+        for(var j = 0; j < 5; j++)
+        {
             switch(j){
+                case 0:
+                    list += '<td class="detail">';
+                    list += product["name"];
+                    break;
                 case 1:
-                    cell.innerHTML = "<input  type=\"radio\" name=\"doubleCheck\">";  //設定欄位內容，將確認, ' \ ' 重要。
+                    list += '<td class="price">';
+                    list += product["price"];
                     break;
                 case 2:
-                    cell.innerHTML = "ProductName";  //設定欄位內容，項目名稱, ' \ ' 重要。
-                    break;
-                case 3:
-                    cell.innerHTML = "ProductPrice";  //設定欄位內容，單價, ' \ ' 重要。
-                    break;
-                case 4:
-                    cell.innerHTML = "<select>" +
+                    list += '<td class="amount">';
+                    list += "<select id='amount'>" +
                         "<option value=\"1\">1</option>" +
                         "<option value=\"2\">2</option>" +
                         "<option value=\"3\">3</option>" +
                         "<option value=\"4\">4</option>" +
                         "<option value=\"5\">5</option>" +
-                        "</select>";  //設定欄位內容，數量, ' + ' 與 '  \ ' 重要。
+                        "</select>";
                     break;
-                case 5:
-                    cell.innerHTML = "Price";  //設定欄位內容，價格, ' \ ' 重要。
+                case 3:
+                    list += '<td class="smallTotal">';
+                    list += (product["price"] * productslist[i]["amount"]).toString();
+                    break;
+                case 4:
+                    list += '<td class="trash">';
+                    list += '<input class="trashButton" type="image" onclick="removeProduct('+product["PID"]+'); window.location.reload();" img src="./resource/trash.png">';
                     break;
                 default:
                     break;
             }
-            row.appendChild(cell);//將設定的欄位內容塞入ROW中
+            list += '</td>';
         }
+        list += '</tr>';
+    }
+    return list;
 
-        if(i % 2 === 0){    //修改列顏色，美術不好不知道怎麼選顏色ˊˇˋ"
-            row.style.background = '#f9f2f4';
-        }else{
-            row.style.background = '#02df82';
+}
+
+function updateAmount() {
+    var e = document.getElementById("amount");
+    var amount = e.options[e.selectedIndex].value;
+    console.log(amount);
+    updateShopAmount(product["PID"], amount);
+}
+
+function removeProduct(pid) {
+    var http = new XMLHttpRequest();
+    var products = "";
+    http.open("POST", "./dbrequest/removeProduct.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            products = http.responseText;
         }
+    };
+    http.send("PID="+pid+"&paid=0");
+}
 
-        tOBj.appendChild(row);//將ROW塞進表格
-
+function getShoppingCartLength()
+{
+    var productslist = getPersonalShoppingList(0);
+    if(productslist.length>0) {
+        document.getElementById("cart").innerHTML += ' ('+productslist.length+')';
     }
 }

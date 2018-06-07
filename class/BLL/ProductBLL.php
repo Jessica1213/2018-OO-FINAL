@@ -41,6 +41,11 @@ class ProductBLL extends BLLBase
         return $this->dal->addtoShoppingCart($uid, $pid, $amount, $time, $paid);
     }
 
+    public function updatedShopAmount($uid, $pid, $paid, $amount)
+    {
+        return $this->dal->updatedShopAmount($uid, $pid, $paid, $amount);
+    }
+
     public function updatedShoppingCart($uid, $pid, $paid)
     {
         return $this->dal->updatedShoppingCart($uid, $pid, $paid);
@@ -49,5 +54,10 @@ class ProductBLL extends BLLBase
     public function getShoppingCart($uid, $paid)
     {
         return $this->dal->getShoppingCart($uid, $paid);
+    }
+
+    public function removeProductfromCart($uid, $pid, $paid)
+    {
+        return $this->dal->removeItemfromCart($uid, $pid, $paid);
     }
 }

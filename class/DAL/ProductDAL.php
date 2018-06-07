@@ -54,12 +54,21 @@ class ProductDAL extends DALBase
         return $result;
     }
 
+    public function getShoppingCart($uid, $paid)
+    {
+        $query = "select ";
+        $query.= "UID, PID, amount from shoppingCart A ";
+        $query.= "where A.uid=? and A.paid=?";
+        $result = $this->exec($query, [$uid, $paid], true);
+        return $result;
+    }
+
     public function addtoShoppingCart($uid, $pid, $amount, $time, $paid)
     {
         $query = "insert ";
         $query.= "into ";
         $query.= "shoppingCart ";
-        $query.= "(UID, productID, amount, create_at, paid)";
+        $query.= "(UID, PID, amount, create_at, paid)";
         $query.= " VALUES ('".$uid."','".$pid."','".$amount."','". $time."','".$paid."')";
         $this->exec($query, [
             "UID"=>$uid,
@@ -69,6 +78,19 @@ class ProductDAL extends DALBase
             "paid"=>$paid
         ],  false, true);
         return "true";
+    }
+
+    public function updatedShopAmount($uid, $pid, $paid, $amount)
+    {
+        $query="update shoppingCart ";
+        $query.="SET amount=:amount ";
+        $query.="WHERE uid=:uid and pid=:pid and paid=:paid";
+        $result=$this->exec($query,[
+            ":uid"=>$uid,
+            ":pid"=>$pid,
+            ":paid"=>$paid,
+            ":amount"=>$amount
+        ],false,true);
     }
 
     public function updatedShoppingCart($uid, $pid, $paid)
@@ -84,12 +106,15 @@ class ProductDAL extends DALBase
         ],false,true);
     }
 
-    public function getShoppingCart($uid, $paid)
+    public function removeItemfromCart($uid, $pid, $paid)
     {
-        $query = "select ";
-        $query.= "UID, PID, amount from shoppingCart A ";
-        $query.= "where A.uid=? and A.paid=?";
-        $result = $this->exec($query, [$uid, $paid], true);
-        return $result;
+        $query="delete ";
+        $query.="from shoppingCart ";
+        $query.="WHERE uid=:uid and pid=:pid and paid=:paid";
+        $result=$this->exec($query,[
+            ":uid"=>$uid,
+            ":pid"=>$pid,
+            ":paid"=>$paid
+        ],false,true);
     }
 }

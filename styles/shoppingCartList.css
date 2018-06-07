@@ -1,52 +1,54 @@
 #shoppingCartList{
 	display:block;
 	position:relative; /* important */
-	left : 50%;
-	top: 125px;
-	margin-left: -300px;
-	width:600px;
+	margin-top: 8vh;
+	width:60em;
 	height:auto;
 	color:#000000;
-	background-color: #f9f2f4;
 }
-<!-- --------------------------------------------------------------------------------------------------------------- -->
 
 #shoppingCartList_Header{
 	position:relative; /* important */
-	width:600px;
+	width:100%;
 	height:auto;
-	padding: 0px 10px 10px 10px;
-	background-color:#f9f2f4;
 	text-align: center;"
 }
 
 #shoppingCartList_Header tr{
-	width:120px;
-	height:80px;
-	background-color:#02df82	;
+	height:3vw;
+	background-color:#D9FFF5;
 }
 
 #shoppingCartList_Header td{
-	width:120px;
 	border: 2px solid #FFFFFF;
 	font-size: 20px;
 	text-align: center;
 	font-family: 'Microsoft JhengHei';
 }
 
-<!-- --------------------------------------------------------------------------------------------------------------- -->
+.detail {
+	width: 20em;
+}
+
+.trash {
+	width: 5em;
+}
+.trashButton {
+	width: 50%;
+}
+
 #shoppingCartList_Footer{
 	position:relative; /* important */
-	width:600px;
+	width:100%;
 	height:auto;
-	padding: 0px 10px 10px 10px;
+	padding: 0 10px 10px 10px;
 	background-color: #f9f2f4;
 	align-content: right;
 }
 
 #shoppingCartList_Footer td{
 	padding-right:2px;
-	width:600px;
+	width:100%;
 	font-size: 20px;
 	align-items: right;
 	font-family: 'Microsoft JhengHei';
