@@ -22,26 +22,7 @@ $bll = new BLL\UserBLL();
 
 <div class="container" id="shoppingCartList">
     <form action="" name="" method="post" onsubmit="return false;">
-        <table id = "shoppingCartList_Header">
-            <tr>
-                <td>商品</td>
-                <td>單價</td>
-                <td>數量</td>
-                <td>價格</td>
-                <td>取消購買</td>
-            </tr>
-        </table>
-        <table id = "shoppingCartList_Footer">
-            <tr>
-                <td><label>Total Price：</label><input type="text" id="" name="priceOutput"></td>    <!-- 此行需加入：回傳總價格 -->
-            </tr>
-            <tr>
-                <td>
-                    <input class="button" type="submit" name=""  onclick="location.href='index.php'" value="繼續購物" >    <!-- 此行需更改：點擊後的目標網址 -->
-                    <input class="button" type="submit" name="" onclick="location.href='#.html'" value="結帳"> <!-- 此行需更改：點擊後的目標網址 -->
-                </td>
-            </tr>
-        </table>
+        <table id = "shoppingCartList_Header"></table>
     </form>
 </div>
 

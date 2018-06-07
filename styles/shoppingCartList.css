@@ -37,25 +37,7 @@
 	width: 50%;
 }
 
-#shoppingCartList_Footer{
-	position:relative; /* important */
-	width:100%;
-	height:auto;
-	padding: 0 10px 10px 10px;
-	background-color: #f9f2f4;
-	align-content: right;
-}
-
-#shoppingCartList_Footer td{
-	padding-right:2px;
-	width:100%;
-	font-size: 20px;
-	align-items: right;
-	font-family: 'Microsoft JhengHei';
-	text-align:right;
-}
-
-#shoppingCartList_Footer input.button{
+#decisionRow input.button{
 	border-radius:5px;
 	background-color:	#EE7700 ;
 	color:#FFFFFF;
