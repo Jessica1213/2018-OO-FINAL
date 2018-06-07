@@ -53,19 +53,18 @@ function searchItemMain() {
 function showProduct(products) {
     var list = "";
     for (var i=0; i<products.length; i++){
-        list += '<div class="col-md-4" style="background:#eee; margin-top: 1vh;"><div class="card mb-4 box-shadow">';
-        list += '<div class="panal" style="height: 300px; width:300px;">';
-        list += '<img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="" style="height: 100%; width:100%; display: block;" src="'+products[i]["image"]+'" data-holder-rendered="true"></div>';
-        list += '<div class="card-body" align="left"><div class="row"><div class="col">';
-        list += '<h4 style="padding-left: 2vw">'+products[i]["name"]+'</h4></div>';
-        list += '<div class="col"><h4 style="padding-right:2vw;" color="success" align="right">售價：'+products[i]["price"]+'</h4></div></div>';
-        list += '<h6>商品描述</h6>';
-        list += '<div class="panal" style="height:80px;width:300px;">';
-        list += '<p class="card-text">'+products[i]["description"]+'</p></div>';
-        list += '<div class="d-flex justify-content-between align-items-center" align="right">' +
+        list += '<div class="col-md-4" style="background:#eee; "><div class="row"><div class="col-md-6 col-xs-6" >';
+        list += '<img  style="height: 100%; width:100%;" src="'+products[i]["image"]+'" ></div>';        
+        list += '<div class="col-md-6 col-xs-6" >';   
+        list += '<div class="row-md-3 row-sx-3" align="left">';
+        list += '<div class="col-md-6 col-xs-6" align="left" ><lable>'+products[i]["name"]+'</lable></div>';
+        list += '<div class="col-md-6 col-xs-6" > <lable>售價：'+products[i]["price"]+'</lable></div></div>';  
+        list += '<div class="row-md-6 row-xs-6" align="left" style="height: 100%; width:100%;" ><lable>商品描述 : </lable>'+products[i]["description"]+'</div>';
+        list += ' <div class="row-md-3 row-xs-3" align="bottom"> ' +
             '<div class="btn-group" >'+
             '<button type="button" class="btn " style="background-color:#CCBBFF" onclick="viewProduct('+products[i]["PID"]+')">瀏覽</button>' +
-            '<button type="button" class="btn " style="background-color:#FFD4D4" onclick="addToShoppingCart('+products[i]["PID"]+')">加入購物車</button></div></div></div></div></div>';
+            '<button type="button" class="btn " style="background-color:#FFD4D4" onclick="addToShoppingCart('+products[i]["PID"]+')">加入購物車</button>';
+        list += '</div> </div> </div></div></div></div>';
     }
     return list;
 }
@@ -90,20 +89,24 @@ function viewProductInfo(pid)
 {
     var product = findProduct(pid);
     var list = "";
-    list += '<div class="row" style="background:#AEB7CC;height: 350px; width:auto;"><div class="col-md-4 col-xs-4">';
+    list += '<div class="row" style="background:#eee;height: 350px; width:auto;"><div class="col-md-4 col-xs-4">';
     list += '<img src="'+product["image"]+'" alt="..." class="img-thumbnail" style="height: 100%; width:100%;"></div>';
     list += '<form  action="" name="InfoForm" method="post" onsubmit="return false;">';
-    list += '<div class="col-md-8 col-xs-8"><table class="table table-striped" ><tbody><tr><th scope="col">';
-    list += '<h4>商品名稱</h4> <label>'+product["name"]+'</label></th></tr>';
-    list += '<tr ><th scope="row"><h4>商品介紹</h4><label>'+product["description"]+'</label></th></tr>';
-    list += '</tbody></table></div></div>';
+    list += '<div class="col-md-8 col-xs-8"> <div class="row-md-3 row-xs-3" >';
+    list += '<h4>商品名稱'+product["name"]+'</h4></div>';
+    list += '<div class="row-md-8 row-xs-8" >';
+    list += '<h4 >商品介紹'+product["description"]+'</h4>';  
+    list += '</div></div></div>';
     list += '<div class="row" style="width:auto;background:#eee">';
-    list += '<div class="col"><table class="table table-striped">';
-    list += '<tbody><tr><th scope="row">';
-    list += '<h4>價格</h4><label>'+product["price"]+'</label></th></tr><tr ><th scope="row">';
-    list += '<h4>剩餘數量</h4><label>'+'剩餘數量'+'</label></th></tr><tr ><th scope="row">';
-    list += '<h4>類別</h4><label>'+product["category"]+'</label></th></tr></tbody></table>';
-    list += '<button class="btn " style="background-color:#CCBBFF"> 購買 </button><button style="background-color:#FFD4D4" class="btn "> 加入購物車 </button></div></form></div></div>';
+    list += '<div class="col-md-4 col-xs-4">';
+    list += '<h4>價格  :  '+product["price"]+'</h4></div>';
+    list += '<div class="col-md-4 col-xs-4">';
+    list += '<h4>剩餘數量  :  '+'剩餘數量'+'</h4></div>';
+    list += '<div class="col-md-4 col-xs-4">';
+    list += '<h4>類別  :  '+product["category"]+'</h4></div>';
+    list += '<div class="btn-group" ><br>';
+    list += '<button class="btn " style="background-color:#CCBBFF"> 購買 </button>';
+    list += '<button style="background-color:#FFD4D4" class="btn "> 加入購物車 </button></div></form></div></div></div>';
     document.getElementById("product").innerHTML+= list;
 }
 
