@@ -83,4 +83,13 @@ class ProductDAL extends DALBase
             ":paid"=>$paid
         ],false,true);
     }
+
+    public function getShoppingCart($uid, $paid)
+    {
+        $query = "select ";
+        $query.= "UID, PID, amount from shoppingCart A ";
+        $query.= "where A.uid=? and A.paid=?";
+        $result = $this->exec($query, [$uid, $paid], true);
+        return $result;
+    }
 }

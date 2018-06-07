@@ -153,19 +153,19 @@ function showPersonalItems()
     return showProduct(products);
 }
 
-function getPersonalShoppingList(uid) {
-    // var http = new XMLHttpRequest();
-    // var products = "";
-    // http.open("POST", "./dbrequest/addToShoppingCart.php", false);
-    // http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    // http.onreadystatechange=function() {
-    //     if(this.readyState === 4 && this.status === 200) {
-    //         products = http.responseText;
-    //         products = JSON.parse(products);
-    //     }
-    // };
-    // http.send("UID="+uid);
-    // return products;
+function getPersonalShoppingList(paid) {
+    var http = new XMLHttpRequest();
+    var products = "";
+    http.open("POST", "./dbrequest/getShoppingCart.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            products = http.responseText;
+            products = JSON.parse(products);
+        }
+    };
+    http.send("paid="+paid);
+    return products;
 }
 
 function addToShoppingCart(pid)
@@ -184,7 +184,7 @@ function addToShoppingCart(pid)
 
 function showShoppingCart()
 {
-
+    var products = getPersonalShoppingList(0);
     var table = document.getElementById("shoppingCartList_Header");
     var tOBj = table.tBodies[0];
     var row  = document.createElement("tr");//產生一ROW;
