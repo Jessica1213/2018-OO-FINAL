@@ -25,7 +25,6 @@ SessionManager::start();
 </div>
 <div class="album py-5 ">
     <div class="container" align="center">
-    <div class="row">
         <section class="col-xs-12 col-xs-offset-3">
             <form class="form-horizo​​ntal">
                 <div class="form-group col-xs-6">
@@ -41,19 +40,17 @@ SessionManager::start();
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="button" onclick="searchItemMain();">search</button>
                         </span>
+                        <div class="input-group-btn" >
+                        <select  id="choice" class="form-control"  style = "width: auto;" >
+                            <option value="1">價格少到多</option>
+                            <option value="2">價格多到少</option>
+                        </select>
+                        </div>
                     </div>
                 </div>
             </form>
         </section><br><br>
-        </div>
-        <div class="row">
-        <div class="col-md-2"> 
-        <select class="form-control" >
-            <option value="1">價格少到多</option>
-            <option value="2">價格多到少</option>
-        </select>
-        </div>
-        </div>
+       
         <div class="row" style="width:auto; margin-bottom: 5vh;" id="itemlist"></div>
     </div>
 </div>
