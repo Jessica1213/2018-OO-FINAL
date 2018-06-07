@@ -22,7 +22,7 @@ $bll = new BLL\UserBLL();
 <div class="album py-5 ">
     <div class="container " align="center" style="margin-top: 15vh">
         <div class="row">
-            <div class="col-md-2  col-xs-2">
+        <div class="col-md-2 col-xs-2">
                         <a href="Introduce.php" class="list-group-item list-group-item-action" style="width:auto;" >介紹</a>
                         <a href="commodity.php" class="list-group-item list-group-item-action list-group-item-warning" style="width:auto;">商品</a>
                         <a href="assess.php" class="list-group-item list-group-item-action list-group-item-info" style="width:auto;">評價</a>

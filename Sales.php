@@ -62,6 +62,8 @@ $bll = new BLL\UserBLL();
                             <th scope="col">交易時間</th>
                             <th scope="col">物品</th>
                             <th scope="col">完成與否</th>
+                            <th scope="col">確認</th>
+                            <th scope="col">評價</th>
 
                         </tr>
                         </thead>
@@ -77,6 +79,10 @@ $bll = new BLL\UserBLL();
                                     </label>
                                 </div>
                             </td>
+                            <td>
+                            <button type="button" class="btn " style="background-color:#FF8076"> 確認 </button>
+                            </td>
+                            <td>評價</td>
 
                         </tr>
                         <tr>
@@ -90,6 +96,10 @@ $bll = new BLL\UserBLL();
                                     </label>
                                 </div>
                             </td>
+                            <td>
+                            <button type="button" class="btn " style="background-color:#FF8076"> 確認 </button>
+                            </td>
+                            <td>評價</td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
@@ -102,6 +112,10 @@ $bll = new BLL\UserBLL();
                                     </label>
                                 </div>
                             </td>
+                            <td>
+                            <button type="button" class="btn " style="background-color:#FF8076"> 確認 </button>
+                            </td>
+                            <td>評價</td>
                         </tr>
                         </tbody>
                     </table>

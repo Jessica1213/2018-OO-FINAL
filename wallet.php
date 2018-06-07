@@ -36,8 +36,8 @@ $bll = new BLL\UserBLL();
                     <div class="col" style="width:auto;background:#eee">
                         <section class=" text-left " >
                             <div class="container">
-                                <h2 valign="top"><?=$bll->getUsername(SessionManager::get("UID"))?>的錢包</h2>
-
+                                <h2 valign="top"><?=$bll->getUsername(SessionManager::get("UID"))?>的錢包
+                                <button type="button" class="btn " style="background-color:#FFD23C"> + 加值 + </button></h2>
                             </div>
                         </section>
                         <HR style="width:auto;" size="10">
@@ -64,6 +64,7 @@ $bll = new BLL\UserBLL();
                             <th scope="col">物品</th>
                             <th scope="col">收入</th>
                             <th scope="col">支出</th>
+                            <th scope="col">評價</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -73,6 +74,9 @@ $bll = new BLL\UserBLL();
                             <td>thing</td>
                             <td>金額</td>
                             <td>金額</td>
+                            <td>
+                            <input type="text" class="form-control">
+                            </td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
@@ -80,6 +84,9 @@ $bll = new BLL\UserBLL();
                             <td>thing</td>
                             <td>金額</td>
                             <td>金額</td>
+                            <td>
+                            <input type="text" class="form-control">
+                            </td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
@@ -87,6 +94,9 @@ $bll = new BLL\UserBLL();
                             <td>thing</td>
                             <td>金額</td>
                             <td>金額</td>
+                            <td>
+                            <input type="text" class="form-control">
+                            </td>
                         </tr>
                         </tbody>
                     </table>
