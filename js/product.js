@@ -30,6 +30,21 @@ function findProduct(pid)
     return product;
 }
 
+function getShoppingList(uid) {
+    var http = new XMLHttpRequest();
+    var products = "";
+    http.open("POST", "./dbrequest/getShoppingCart.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            products = http.responseText;
+            products = JSON.parse(products);
+        }
+    };
+    http.send("UID="+uid);
+    return products;
+}
+
 function searchItemIndex() {
     var key = document.getElementById("search").value;
     if(key.length===0) return false;
@@ -65,7 +80,7 @@ function showProduct(products) {
         list += '<div class="d-flex justify-content-between align-items-center">' +
             '<div class="btn-group">'+
             '<button type="button" class="btn btn-sm btn-outline-secondary" onclick="viewProduct('+products[i]["PID"]+')">瀏覽</button>' +
-            '<button type="button" class="btn btn-sm btn-outline-secondary">加入購物車</button></div></div></div></div></div>';
+            '<button type="button" class="btn btn-sm btn-outline-secondary" onclick="addToShoppingCart('+products[i]["PID"]+')">加入購物車</button></div></div></div></div></div>';
     }
     return list;
 }
@@ -151,5 +166,71 @@ function showPersonalItems()
 {
     var products = findPersonalProduct();
     return showProduct(products);
+}
 
+function addToShoppingCart(pid)
+{
+    var amount = 1;
+    var http = new XMLHttpRequest();
+    var products = "";
+    http.open("POST", "./dbrequest/findPersonalProducts.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            products = http.responseText;
+            products = JSON.parse(products);
+        }
+    };
+    http.send();
+    return products;
+}
+
+function showShoppingCart()
+{
+
+    var table = document.getElementById("shoppingCartList_Header");
+    var tOBj = table.tBodies[0];
+    var row  = document.createElement("tr");//產生一ROW;
+    var cell = document.createElement("td");//產生第一欄;
+    for (var i=1;i <= 2;i++) {    // '2' 改成購買商品數
+        row = document.createElement("tr");//產生一ROW
+        for (var j = 1; j <= 5; j++) {
+            cell = document.createElement("td");//產生第一欄
+            switch(j){
+                case 1:
+                    cell.innerHTML = "<input  type=\"radio\" name=\"doubleCheck\">";  //設定欄位內容，將確認, ' \ ' 重要。
+                    break;
+                case 2:
+                    cell.innerHTML = "ProductName";  //設定欄位內容，項目名稱, ' \ ' 重要。
+                    break;
+                case 3:
+                    cell.innerHTML = "ProductPrice";  //設定欄位內容，單價, ' \ ' 重要。
+                    break;
+                case 4:
+                    cell.innerHTML = "<select>" +
+                        "<option value=\"1\">1</option>" +
+                        "<option value=\"2\">2</option>" +
+                        "<option value=\"3\">3</option>" +
+                        "<option value=\"4\">4</option>" +
+                        "<option value=\"5\">5</option>" +
+                        "</select>";  //設定欄位內容，數量, ' + ' 與 '  \ ' 重要。
+                    break;
+                case 5:
+                    cell.innerHTML = "Price";  //設定欄位內容，價格, ' \ ' 重要。
+                    break;
+                default:
+                    break;
+            }
+            row.appendChild(cell);//將設定的欄位內容塞入ROW中
+        }
+
+        if(i % 2 === 0){    //修改列顏色，美術不好不知道怎麼選顏色ˊˇˋ"
+            row.style.background = '#f9f2f4';
+        }else{
+            row.style.background = '#02df82';
+        }
+
+        tOBj.appendChild(row);//將ROW塞進表格
+
+    }
 }

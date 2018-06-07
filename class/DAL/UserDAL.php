@@ -112,7 +112,7 @@ class UserDAL extends DALBase
         $query.="WHERE uid=:uid";
         $result=$this->exec($query,[
             ":uid"=>$uid,
-            ":password"=>$state
+            ":userstate"=>$state
         ],false,true);
     }
 

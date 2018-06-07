@@ -35,4 +35,14 @@ class ProductBLL extends BLLBase
     public function getProductByUserID($uid) {
         return $this->dal->getProductByUseID($uid);
     }
+
+    public function addtoShoppingCart($uid, $pid, $amount, $time, $paid)
+    {
+        return $this->dal->addtoShoppingCart($uid, $pid, $amount, $time, $paid);
+    }
+
+    public function updatedShoppingCart($uid, $pid, $paid)
+    {
+        return $this->dal->updatedShoppingCart($uid, $pid, $paid);
+    }
 }

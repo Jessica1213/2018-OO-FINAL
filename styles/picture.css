@@ -1,17 +1,16 @@
 #picture{
 	display:block;
 	position:relative; /* important */
-	left : 50%;
+	left : 35%;
 	top: 125px;
 	margin-left: -272px;
-	width:544px;
-	height:184px;
+	width:50vw;
+	height:40vh;
 	background-color:#FFFFFF;
 }
 
 #product_picture_info{
 	width: 760px;
-	top: 175px;
 	position:relative; /* important */
 	top: 200px;
 	left: 50%;
@@ -28,5 +27,16 @@
 #product_picture_info li{
 	display:inline;
 	width:317px;
-	margin-right:0px;
+	margin-right:0;
+}
+
+#head {
+	display:block;
+	position:relative; /* important */
+	margin-top: 10vh;
+	margin-bottom: 3vh;
+	margin-left: 35vw;
+	width:30vw;
+	height:20vh;
+	background-color:#FFFFFF;
 }

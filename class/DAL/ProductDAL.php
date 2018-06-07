@@ -53,4 +53,34 @@ class ProductDAL extends DALBase
         $result = $this->exec($query, [], true);
         return $result;
     }
+
+    public function addtoShoppingCart($uid, $pid, $amount, $time, $paid)
+    {
+        $query = "insert ";
+        $query.= "into ";
+        $query.= "shoppingCart ";
+        $query.= "(UID, productID, amount, create_at, paid)";
+        $query.= " VALUES ('".$uid."','".$pid."','".$amount."','". $time."','".$paid."')";
+        $this->exec($query, [
+            "UID"=>$uid,
+            "productID"=>$pid,
+            "amount"=>$amount,
+            "create_at"=>$time,
+            "paid"=>$paid
+        ],  false, true);
+        return "true";
+    }
+
+    public function updatedShoppingCart($uid, $pid, $paid)
+    {
+        $query="";
+        $query.="update shoppingCart ";
+        $query.="SET paid=:paid ";
+        $query.="WHERE uid=:uid and pid=:pid";
+        $result=$this->exec($query,[
+            ":uid"=>$uid,
+            ":pid"=>$pid,
+            ":paid"=>$paid
+        ],false,true);
+    }
 }

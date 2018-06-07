@@ -16,12 +16,12 @@ SessionManager::start();
 <body>
     <?php require_once ("navbar.php")?>
     <div class="container" id="picture">
-            <img src="resource/images/googlelogo.png">
+            <img src="resource/pin_means_mine.png" style="width: 100%; height: 100%;">
     </div>
 
     <div class="container" id="search-box">
         <input id="search" class="sreachInput" type="text" placeholder="搜尋" name="searchText" >
-        <input class="sreachButton" type="image" name="searchSubmit" onclick="searchItemIndex()" img src="resource/images/search.png" style="width:8%;" >
+        <input class="sreachButton" type="image" name="searchSubmit" onclick="searchItemIndex()" img src="resource/search.png" style="width:8%;" >
     </div>
 
     <div id="product_picture_info">

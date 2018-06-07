@@ -18,11 +18,9 @@ SessionManager::start();
 <body>
 <?php require_once ("navbar.php")?>
 <div>
-    <section class="jumbotron text-center" >
-        <div class="container">
-            <h1 class="jumbotron-heading">拼命買</h1>
-        </div>
-    </section>
+    <div class="container" id="head">
+        <a href="index.php"><img src="resource/pin_means_mine.png" style="width: 100%; height: 100%;"></a>
+    </div>
 </div>
 <div class="album py-5 ">
     <div class="container" align="center">
