@@ -78,8 +78,7 @@ SessionManager::start();
                             <td>email</td>
                             <td>
                             <a type="button" href="seeuser.php"class="btn btn-success">查看</a>
-                            <a type="button" href="changeuser.php" class="btn btn-primary">修改</a>
-                                <button class="btn btn-warning">暫停</button>
+                            <a type="button" href="changeuser.php" class="btn btn-primary">修改</a>                             
                                 <button class="btn btn-default">刪除</button>
                             </td>
                         </tr>
@@ -90,8 +89,7 @@ SessionManager::start();
                             <td>email</td>
                             <td>
                             <a type="button" href="seeuser.php"class="btn btn-success">查看</a>
-                            <a type="button" href="changeuser.php" class="btn btn-primary">修改</a>
-                                <button class="btn btn-warning">暫停</button>
+                            <a type="button" href="changeuser.php" class="btn btn-primary">修改</a>     
                                 <button class="btn btn-default">刪除</button>
                             </td>
                         </tr>
@@ -102,8 +100,7 @@ SessionManager::start();
                             <td>email</td>
                             <td>
                             <a type="button" href="seeuser.php"class="btn btn-success">查看</a>
-                            <a type="button" href="changeuser.php" class="btn btn-primary">修改</a>
-                                <button class="btn btn-warning">暫停</button>
+                            <a type="button" href="changeuser.php" class="btn btn-primary">修改</a>                           
                                 <button class="btn btn-default">刪除</button>
                             </td>
                         </tr>
