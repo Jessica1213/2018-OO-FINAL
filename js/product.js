@@ -118,8 +118,9 @@ function addToShoppingCart(pid)
 
 function showShoppingCart()
 {
+    var colnum = 6;
     var productslist = getPersonalShoppingList(0);
-    var list='<tr><td>商品</td><td>單價</td><td>數量</td><td>價格</td><td>取消購買</td></tr>';
+    var list='<tr><td>商品</td><td>單價</td><td>庫存</td><td>數量</td><td>價格</td><td>取消購買</td></tr>';
     var totalcost = 0;
     for (var i = 0;i < productslist.length; i++) {
         var product = findProduct(productslist[i]["PID"]);
@@ -128,7 +129,7 @@ function showShoppingCart()
         }
         else list += '<tr style="background-color: #FFE5FF">';
 
-        for(var j = 0; j < 5; j++)
+        for(var j = 0; j < colnum; j++)
         {
             switch(j){
                 case 0:
@@ -140,8 +141,12 @@ function showShoppingCart()
                     list += product["price"];
                     break;
                 case 2:
+                    list += '<td class="stock">';
+                    list += product["amount"];
+                    break;
+                case 3:
                     list += '<td class="amount">';
-                    list += '<select id="amount" onchange="updateAmount('+product["PID"]+'); window.location.reload();">';
+                    list += '<select id="amount_'+i.toString()+'" onchange="updateAmount('+product["PID"]+','+i+'); window.location.reload();">';
                     list += '<option value=\"0\">'+productslist[i]["amount"]+'</option>' +
                         '<option value=\"1\">1</option>' +
                         '<option value=\"2\">2</option>' +
@@ -150,12 +155,12 @@ function showShoppingCart()
                         '<option value=\"5\">5</option>' +
                         '</select>';
                     break;
-                case 3:
+                case 4:
                     list += '<td class="smallTotal">';
                     list += (product["price"] * productslist[i]["amount"]).toString();
                     totalcost += product["price"] * productslist[i]["amount"];
                     break;
-                case 4:
+                case 5:
                     list += '<td class="trash">';
                     list += '<input class="trashButton" type="image" onclick="removeProduct('+product["PID"]+'); window.location.reload();" img src="./resource/trash.png">';
                     break;
@@ -166,8 +171,8 @@ function showShoppingCart()
         }
         list += '</tr>';
     }
-    list += '<tr><td colspan="5" style="text-align:right; padding-right: 2em;"><label>Total Price：</label>'+totalcost.toString()+'</td></tr>';
-    list += '<tr id="decisionRow"><td colspan="5" style="background-color: #f9f2f4; align-content: right;">' +
+    list += '<tr><td colspan="'+colnum+'" style="text-align:right; padding-right: 2em;"><label>Total Price：</label>'+totalcost.toString()+'</td></tr>';
+    list += '<tr id="decisionRow"><td colspan="'+colnum+'" style="background-color: #f9f2f4; align-content: right;">' +
         '<input class="button" type="submit" name=""  onclick="location.href=\'index.php\'" value="繼續購物" >' +
         '<input class="button" type="submit" name="" onclick="location.href=\'#.html\'" value="結帳">' +
         '</td></tr>';
@@ -175,8 +180,9 @@ function showShoppingCart()
 
 }
 
-function updateAmount(pid) {
-    var e = document.getElementById("amount");
+function updateAmount(pid, i) {
+    var id = "amount_"+i.toString();
+    var e = document.getElementById(id);
     var amount = e.options[e.selectedIndex].value;
     e.options[e.options.selectedIndex].selected = true;
     console.log(amount);
