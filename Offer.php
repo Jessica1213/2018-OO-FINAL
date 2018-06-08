@@ -94,7 +94,7 @@ SessionManager::start();
                             <td>2018/09/10</td>
                             <td>
                                 <button class="btn btn-success">查看</button>
-                                <button class="btn btn-primary">修改</button>
+                                <a type="button" href="changeoffer.php" class="btn btn-primary">修改</a>
                                 <button class="btn btn-warning">暫停</button>
                                 <button class="btn btn-default">刪除</button>
                             </td>
@@ -107,7 +107,7 @@ SessionManager::start();
                             <td>2018/09/10</td>
                             <td>
                             <button class="btn btn-success">查看</button>
-                                <button class="btn btn-primary">修改</button>
+                            <a type="button" href="changeoffer.php" class="btn btn-primary">修改</a>
                                 <button class="btn btn-warning">暫停</button>
                                 <button class="btn btn-default">刪除</button>
                             </td>
@@ -120,7 +120,7 @@ SessionManager::start();
                             <td>2018/09/10</td>
                             <td>
                                 <button class="btn btn-success">查看</button>
-                                <button class="btn btn-primary">修改</button>
+                                <a type="button" href="changeoffer.php" class="btn btn-primary">修改</a>
                                 <button class="btn btn-warning">暫停</button>
                                 <button class="btn btn-default">刪除</button>
                             </td>
