@@ -79,6 +79,19 @@ function getPersonalShoppingList(paid) {
 
 function addToShoppingCart(pid)
 {
+    var productslist = getPersonalShoppingList(0);
+    for (var i = 0; i < productslist.length; i++)
+    {
+        if(productslist[i]["PID"]===pid.toString()) {
+            alert("購物車已經有這個商品囉！請在購物車中修改數量！");
+            return false;
+        }
+        else if(findProduct(pid)["UID"] === getUserID()) {
+            alert("此商品為個人商品，不提供購買服務！");
+            return false;
+        }
+
+    }
     var http = new XMLHttpRequest();
     var products = "";
     http.open("POST", "./dbrequest/addToShoppingCart.php", false);
@@ -86,6 +99,7 @@ function addToShoppingCart(pid)
     http.onreadystatechange=function() {
         if(this.readyState === 4 && this.status === 200) {
             products = http.responseText;
+            alert("成功加入購物車！")
         }
     };
     http.send("PID="+pid+"&amount=1");

@@ -151,3 +151,18 @@ function UpdatePersonalInfo() {
         http.send("password="+pwd+"&email="+email);
     }
 }
+
+function getUserID() {
+    var http = new XMLHttpRequest();
+    var id = "";
+    http.open("POST", "./dbrequest/getUserID.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            id = http.responseText;
+        }
+    };
+
+    http.send();
+    return id;
+}

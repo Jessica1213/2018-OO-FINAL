@@ -68,7 +68,7 @@ function viewProductInfo(pid)
     list += '<div class="col-md-4 col-xs-4">';
     list += '<h4>價格  :  '+product["price"]+'</h4></div>';
     list += '<div class="col-md-4 col-xs-4">';
-    list += '<h4>剩餘數量  :  '+'剩餘數量'+'</h4></div>';
+    list += '<h4>剩餘數量  :  '+product["amount"]+'</h4></div>';
     list += '<div class="col-md-4 col-xs-4">';
     list += '<h4>類別  :  '+product["category"]+'</h4></div>';
     list += '<div class="btn-group" ><br>';
@@ -91,32 +91,15 @@ function listAllCategory()
 
 }
 
-
-
 function showPersonalItems()
 {
     var products = findPersonalProduct();
     return showProduct(products);
 }
 
-
-function addToShoppingCart(pid)
-{
-    var http = new XMLHttpRequest();
-    var products = "";
-    http.open("POST", "./dbrequest/addToShoppingCart.php", false);
-    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    http.onreadystatechange=function() {
-        if(this.readyState === 4 && this.status === 200) {
-            products = http.responseText;
-        }
-    };
-    http.send("PID="+pid+"&amount=1");
-}
-
-
 var header = ["商品", "單價", "庫存","數量", "價格", "取消購買"];
-var headerclass = ["detail", "price", "stock", "amount"];
+var headerclass = ["detail", "price", "stock", "amount", "smallTotal", "trash"];
+
 function showShoppingCart()
 {
     var colnum = header.length;
@@ -140,19 +123,19 @@ function showShoppingCart()
         {
             switch(j){
                 case 0:
-                    list += '<td class=>';
+                    list += '<td class='+headerclass[j]+'>';
                     list += product["name"];
                     break;
                 case 1:
-                    list += '<td class=>';
+                    list += '<td class='+headerclass[j]+'>';
                     list += product["price"];
                     break;
                 case 2:
-                    list += '<td class=>';
+                    list += '<td class='+headerclass[j]+'>';
                     list += product["amount"];
                     break;
                 case 3:
-                    list += '<td class=>';
+                    list += '<td class='+headerclass[j]+'>';
                     list += '<select id="amount_'+i.toString()+'" onchange="updateAmount('+product["PID"]+','+i+'); window.location.reload();">';
                     list += '<option value=\"0\">'+productslist[i]["amount"]+'</option>' +
                         '<option value=\"1\">1</option>' +
@@ -163,12 +146,12 @@ function showShoppingCart()
                         '</select>';
                     break;
                 case 4:
-                    list += '<td class="smallTotal">';
+                    list += '<td class='+headerclass[j]+'>';
                     list += (product["price"] * productslist[i]["amount"]).toString();
                     totalcost += product["price"] * productslist[i]["amount"];
                     break;
                 case 5:
-                    list += '<td class="trash">';
+                    list += '<td class='+headerclass[j]+'>';
                     list += '<input class="trashButton" type="image" onclick="removeProduct('+product["PID"]+'); window.location.reload();" img src="./resource/trash.png">';
                     break;
                 default:
