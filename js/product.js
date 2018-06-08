@@ -115,14 +115,21 @@ function addToShoppingCart(pid)
 }
 
 
-
+var header = ["商品", "單價", "庫存","數量", "價格", "取消購買"];
+var headerclass = ["detail", "price", "stock", "amount"];
 function showShoppingCart()
 {
-    var colnum = 6;
+    var colnum = header.length;
     var productslist = getPersonalShoppingList(0);
-    var list='<tr><td>商品</td><td>單價</td><td>庫存</td><td>數量</td><td>價格</td><td>取消購買</td></tr>';
+    var list='<tr>';
+    list+= '</tr>';
+    for (var i = 0; i < colnum; i++) {
+        list += '<td>';
+        list += header[i];
+        list += '</td>';
+    }
     var totalcost = 0;
-    for (var i = 0;i < productslist.length; i++) {
+    for (i = 0;i < productslist.length; i++) {
         var product = findProduct(productslist[i]["PID"]);
         if (i%2 === 0) {
             list += '<tr style="background-color: #f9f2f4">';
@@ -133,19 +140,19 @@ function showShoppingCart()
         {
             switch(j){
                 case 0:
-                    list += '<td class="detail">';
+                    list += '<td class=>';
                     list += product["name"];
                     break;
                 case 1:
-                    list += '<td class="price">';
+                    list += '<td class=>';
                     list += product["price"];
                     break;
                 case 2:
-                    list += '<td class="stock">';
+                    list += '<td class=>';
                     list += product["amount"];
                     break;
                 case 3:
-                    list += '<td class="amount">';
+                    list += '<td class=>';
                     list += '<select id="amount_'+i.toString()+'" onchange="updateAmount('+product["PID"]+','+i+'); window.location.reload();">';
                     list += '<option value=\"0\">'+productslist[i]["amount"]+'</option>' +
                         '<option value=\"1\">1</option>' +
