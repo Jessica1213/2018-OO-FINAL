@@ -30,7 +30,7 @@ require_once ("autoload.php");
                     <div class="col" style="width:auto;background:#eee">
                         <section class=" text-left " >
                             <div class="container">
-                                <h2 valign="top">新增優惠</h2>
+                                <h2 valign="top">優惠內容</h2>
                             </div>
                         </section> 
                         <HR style="width:auto;" size="10">
@@ -38,12 +38,7 @@ require_once ("autoload.php");
 
                 </div>
                 
-                <div class="row" style="width:auto;background:#eee">
-                <br>
-               
-                <br>
-
-                
+                <div class="row" style="width:auto;background:#eee">             
                     <form  action="" name="InfoForm" method="post" onsubmit="return false;">
                     <div class="col">
                         <table class="table table-striped">
@@ -51,7 +46,7 @@ require_once ("autoload.php");
                         <tr>
                             <th scope="row">
                                 <label >優惠名稱</label>
-                                <input placeholder="新優惠">
+                                <label >優惠名稱</label>
                             </th>  
                         </tr>
                         <tr>
@@ -59,30 +54,22 @@ require_once ("autoload.php");
                                 <label >優惠區間</label>
                                 <div class="input-group" style = "width: 80%;" >
                                 <label  class="form-control"type="text" style = "width: 20%;" >開始日期</label>
-                            <input  class="form-control" type="date" style = "width: 30%;"  required="required" min="<?php echo date ("y-m-d",strtotime("-1months"));?>"max="<?php echo date ("y-m-d",strtotime("+1months"));?>">
-                            <label  class="form-control"type="text" style = "width: 20%;" > 到 截止時間</label>
-                            <input  class="form-control" type="date" style = "width: 30%;"  required="required" min="<?php echo date ("y-m-d",strtotime("-1months"));?>"max="<?php echo date ("y-m-d",strtotime("+1months"));?>">
+                                <label  class="form-control"type="text" style = "width: 20%;" >2016-08-04</label>
+                                <label  class="form-control"type="text" style = "width: 20%;" > 到 截止時間</label>
+                                <label  class="form-control"type="text" style = "width: 20%;" >2018-04-07</label>
                             </div>
                             </th>  
                         </tr>
                         <tr>
-                        <th scope="row">
-                                類別<p>
-                                <select class="form-control">
-                                    <option >餐具</option>
-                                    <option >茶具</option>
-                                    <option >文具</option>
-                                    <option >衣服</option>
-                                </select>
+                        <th scope="row">類別<p>
+                               選擇類別
                             </th> 
                         </tr>
                         
                         </tbody>
                         
                         </table>
-                        <a href="Offer.php" class="btn btn-default" type="button" style="background-color:#CCBBFF" >返回</a> 
-                        <a href="seeoffer.php" class="btn btn-default" type="button" style="background-color:#FFD4D4" >新增優惠</a> 
-                        
+                        <a class="btn btn-default" type="button" href="Offer.php" style="background-color:#CCBBFF">返回</a> 
                     </div>
                     </form>    
                 </div>  

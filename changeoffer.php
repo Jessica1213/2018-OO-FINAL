@@ -81,7 +81,7 @@ require_once ("autoload.php");
                         
                         </table>
                         <a href="Offer.php" class="btn btn-default" type="button"  style="background-color:#CCBBFF">返回</a> 
-                        <a href="Offer.php" class="btn btn-default" type="button"  style="background-color:#FFD4D4">確認修改</a> 
+                        <a href="seeoffer.php" class="btn btn-default" type="button"  style="background-color:#FFD4D4">確認修改</a> 
                         
                     </div>
                     </form>    
