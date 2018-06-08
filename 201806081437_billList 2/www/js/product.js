@@ -68,7 +68,7 @@ function viewProductInfo(pid)
     list += '<div class="col-md-4 col-xs-4">';
     list += '<h4>價格  :  '+product["price"]+'</h4></div>';
     list += '<div class="col-md-4 col-xs-4">';
-    list += '<h4>剩餘數量  :  '+product["amount"]+'</h4></div>';
+    list += '<h4>剩餘數量  :  '+'剩餘數量'+'</h4></div>';
     list += '<div class="col-md-4 col-xs-4">';
     list += '<h4>類別  :  '+product["category"]+'</h4></div>';
     list += '<div class="btn-group" ><br>';
@@ -91,65 +91,72 @@ function listAllCategory()
 
 }
 
+
+
 function showPersonalItems()
 {
     var products = findPersonalProduct();
     return showProduct(products);
 }
 
-var header = ["商品", "單價", "庫存","數量", "價格", "取消購買"];
-var headerclass = ["detail", "price", "stock", "amount", "smallTotal", "trash"];
-var maxStock = 10;
+
+function addToShoppingCart(pid)
+{
+    var http = new XMLHttpRequest();
+    var products = "";
+    http.open("POST", "./dbrequest/addToShoppingCart.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            products = http.responseText;
+        }
+    };
+    http.send("PID="+pid+"&amount=1");
+}
+
+
+
 function showShoppingCart()
 {
-    var colnum = header.length;
     var productslist = getPersonalShoppingList(0);
-    var list='<tr>';
-    list+= '</tr>';
-    for (var i = 0; i < colnum; i++) {
-        list += '<td>';
-        list += header[i];
-        list += '</td>';
-    }
+    var list='<tr><td>商品</td><td>單價</td><td>數量</td><td>價格</td><td>取消購買</td></tr>';
     var totalcost = 0;
-    for (i = 0;i < productslist.length; i++) {
+    for (var i = 0;i < productslist.length; i++) {
         var product = findProduct(productslist[i]["PID"]);
         if (i%2 === 0) {
             list += '<tr style="background-color: #f9f2f4">';
         }
         else list += '<tr style="background-color: #FFE5FF">';
 
-        for(var j = 0; j < colnum; j++)
+        for(var j = 0; j < 5; j++)
         {
             switch(j){
                 case 0:
-                    list += '<td class='+headerclass[j]+'>';
+                    list += '<td class="detail">';
                     list += product["name"];
                     break;
                 case 1:
-                    list += '<td class='+headerclass[j]+'>';
+                    list += '<td class="price">';
                     list += product["price"];
                     break;
                 case 2:
-                    list += '<td class='+headerclass[j]+'>';
-                    list += product["amount"];
+                    list += '<td class="amount">';
+                    list += '<select id="amount" onchange="updateAmount('+product["PID"]+'); window.location.reload();">';
+                    list += '<option value=\"0\">'+productslist[i]["amount"]+'</option>' +
+                        '<option value=\"1\">1</option>' +
+                        '<option value=\"2\">2</option>' +
+                        '<option value=\"3\">3</option>' +
+                        '<option value=\"4\">4</option>' +
+                        '<option value=\"5\">5</option>' +
+                        '</select>';
                     break;
                 case 3:
-                    list += '<td class='+headerclass[j]+'>';
-                    list += '<select id="amount_'+i.toString()+'" onchange="updateAmount('+product["PID"]+','+i+'); window.location.reload();">';
-                    list += '<option value=\"0\">'+productslist[i]["amount"]+'</option>';
-                    for (var k = 1; k<=maxStock; k++) {
-                        list += '<option value="'+k.toString()+'">'+k+'</option>'
-                    }
-                        list +='</select>';
-                    break;
-                case 4:
-                    list += '<td class='+headerclass[j]+'>';
+                    list += '<td class="smallTotal">';
                     list += (product["price"] * productslist[i]["amount"]).toString();
                     totalcost += product["price"] * productslist[i]["amount"];
                     break;
-                case 5:
-                    list += '<td class='+headerclass[j]+'>';
+                case 4:
+                    list += '<td class="trash">';
                     list += '<input class="trashButton" type="image" onclick="removeProduct('+product["PID"]+'); window.location.reload();" img src="./resource/trash.png">';
                     break;
                 default:
@@ -159,20 +166,20 @@ function showShoppingCart()
         }
         list += '</tr>';
     }
-    list += '<tr><td colspan="'+colnum+'" style="text-align:right; padding-right: 2em;"><label>Total Price：</label>'+totalcost.toString()+'</td></tr>';
-    list += '<tr id="decisionRow"><td colspan="'+colnum+'" style="background-color: #f9f2f4; align-content: right;">' +
+    list += '<tr><td colspan="5" style="text-align:right; padding-right: 2em;"><label>Total Price：</label>'+totalcost.toString()+'</td></tr>';
+    list += '<tr id="decisionRow"><td colspan="5" style="background-color: #f9f2f4; align-content: right;">' +
         '<input class="button" type="submit" name=""  onclick="location.href=\'index.php\'" value="繼續購物" >' +
-        '<input class="button" type="submit" name="" onclick="location.href=\'bill.php\'" value="結帳">' +
+        '<input class="button" type="submit" name="" onclick="location.href=\'#.html\'" value="結帳">' +
         '</td></tr>';
     return list;
 
 }
 
-function updateAmount(pid, i) {
-    var id = "amount_"+i.toString();
-    var e = document.getElementById(id);
+function updateAmount(pid) {
+    var e = document.getElementById("amount");
     var amount = e.options[e.selectedIndex].value;
     e.options[e.options.selectedIndex].selected = true;
+    console.log(amount);
     updateShopAmount(pid, amount);
 }
 
@@ -186,10 +193,12 @@ function getShoppingCartLength()
     }
 }
 
-function showBill()
+/*測試線*/
+
+function showShoppingCart()
 {
     var productslist = getPersonalShoppingList(0);
-    var list='<tr><td>商品</td><td>價格</td></tr>';
+    var list='<tr><td>商品</td><td>單價</td><td>數量</td><td>價格</td><td>取消購買</td></tr>';
     var totalcost = 0;
     for (var i = 0;i < productslist.length; i++) {
         var product = findProduct(productslist[i]["PID"]);
@@ -198,7 +207,7 @@ function showBill()
         }
         else list += '<tr style="background-color: #FFE5FF">';
 
-        for(var j = 0; j < 2; j++)
+        for(var j = 0; j < 5; j++)
         {
             switch(j){
                 case 0:
@@ -206,14 +215,29 @@ function showBill()
                     list += product["name"];
                     break;
                 case 1:
+                    list += '<td class="price">';
+                    list += product["price"];
+                    break;
+                case 2:
+                    list += '<td class="amount">';
+                    list += '<select id="amount" onchange="updateAmount('+product["PID"]+'); window.location.reload();">';
+                    list += '<option value=\"0\">'+productslist[i]["amount"]+'</option>' +
+                        '<option value=\"1\">1</option>' +
+                        '<option value=\"2\">2</option>' +
+                        '<option value=\"3\">3</option>' +
+                        '<option value=\"4\">4</option>' +
+                        '<option value=\"5\">5</option>' +
+                        '</select>';
+                    break;
+                case 3:
                     list += '<td class="smallTotal">';
                     list += (product["price"] * productslist[i]["amount"]).toString();
                     totalcost += product["price"] * productslist[i]["amount"];
                     break;
-                /*case 4:
+                case 4:
                     list += '<td class="trash">';
                     list += '<input class="trashButton" type="image" onclick="removeProduct('+product["PID"]+'); window.location.reload();" img src="./resource/trash.png">';
-                    break;*/
+                    break;
                 default:
                     break;
             }
@@ -222,11 +246,28 @@ function showBill()
         list += '</tr>';
     }
     list += '<tr><td colspan="5" style="text-align:right; padding-right: 2em;"><label>Total Price：</label>'+totalcost.toString()+'</td></tr>';
-    list +='<tr><td colspan="5" style="text-align:right; padding-right: 2em;"><label>錢包餘額：</label>'+/*account.toString()*/+'</td></tr>';
     list += '<tr id="decisionRow"><td colspan="5" style="background-color: #f9f2f4; align-content: right;">' +
-        '<input class="button" type="submit" name=""  onclick="location.href=\'#.php\'" value="加值" >' +
-        '<input class="button" type="submit" onclick="location.href=\'index.php\'" value="取消">' + /*刪除商品，如上222行*/
-        '<input class="button" type="submit" name="" onclick="location.href=\'index.php\'" value="確認">' + /*警告視窗*/
+        '<input class="button" type="submit" name=""  onclick="location.href=\'index.php\'" value="繼續購物" >' +
+        '<input class="button" type="submit" name="" onclick="location.href=\'#.html\'" value="結帳">' +
         '</td></tr>';
     return list;
+
+}
+
+function updateAmount(pid) {
+    var e = document.getElementById("amount");
+    var amount = e.options[e.selectedIndex].value;
+    e.options[e.options.selectedIndex].selected = true;
+    console.log(amount);
+    updateShopAmount(pid, amount);
+}
+
+
+
+function getShoppingCartLength()
+{
+    var productslist = getPersonalShoppingList(0);
+    if(productslist.length>0) {
+        document.getElementById("cart").innerHTML += ' ('+productslist.length+')';
+    }
 }

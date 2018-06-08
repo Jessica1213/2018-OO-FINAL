@@ -1,0 +1,13 @@
+@import url(topNavi.css);
+@import url(picture.css);
+@import url(login.css);
+@import url(search.css);
+@import url(shoppingCartList.css);
+@import url(billList.css);
+
+body{
+	font-size:14px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#000000;
+	background-color:#FFFFFF;
+}
