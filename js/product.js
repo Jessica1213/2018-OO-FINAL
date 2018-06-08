@@ -23,12 +23,11 @@ function showProduct(products) {
     for (var i=0; i<products.length; i++){
         list += '<div class="col-md-4" style="background:#eee; "><div class="row"><div class="col-md-6 col-xs-6" >';
          list += '<img  style="height: 100%; width:100%;" src="'+products[i]["image"]+'" ></div>';        
-         list += '<div class="col-md-6 col-xs-6" >';   
-         list += '<div class="row-md-3 row-sx-3" align="left">';
-         list += '<div class="col-md-6 col-xs-6" align="left" ><lable>'+products[i]["name"]+'</lable></div>';
-         list += '<div class="col-md-6 col-xs-6" > <lable>售價：'+products[i]["price"]+'</lable></div></div>';  
-         list += '<div class="row-md-6 row-xs-6" align="left" style="height: 100%; width:100%;" ><lable>商品描述 : </lable>'+products[i]["description"]+'</div>';
-         list += ' <div class="row-md-3 row-xs-3" align="bottom"> ' +
+         list += '<div class="col-md-6 col-xs-6"align="left" >';   
+         list += '<div class="row" style=" white-space: nowrap; overflow: hidden;text-overflow: ellipsis; " ><lable>'+products[i]["name"]+'</lable></div>';
+         list += '<div class="row" style="height: 100%; width:100%;"><lable>商品描述 : </lable>'+products[i]["description"]+'</div>';
+         list += '<div class="row" > <h4>售價<lable>'+products[i]["price"]+'</lable></h4></div>';        
+         list += '<div class="row" align="bottom"> ' +
             '<div class="btn-group" >'+
             '<button type="button" class="btn " style="background-color:#CCBBFF" onclick="viewProduct('+products[i]["PID"]+')">瀏覽</button>' +
             '<button type="button" class="btn " style="background-color:#FFD4D4" onclick="addToShoppingCart('+products[i]["PID"]+')">加入購物車</button>';
@@ -86,7 +85,6 @@ function listAllCategory()
     var list = "";
     for (var i=0; i<categories.length; i++)
     {
-        if(i===categories.length/2) list+='<br>';
         list += '<li><a href="main.php?keyword='+categories[i]["category"]+'&searchby=cate">'+categories[i]["category"]+'</a></li>&nbsp;&nbsp;&nbsp;';
     }
     return list;
