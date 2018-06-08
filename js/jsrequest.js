@@ -77,6 +77,20 @@ function getPersonalShoppingList(paid) {
     return products;
 }
 
+function addToShoppingCart(pid)
+{
+    var http = new XMLHttpRequest();
+    var products = "";
+    http.open("POST", "./dbrequest/addToShoppingCart.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            products = http.responseText;
+        }
+    };
+    http.send("PID="+pid+"&amount=1");
+}
+
 function updateShopAmount(pid, amount)
 {
     var product = findProduct(pid);
