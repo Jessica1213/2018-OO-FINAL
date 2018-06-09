@@ -224,7 +224,7 @@ function showBill()
     list += '<tr><td colspan="5" style="text-align:right; padding-right: 2em;"><label>Total Price：</label>'+totalcost.toString()+'</td></tr>';
     list +='<tr><td colspan="5" style="text-align:right; padding-right: 2em;"><label>錢包餘額：</label>'+/*account.toString()*/+'</td></tr>';
     list += '<tr id="decisionRow"><td colspan="5" style="background-color: #f9f2f4; align-content: right;">' +
-        '<input class="button" type="submit" name=""  onclick="location.href=\'#.php\'" value="加值" >' +
+        '<input class="button" type="submit" name=""  onclick="location.href=\'topUp.php\'" value="加值" >' +
         '<input class="button" type="submit" onclick="location.href=\'index.php\'" value="取消">' + /*刪除商品，如上222行*/
         '<input class="button" type="submit" name="" onclick="location.href=\'index.php\'" value="確認">' + /*警告視窗*/
         '</td></tr>';

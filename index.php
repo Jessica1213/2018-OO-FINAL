@@ -20,9 +20,27 @@ SessionManager::start();
             <img id="PPMpicture" src="resource/pin_means_mine.png">
     </div>
 
-    <div class="container" id="search-box">
-        <input id="search" class="sreachInput" type="text" placeholder="搜尋" name="searchText" >
-        <input class="sreachButton" type="image" name="searchSubmit" onclick="searchItemIndex()" img src="resource/search.png" style="width:8%;" >
+    <div class="album py-5 " style="margin-top: 5em">
+        <div class="container" align="center">
+            <section class="col-xs-12 col-xs-offset-3" style="margin-left: 10%;>
+                <form class="form-horizo​​ntal">
+                    <div class="form-group col-xs-6" style="width: 75%;">
+                        <div class="input-group col-xs-12 ">
+                            <div class="input-group-btn" >
+                            </div>
+                            <input id="search" type="text" class="form-control " style="width:" name="searchText" placeholder="請輸入...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" onclick="searchItemIndex()";">search</button>
+                            </span>
+                            <div class="input-group-btn" >
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section><br><br>
+
+            <div class="row" style="width:auto; margin-bottom: 5vh;" id="itemlist"></div>
+        </div>
     </div>
 
     <div class="container" id="allCategory"></div>

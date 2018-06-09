@@ -1,0 +1,38 @@
+#topUp{
+	margin-top: 5em;
+}
+
+#topUp table{
+	border-radius:1em;
+	width: 45%;
+	height: 30%;
+	margin: auto;
+	background-color:#D9FFF5;
+	text-align: center;
+}
+
+/*-- ####################################################################################################### -*/
+#topUp td{
+	co_blocklor:#FFFFFF;
+	font-size: 3em;
+	font-family: 'Microsoft JhengHei';
+}
+
+#topUp input.text{
+	margin-top: 7vh;
+	width: 80%;
+	height: 2%;
+	font-size: 2vh;
+	color:#000000;
+	padding-left:1vw;
+	font-family: 'Microsoft JhengHei';
+}
+
+#topUp input.button{
+	margin-top: 7vh;
+	border-radius:0.5em;
+	background-color:#EE7700 ;
+	color:#FFFFFF;
+	font-size: 2.8vh;
+	font-family: 'Microsoft JhengHei';
+}

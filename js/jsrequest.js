@@ -99,7 +99,11 @@ function addToShoppingCart(pid)
     http.onreadystatechange=function() {
         if(this.readyState === 4 && this.status === 200) {
             products = http.responseText;
-            alert("成功加入購物車！")
+            alert("成功加入購物車！");
+        }
+        else {
+            alert("請先登入會員！");
+            window.location.href = "login.php";
         }
     };
     http.send("PID="+pid+"&amount=1");
