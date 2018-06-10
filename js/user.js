@@ -238,18 +238,36 @@ function updateUserImage()
     http.send("image="+image);
 }
 
-function getUsernameByID(id)
+function getUserByID(id)
 {
     var http = new XMLHttpRequest();
-    var name = "";
-    http.open("POST", "./dbrequest/getUsername.php", false);
+    var user = "";
+    http.open("POST", "./dbrequest/getUser.php", false);
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     http.onreadystatechange=function() {
         if(this.readyState === 4 && this.status === 200) {
-            name = http.responseText;
+            user = http.responseText;
+            user = JSON.parse(user);
         }
     };
 
     http.send("UID="+id);
-    return name;
+    return user;
+}
+
+function getAllUsers()
+{
+    var http = new XMLHttpRequest();
+    var users = "";
+    http.open("POST", "./dbrequest/getAllUsers.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            users = http.responseText;
+            users = JSON.parse(users);
+        }
+    };
+
+    http.send();
+    return users;
 }

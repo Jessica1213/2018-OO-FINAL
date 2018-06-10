@@ -62,6 +62,11 @@ class UserBLL extends BLLBase
         return $this->isLogIn()?$this->dal->getUsername($uid):false;
     }
 
+    public function getUser($uid)
+    {
+        return $this->isLogIn()?$this->dal->getUser($uid):false;
+    }
+
     public function getEmail($uid)
     {
         return $this->isLogIn()?$this->dal->getEmail($uid):false;
@@ -89,6 +94,11 @@ class UserBLL extends BLLBase
     public function addAccount($account, $password, $username, $email)
     {
         return $this->dal->setUser($account, $password, $username, $email);
+    }
+
+    public function getAlluser()
+    {
+        return $this->dal->getAllUsers();
     }
 
 }

@@ -32,6 +32,14 @@ class UserDAL extends DALBase
         return $result[0]["name"];
     }
 
+    public function getUser($uid)
+    {
+        $query="select ";
+        $query.="* from user where uid=?";
+        $result=$this->exec($query,[$uid],true);
+        return $result[0];
+    }
+
     public function getEmail($uid)
     {
         $query="select ";
@@ -125,5 +133,13 @@ class UserDAL extends DALBase
                 ],  false, true);
             return "true";
         }
+    }
+
+    public function getAllUsers()
+    {
+        $query="select ";
+        $query.="account, email, name, wallet from user";
+        $result=$this->exec($query,[],true);
+        return $result;
     }
 }

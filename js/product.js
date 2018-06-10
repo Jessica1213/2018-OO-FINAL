@@ -327,7 +327,7 @@ function showSelllist()
             count++;
             list += '<td>'+soldRecord[i]["time"]+'</td>';
             list += '<td>'+product["name"]+'</td>';
-            list += '<td>'+soldRecord[i]["UID"]+'</td>';
+            list += '<td>'+getUserByID(soldRecord[i]["UID"])["name"]+'</td>';
             list += '<td>'+soldRecord[i]["amount"]+'</td>';
 
             if (soldRecord[i]["checked"]==='0')
