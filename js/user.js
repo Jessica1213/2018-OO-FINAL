@@ -10,8 +10,8 @@ function checkLogin(){
       http.onreadystatechange=function() {
           if(this.readyState === 4 && this.status === 200) {
               login = http.responseText;
-              console.log(login);
               if(login==="true") {
+
                   window.location.href = "index.php";
               }
           }
@@ -58,7 +58,7 @@ function checkRegister(){
                     register = http.responseText;
                     console.log(register);
                     if(register==="true") {
-                        window.location.href = "login.php";
+                        checkUserLevel();
                     }
                     else {
                         alert("這個帳號已經註冊過，請使用新的帳號");
@@ -113,18 +113,18 @@ function checkRegisterName(name) {
     }
 }
 
-//update user state
-function changeUserState(state) {
+//check user level
+function checkUserLevel() {
     var http = new XMLHttpRequest();
-    http.open("POST", "./dbrequest/changeUserState.php", false);
+    http.open("POST", "./dbrequest/checkUserLevel.php", false);
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     http.onreadystatechange=function() {
         if(this.readyState === 4 && this.status === 200) {
-            if (state ==='B') {
+            if (state ==='member') {
                 window.location.href='index.php';
             }
-            else if(state==='S') {
-                window.location.href='Introduction.php';
+            else if(state ==='admin') {
+                window.location.href='adminChoice.php';
             }
         }
     };

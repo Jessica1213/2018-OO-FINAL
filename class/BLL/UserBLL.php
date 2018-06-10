@@ -91,13 +91,4 @@ class UserBLL extends BLLBase
         return $this->dal->setUser($account, $password, $username, $email);
     }
 
-    public function getState() {
-        return $this->islogIn()?$this->dal->getState(SessionManager::get("UID")):false;
-    }
-
-    public function updateState($uid,$state)
-    {
-        return $this->dal->updateState($uid,$state);
-    }
-
 }

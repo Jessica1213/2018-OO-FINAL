@@ -2,6 +2,7 @@
 require_once ("autoload.php");
 SessionManager::start();
 require_once ("checkLogin.php");
+require_once ("checkAdmin.php");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
@@ -24,10 +25,10 @@ require_once ("checkLogin.php");
                     <th>Administrator</th>
                 </tr>
                 <tr>
-                    <td><input class="customer" type="button" onclick="location.href='#.php' " value="會員管理"></td>
+                    <td><input class="customer" type="button" onclick="location.href='User.php' " value="會員管理"></td>
                 </tr>
                 <tr>
-                    <td><input class="Manager"  type="button" onclick="location.href='#.php' " value="商品管理" ></td>
+                    <td><input class="Manager"  type="button" onclick="location.href='Offer.php' " value="優惠管理" ></td>
                 </tr>
             </table>
         </form>

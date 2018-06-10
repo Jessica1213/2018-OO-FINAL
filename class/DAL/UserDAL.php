@@ -126,24 +126,4 @@ class UserDAL extends DALBase
             return "true";
         }
     }
-
-    public function updateState($uid, $state)
-    {
-        $query="";
-        $query.="update user ";
-        $query.="SET userstate=:userstate ";
-        $query.="WHERE uid=:uid";
-        $result=$this->exec($query,[
-            ":uid"=>$uid,
-            ":userstate"=>$state
-        ],false,true);
-    }
-
-    public function getState($uid)
-    {
-        $query = "select ";
-        $query.= "userstate from user where uid=?";
-        $class=$this->exec($query,[$uid],true);
-        return $class[0]["userstate"];
-    }
 }

@@ -92,8 +92,7 @@ function viewProductInfo(pid)
     list += '<div class="col-md-4 col-xs-4">';
     list += '<h4>類別  :  '+product["category"]+'</h4></div>';
     list += '<div class="btn-group" ><br>';
-    // list += '<button class="btn " style="background-color:#CCBBFF"> 購買 </button>';
-    list += '<button style="background-color:#FFD4D4" class="btn " onclick="addToShoppingCart('+product["PID"]+')"> 加入購物車 </button></div></form></div></div></div>';
+    list += '<button style="background-color:#FFD4D4" class="btn " onclick="addToShoppingCart('+product["PID"]+','+product["UID"]+')"> 加入購物車 </button></div></form></div></div></div>';
     document.getElementById("product").innerHTML+= list;
 }
 
