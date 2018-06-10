@@ -39,7 +39,11 @@ $bll = new BLL\UserBLL();
 
                 </div>
                 <div class="row" style="width:auto;background:#eee">
-
+                    <section class=" text-left " >
+                    <div class="container">
+                        <h4 align="top">購買紀錄</h4>
+                    </div>
+                    </section>
                     <table class="table table-hover">
                         <thead>
                         <tr>

@@ -302,7 +302,12 @@ function showOrderlist()
         }
         else
         {
-            list += '<td><input type="text" class="form-control"></td>';
+            list += '<td><input id="comment_'+i+'" type="text" class="form-control" value="'+orderrecord[i]["comment"]+'">' +
+                '<button type="button" class="btn " style="background-color: #e4b9c0 " onclick="updateComment('+orderrecord[i]["UID"]+','+orderrecord[i]["PID"]+','+i+'); window.location.reload();">';
+            if(orderrecord[i]["comment"]==="")
+                list += "送出";
+            else list += "修改";
+            list +='</button>' + '</td>';
         }
         list += '</tr>';
     }

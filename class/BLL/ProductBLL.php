@@ -76,4 +76,9 @@ class ProductBLL extends BLLBase
         return $this->dal->updateStock($pid, $amount);
     }
 
+    public function updateComment($uid, $pid, $comment)
+    {
+        return $this->dal->updateComment($uid, $pid, $comment);
+    }
+
 }

@@ -194,7 +194,6 @@ function productSold(pid, check)
 
 function updateStock(pid, amount)
 {
-    console.log(pid, amount);
     var http = new XMLHttpRequest();
     var products = "";
     http.open("POST", "./dbrequest/updateStock.php", false);
@@ -205,4 +204,21 @@ function updateStock(pid, amount)
         }
     };
     http.send("PID="+pid+"&amount="+amount);
+}
+
+function updateComment(bid, pid, i)
+{
+    var id = "comment_"+i.toString();
+    var comment = document.getElementById(id).value;
+    console.log(comment);
+    var http = new XMLHttpRequest();
+    var products = "";
+    http.open("POST", "./dbrequest/updateComment.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            products = http.responseText;
+        }
+    };
+    http.send("BID="+bid+"&PID="+pid+"&comment="+comment);
 }

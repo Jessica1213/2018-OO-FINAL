@@ -156,4 +156,16 @@ class ProductDAL extends DALBase
             ":amount"=>$amount
         ],false,true);
     }
+
+    public function updateComment($uid, $pid, $comment)
+    {
+        $query="update shoppingCart ";
+        $query.="SET comment=:comment ";
+        $query.="WHERE uid=:uid and pid=:pid";
+        $result=$this->exec($query,[
+            ":uid"=>$uid,
+            ":pid"=>$pid,
+            ":comment"=>$comment
+        ],false,true);
+    }
 }
