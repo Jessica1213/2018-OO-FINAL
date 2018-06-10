@@ -8,9 +8,9 @@
 require_once ("../autoload.php");
 SessionManager::start();
 require_once ("../checkLogin.php");
-if(isset($_POST["password"]) && isset($_POST["email"])) {
+if(isset($_POST["password"]) && isset($_POST["email"]) && isset($_POST["name"])) {
     $bll = new BLL\UserBLL();
-    echo $bll->updateInfo(SessionManager::get("UID"), hash('sha256',$_POST["password"]), $_POST["email"]);
+    echo $bll->updateInfo(SessionManager::get("UID"), hash('sha256',$_POST["password"]), $_POST["email"], $_POST["name"]);
 }
 else {
     header("HTTP/1.1 500 error");

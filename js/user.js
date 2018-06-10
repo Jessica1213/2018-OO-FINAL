@@ -133,6 +133,7 @@ function changeUserState(state) {
 }
 
 function UpdatePersonalInfo() {
+    var name = document.InfoForm.name.value;
     var email = document.InfoForm.email.value;
     var pwd = document.InfoForm.pwd.value;
     var pwd2 = document.InfoForm.check.value;
@@ -148,7 +149,7 @@ function UpdatePersonalInfo() {
             }
         };
 
-        http.send("password="+pwd+"&email="+email);
+        http.send("password="+pwd+"&email="+email+"&name="+name);
     }
 }
 

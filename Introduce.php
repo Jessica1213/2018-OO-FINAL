@@ -37,10 +37,6 @@
                         <section class=" text-left " >
                             <div class="container">
                                 <h2 align="top"><?=$bll->getUsername(SessionManager::get("UID"))?>的檔案</h2>
-                                <h4> 賣場介紹 </h4>
-                            </div>
-                            <div class="container">
-
                             </div>
                         </section>
                         <HR style="width:auto;" size="10">

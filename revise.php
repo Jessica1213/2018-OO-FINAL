@@ -36,7 +36,6 @@ $bll = new BLL\UserBLL();
                     <section class=" text-left " >
                         <div class="container">
                             <h2 align="top"><?=$bll->getUsername(SessionManager::get("UID"))?>的檔案</h2>
-                            <input type="text" placeholder="賣場介紹" >
                         </div>
                     </section>
                     <HR style="width:auto;" size="10">
@@ -53,6 +52,12 @@ $bll = new BLL\UserBLL();
                             </tr>
                             </thead>
                         <tbody>
+                        <tr>
+                            <th scope="row">
+                                <label >暱稱: </label>
+                                <input name="name" type="text" value="<?=$bll->getUsername(SessionManager::get("UID"))?>" >
+                            </th>
+                        </tr>
                         <tr>
                             <th scope="row">
                                 <label >email: </label>

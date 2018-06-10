@@ -56,15 +56,16 @@ class UserDAL extends DALBase
         return $result[0]["userlevel"];
     }
 
-    public function updateInfo($uid, $newpwd, $email)
+    public function updateInfo($uid, $newpwd, $email, $name)
     {
         $query="update user ";
-        $query.="SET password=:password, email=:email ";
+        $query.="SET password=:password, email=:email, name=:name ";
         $query.="WHERE uid=:uid";
         $result=$this->exec($query,[
             ":uid"=>$uid,
             ":password"=>$newpwd,
-            ":email"=>$email
+            ":email"=>$email,
+            ":name"=>$name
         ],false,true);
 
     }

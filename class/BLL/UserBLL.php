@@ -42,9 +42,9 @@ class UserBLL extends BLLBase
 //    {
 //        return $this->dal->getAccount($uid);
 //    }
-    public function updateInfo($id, $newpwd, $email)
+    public function updateInfo($id, $newpwd, $email, $name)
     {
-        return $this->isLogIn()?$this->dal->updateInfo($id, $newpwd, $email):false;
+        return $this->isLogIn()?$this->dal->updateInfo($id, $newpwd, $email, $name):false;
     }
 
 
