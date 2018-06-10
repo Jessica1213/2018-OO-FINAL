@@ -33,6 +33,7 @@ $bll = new BLL\UserBLL();
                                 <h2 align="top"><?=$bll->getUsername(SessionManager::get("UID"))?>的銷售紀錄</h2>
                             </div>
                         </section>
+                        <h4 id="money" align="left" style="padding-left:1em;">目前餘額 &nbsp;&nbsp;&nbsp;&nbsp;</h4>
                         <HR style="width:auto;" size="10">
                     </div>
 
@@ -64,6 +65,7 @@ $bll = new BLL\UserBLL();
 </div>
 <script type="text/javascript">
     showOptions();
+    document.getElementById("money").innerHTML += ("NT. $"+getWallet());
     document.getElementById("selllist").innerHTML += showSelllist();
 </script>
 </body>

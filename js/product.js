@@ -349,4 +349,5 @@ function showSelllist()
 function confirmSold(pid, amount) {
     updateStock(pid, parseInt(amount)*(-1));
     productSold(pid, 1);
+    updateWallet(findProduct(pid)["price"]*amount);
 }
