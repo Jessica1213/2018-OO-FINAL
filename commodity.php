@@ -30,7 +30,8 @@ $bll = new BLL\UserBLL();
                     <div class="col" style="width:auto;background:#eee">
                         <section class=" text-left " >
                             <div class="container">
-                                <h2 valign="top"><?=$bll->getUsername(SessionManager::get("UID"))?>的商品</h2>
+                                <h2 valign="top"><?=$bll->getUsername(SessionManager::get("UID"))?>的商品
+                                <button type="button" class="btn " style="background-color:#FFD23C" onclick="window.location.href='Shelf.php';"> 新增商品 </button></h2>
                             </div>
                         </section>
                         <HR style="width:auto;" size="10">
