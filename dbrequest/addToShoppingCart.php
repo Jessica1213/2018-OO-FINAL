@@ -11,7 +11,7 @@ require_once ("../checkLogin.php");
 
 if(isset($_POST["PID"]) && isset($_POST["amount"])) {
     $bll = new BLL\ProductBLL();
-    echo $bll->addtoShoppingCart(SessionManager::get("UID"), $_POST["PID"], $_POST["amount"],date("Y/m/d H:i:s"), 0);
+    echo $bll->addtoShoppingCart(SessionManager::get("UID"), $_POST["PID"], $_POST["amount"],date("Y/m/d H:i"), 0);
 }
 else {
     header("HTTP/1.1 500 error");

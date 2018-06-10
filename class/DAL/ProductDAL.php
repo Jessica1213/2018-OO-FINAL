@@ -57,7 +57,7 @@ class ProductDAL extends DALBase
     public function getShoppingCart($uid, $paid)
     {
         $query = "select ";
-        $query.= "UID, PID, amount from shoppingCart A ";
+        $query.= "UID, PID, amount, time, checked from shoppingCart A ";
         $query.= "where A.uid=? and A.paid=?";
         $result = $this->exec($query, [$uid, $paid], true);
         return $result;
@@ -109,16 +109,17 @@ class ProductDAL extends DALBase
         ],false,true);
     }
 
-    public function paidOrderlist($uid, $pid, $paid)
+    public function paidOrderlist($uid, $pid, $paid, $time)
     {
         $query="";
         $query.="update shoppingCart ";
-        $query.="SET paid=:paid ";
+        $query.="SET paid=:paid, time=:time ";
         $query.="WHERE uid=:uid and pid=:pid";
         $result=$this->exec($query,[
             ":uid"=>$uid,
             ":pid"=>$pid,
-            ":paid"=>$paid
+            ":paid"=>$paid,
+            ":time"=>$time
         ],false,true);
     }
 }

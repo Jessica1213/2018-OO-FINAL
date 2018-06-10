@@ -53,43 +53,12 @@ $bll = new BLL\UserBLL();
                             <th scope="col">#</th>
                             <th scope="col">交易時間</th>
                             <th scope="col">物品</th>
-                            <th scope="col">收入</th>
-                            <th scope="col">支出</th>
+                            <th scope="col">數量</th>
+                            <th scope="col">金額</th>
                             <th scope="col">評價</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>time</td>
-                            <td>thing</td>
-                            <td>金額</td>
-                            <td>金額</td>
-                            <td>
-                            <input type="text" class="form-control">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>time</td>
-                            <td>thing</td>
-                            <td>金額</td>
-                            <td>金額</td>
-                            <td>
-                            <input type="text" class="form-control">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>time</td>
-                            <td>thing</td>
-                            <td>金額</td>
-                            <td>金額</td>
-                            <td>
-                            <input type="text" class="form-control">
-                            </td>
-                        </tr>
-                        </tbody>
+                        <tbody id="orderlist"></tbody>
                     </table>
 
                 </div>
@@ -102,6 +71,7 @@ $bll = new BLL\UserBLL();
 </div>
 <script type="text/javascript">
     document.getElementById("money").innerHTML += ("NT. $"+getWallet());
+    document.getElementById("orderlist").innerHTML += showOrderlist();
 </script>
 </body>
 </html>

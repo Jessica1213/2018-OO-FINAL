@@ -276,3 +276,30 @@ function confirmInfo(price)
     }
 
 }
+
+function showOrderlist()
+{
+    var orderrecord = getPersonalShoppingList(1);
+    var list = "";
+
+    for (var i = 0; i < orderrecord.length; i++)
+    {
+        list += '<tr>';
+        var product = findProduct(orderrecord[i]["PID"]);
+        list += '<th scope="row">'+(i+1).toString()+'</th>';
+        list += '<td>'+orderrecord[i]["time"]+'</td>';
+        list += '<td>'+product["name"]+'</td>';
+        list += '<td>'+orderrecord[i]["amount"]+'</td>';
+        list += '<td>'+(parseInt(product["price"]) * parseInt(orderrecord[i]["amount"])).toString()+'</td>';
+        if (orderrecord[i]["checked"]==='0')
+        {
+            list += '<td><input type="text" class="form-control" disabled></td>';
+        }
+        else
+        {
+            list += '<td><input type="text" class="form-control"></td>';
+        }
+        list += '</tr>';
+    }
+    return list;
+}
