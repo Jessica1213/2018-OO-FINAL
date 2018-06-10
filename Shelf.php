@@ -82,7 +82,7 @@ require_once ("autoload.php");
                         </tbody>
                         
                         </table>
-                        <button > 確認修改 </button>
+                        <a href="caption.php" class="btn btn-default" type="button" style="background-color:#CCBBFF" >確認新增</a> 
                     </div>
                     
                     </form>
