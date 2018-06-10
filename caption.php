@@ -20,7 +20,7 @@ SessionManager::start();
 <?php require_once ("navbar.php")?>
 
 <div class="album py-5 ">
-    <div class="container " align="center" style="margin-top: 15vh">
+    <div class="container " align="center" style="margin-top: 5em">
         <div id="product" class="row"></div>
     </div>
 </div>

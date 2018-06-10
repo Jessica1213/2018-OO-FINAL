@@ -138,8 +138,40 @@ class UserDAL extends DALBase
     public function getAllUsers()
     {
         $query="select ";
-        $query.="account, email, name, wallet from user";
+        $query.="UID, account, email, userlevel from user";
         $result=$this->exec($query,[],true);
         return $result;
+    }
+
+    public function removeUser($uid)
+    {
+        $query="delete ";
+        $query.="from user ";
+        $query.="WHERE uid=:uid";
+        $result=$this->exec($query,[
+            ":uid"=>$uid
+        ],false,true);
+    }
+
+    public function updatePassword($uid, $pwd)
+    {
+        $query="update user ";
+        $query.="SET password=:password ";
+        $query.="WHERE uid=:uid";
+        $result=$this->exec($query,[
+            ":uid"=>$uid,
+            ":password"=>$pwd
+        ],false,true);
+    }
+
+    public function updateUserlevel($uid, $level)
+    {
+        $query="update user ";
+        $query.="SET userlevel=:userlevel ";
+        $query.="WHERE uid=:uid";
+        $result=$this->exec($query,[
+            ":uid"=>$uid,
+            ":userlevel"=>$level
+        ],false,true);
     }
 }

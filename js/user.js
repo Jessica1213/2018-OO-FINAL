@@ -13,6 +13,11 @@ function checkLogin(){
               if(login==="true") {
                   checkUserLevel();
               }
+              else
+              {
+                  alert("密碼錯誤！");
+                  return false;
+              }
           }
       };
 
@@ -270,4 +275,64 @@ function getAllUsers()
 
     http.send();
     return users;
+}
+
+function getUserInfo(uid)
+{
+    var http = new XMLHttpRequest();
+    var user = "";
+    http.open("POST", "./dbrequest/getUser.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            user = http.responseText;
+            user = JSON.parse(user);
+        }
+    };
+
+    http.send("UID="+uid);
+    return user;
+}
+
+function deleteUser(uid)
+{
+    var http = new XMLHttpRequest();
+    var user = "";
+    http.open("POST", "./dbrequest/removeUser.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            user = http.responseText;
+        }
+    };
+
+    http.send("UID="+uid);
+}
+
+function resetDefaultPassword(uid) {
+    var http = new XMLHttpRequest();
+    var user = "";
+    http.open("POST", "./dbrequest/resetDefaultPwd.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            user = http.responseText;
+        }
+    };
+
+    http.send("UID="+uid);
+}
+
+function changeUserlevel(uid, level) {
+    var http = new XMLHttpRequest();
+    var user = "";
+    http.open("POST", "./dbrequest/updateUserlevel.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            user = http.responseText;
+        }
+    };
+
+    http.send("UID="+uid+"&level="+level);
 }

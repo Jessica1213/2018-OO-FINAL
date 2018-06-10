@@ -45,8 +45,8 @@ require_once ("checkAdmin.php");
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">帳號</th>
-                            <th scope="col">email</th>
-                            <th scope="col">操作</th>
+                            <th scope="col">會員階級</th>
+                            <th scope="col">會員管理</th>
                         </tr>
                         </thead>
                         <tbody id="userlist">

@@ -2,16 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f45cd8cc-b82b-4cc0-982e-c3c95516f1b7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/dbrequest/addNewProduct.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/dbrequest/getProductID.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dbrequest/removeUser.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dbrequest/resetDefaultPwd.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dbrequest/updateUserlevel.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Shelf.php" afterPath="$PROJECT_DIR$/Shelf.php" />
-      <change beforePath="$PROJECT_DIR$/class/BLL/ProductBLL.php" afterPath="$PROJECT_DIR$/class/BLL/ProductBLL.php" />
-      <change beforePath="$PROJECT_DIR$/class/DAL/ProductDAL.php" afterPath="$PROJECT_DIR$/class/DAL/ProductDAL.php" />
-      <change beforePath="$PROJECT_DIR$/js/jsrequest.js" afterPath="$PROJECT_DIR$/js/jsrequest.js" />
+      <change beforePath="$PROJECT_DIR$/User.php" afterPath="$PROJECT_DIR$/User.php" />
+      <change beforePath="$PROJECT_DIR$/caption.php" afterPath="$PROJECT_DIR$/caption.php" />
+      <change beforePath="$PROJECT_DIR$/class/BLL/UserBLL.php" afterPath="$PROJECT_DIR$/class/BLL/UserBLL.php" />
+      <change beforePath="$PROJECT_DIR$/class/DAL/UserDAL.php" afterPath="$PROJECT_DIR$/class/DAL/UserDAL.php" />
+      <change beforePath="$PROJECT_DIR$/dbrequest/updateInfo.php" afterPath="$PROJECT_DIR$/dbrequest/updateInfo.php" />
+      <change beforePath="$PROJECT_DIR$/js/admin.js" afterPath="$PROJECT_DIR$/js/admin.js" />
       <change beforePath="$PROJECT_DIR$/js/product.js" afterPath="$PROJECT_DIR$/js/product.js" />
       <change beforePath="$PROJECT_DIR$/js/user.js" afterPath="$PROJECT_DIR$/js/user.js" />
-      <change beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
+      <change beforePath="$PROJECT_DIR$/seeuser.php" afterPath="$PROJECT_DIR$/seeuser.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,28 +25,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="jsrequest.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/jsrequest.js">
+      <file leaf-file-name="admin.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="90" column="5" lean-forward="false" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+            <state relative-caret-position="275">
+              <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+              <folding>
+                <marker date="1528647642000" expanded="true" signature="427:433" ph=" " />
+                <marker date="1528647642000" expanded="true" signature="433:439" ph=" " />
+                <marker date="1528647642000" expanded="true" signature="545:551" ph=" " />
+                <marker date="1528647642000" expanded="true" signature="551:557" ph=" " />
+                <marker date="1528647642000" expanded="true" signature="666:672" ph=" " />
+                <marker date="1528647642000" expanded="true" signature="672:678" ph=" " />
+                <marker date="1528647642000" expanded="true" signature="782:788" ph=" " />
+                <marker date="1528647642000" expanded="true" signature="788:794" ph=" " />
+                <marker date="1528647642000" expanded="true" signature="1183:1209" ph="..." />
+                <marker date="1528647642000" expanded="true" signature="1371:1382" ph="..." />
+                <marker date="1528647642000" expanded="true" signature="1444:1470" ph="..." />
+                <marker date="1528647642000" expanded="true" signature="2119:2143" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-432">
+              <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getProductID.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbrequest/getProductID.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" column="49" lean-forward="false" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addNewProduct.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbrequest/addNewProduct.php">
+      <file leaf-file-name="updateInfo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dbrequest/updateInfo.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
               <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
@@ -52,11 +68,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductBLL.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/class/BLL/ProductBLL.php">
+      <file leaf-file-name="updateUserlevel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dbrequest/updateUserlevel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="90" column="47" lean-forward="false" selection-start-line="90" selection-start-column="47" selection-end-line="90" selection-end-column="47" />
+            <state relative-caret-position="228">
+              <caret line="12" column="59" lean-forward="false" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="resetDefaultPwd.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dbrequest/resetDefaultPwd.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -65,88 +91,48 @@
       <file leaf-file-name="ProductDAL.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/class/DAL/ProductDAL.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="195" column="42" lean-forward="false" selection-start-line="195" selection-start-column="42" selection-end-line="195" selection-end-column="42" />
+            <state relative-caret-position="540">
+              <caret line="109" column="22" lean-forward="true" selection-start-line="102" selection-start-column="8" selection-end-line="109" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/user.js">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1707">
-              <caret line="225" column="13" lean-forward="false" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="13" />
+            <state relative-caret-position="295">
+              <caret line="48" column="48" lean-forward="false" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Shelf.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Shelf.php">
+      <file leaf-file-name="UserBLL.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/class/BLL/UserBLL.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="79" column="116" lean-forward="true" selection-start-line="79" selection-start-column="116" selection-end-line="79" selection-end-column="116" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/product.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3307">
-              <caret line="384" column="36" lean-forward="false" selection-start-line="384" selection-start-column="36" selection-end-line="384" selection-end-column="36" />
-              <folding>
-                <element signature="n#!!block;n#getShoppingCartLength#0" expanded="false" />
-                <element signature="n#!!block;n#showWallet#0" expanded="false" />
-                <element signature="n#!!block;n#showBill#0" expanded="false" />
-                <element signature="n#!!block;n#confirmInfo#0" expanded="false" />
-                <marker date="1528643638000" expanded="true" signature="1312:1329" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="1414:1439" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="1600:1664" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="1756:1781" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="2098:2122" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="2240:2264" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="3099:3141" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="3261:3286" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="3696:3722" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="4120:4144" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="4606:4612" ph=" " />
-                <marker date="1528643638000" expanded="true" signature="4612:4618" ph=" " />
-                <marker date="1528643638000" expanded="true" signature="4618:4624" ph=" " />
-                <marker date="1528643638000" expanded="true" signature="5535:5560" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="5608:5633" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="7489:7526" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="7658:7706" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="11928:11954" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="13083:13107" ph="..." />
-                <marker date="1528643638000" expanded="true" signature="13414:13439" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="searchProduct.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbrequest/searchProduct.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="390">
+              <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="revise.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/revise.php">
+      <file leaf-file-name="removeUser.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dbrequest/removeUser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="85" column="32" lean-forward="true" selection-start-line="85" selection-start-column="32" selection-end-line="85" selection-end-column="32" />
+            <state relative-caret-position="133">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDAL.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/class/DAL/UserDAL.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="173" column="32" lean-forward="false" selection-start-line="173" selection-start-column="32" selection-end-line="173" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -167,6 +153,7 @@
       <find>orderlist</find>
       <find>updateW</find>
       <find>image</find>
+      <find>c</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/styles</dir>
@@ -178,10 +165,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/styles/search.css" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/styles/picture.css" />
-        <option value="$PROJECT_DIR$/styles/shoppingCartList.css" />
         <option value="$PROJECT_DIR$/dbrequest/getUserID.php" />
         <option value="$PROJECT_DIR$/bill.php" />
         <option value="$PROJECT_DIR$/main.php" />
@@ -196,12 +179,10 @@
         <option value="$PROJECT_DIR$/commodity.php" />
         <option value="$PROJECT_DIR$/dbrequest/getSellRecord.php" />
         <option value="$PROJECT_DIR$/dbrequest/updatedStock.php" />
-        <option value="$PROJECT_DIR$/caption.php" />
         <option value="$PROJECT_DIR$/dbrequest/updateStock.php" />
         <option value="$PROJECT_DIR$/wallet.php" />
         <option value="$PROJECT_DIR$/dbrequest/updateComment.php" />
         <option value="$PROJECT_DIR$/revise.php" />
-        <option value="$PROJECT_DIR$/dbrequest/updateInfo.php" />
         <option value="$PROJECT_DIR$/dbrequest/updateProfileImage.php" />
         <option value="$PROJECT_DIR$/dbrequest/checkUserLevel.php" />
         <option value="$PROJECT_DIR$/dbrequest/checkAdmin.php" />
@@ -212,23 +193,29 @@
         <option value="$PROJECT_DIR$/dbrequest/updateOrderlist.php" />
         <option value="$PROJECT_DIR$/Sales.php" />
         <option value="$PROJECT_DIR$/checkUserLevel.php" />
-        <option value="$PROJECT_DIR$/User.php" />
         <option value="$PROJECT_DIR$/dbrequest/getAllUsers.php" />
-        <option value="$PROJECT_DIR$/js/admin.js" />
-        <option value="$PROJECT_DIR$/class/DAL/UserDAL.php" />
         <option value="$PROJECT_DIR$/dbrequest/getUsername.php" />
-        <option value="$PROJECT_DIR$/class/BLL/UserBLL.php" />
         <option value="$PROJECT_DIR$/dbrequest/getUser.php" />
         <option value="$PROJECT_DIR$/register.php" />
-        <option value="$PROJECT_DIR$/js/user.js" />
         <option value="$PROJECT_DIR$/dbrequest/addToShoppingCart.php" />
         <option value="$PROJECT_DIR$/dbrequest/addNewProduct.php" />
         <option value="$PROJECT_DIR$/class/DAL/ProductDAL.php" />
         <option value="$PROJECT_DIR$/class/BLL/ProductBLL.php" />
         <option value="$PROJECT_DIR$/Shelf.php" />
         <option value="$PROJECT_DIR$/dbrequest/getProductID.php" />
-        <option value="$PROJECT_DIR$/js/product.js" />
         <option value="$PROJECT_DIR$/js/jsrequest.js" />
+        <option value="$PROJECT_DIR$/js/product.js" />
+        <option value="$PROJECT_DIR$/caption.php" />
+        <option value="$PROJECT_DIR$/dbrequest/removeUser.php" />
+        <option value="$PROJECT_DIR$/dbrequest/resetDefaultPwd.php" />
+        <option value="$PROJECT_DIR$/seeuser.php" />
+        <option value="$PROJECT_DIR$/User.php" />
+        <option value="$PROJECT_DIR$/dbrequest/updateInfo.php" />
+        <option value="$PROJECT_DIR$/class/BLL/UserBLL.php" />
+        <option value="$PROJECT_DIR$/class/DAL/UserDAL.php" />
+        <option value="$PROJECT_DIR$/dbrequest/updateUserlevel.php" />
+        <option value="$PROJECT_DIR$/js/user.js" />
+        <option value="$PROJECT_DIR$/js/admin.js" />
       </list>
     </option>
   </component>
@@ -369,7 +356,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198915000" />
+    <option name="totallyTimeSpent" value="202800000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -439,27 +426,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dbrequest/removeProduct.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="48" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbrequest/getShoppingCart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbrequest/findProductByID.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/navbar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -472,6 +438,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -479,6 +446,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -521,27 +489,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbrequest/updateInfo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assess.php" />
     <entry file="file://$PROJECT_DIR$/Offer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seeuser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="23" column="50" lean-forward="true" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -574,14 +526,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-358">
           <caret line="16" column="65" lean-forward="false" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/caption.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -673,19 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="94" lean-forward="false" selection-start-line="11" selection-start-column="94" selection-end-line="11" selection-end-column="94" />
-          <folding>
-            <marker date="1528637561000" expanded="true" signature="398:404" ph=" " />
-            <marker date="1528637561000" expanded="true" signature="404:410" ph=" " />
-            <marker date="1528637561000" expanded="true" signature="495:501" ph=" " />
-            <marker date="1528637561000" expanded="true" signature="501:507" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dbrequest/getAllUsers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -694,33 +625,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="47" column="54" lean-forward="false" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dbrequest/getUsername.php" />
-    <entry file="file://$PROJECT_DIR$/class/BLL/UserBLL.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="61" column="56" lean-forward="false" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbrequest/getUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/seeoffer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="536">
@@ -755,14 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/class/DAL/UserDAL.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="133" column="26" lean-forward="true" selection-start-line="120" selection-start-column="12" selection-end-line="133" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/class/BLL/ProductBLL.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
@@ -775,14 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1707">
-          <caret line="225" column="13" lean-forward="false" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -803,10 +692,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/class/DAL/ProductDAL.php">
+    <entry file="file://$PROJECT_DIR$/dbrequest/getProductID.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="195" column="42" lean-forward="false" selection-start-line="195" selection-start-column="42" selection-end-line="195" selection-end-column="42" />
+        <state relative-caret-position="247">
+          <caret line="13" column="49" lean-forward="false" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jsrequest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="90" column="5" lean-forward="false" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -824,52 +721,157 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbrequest/getProductID.php">
+    <entry file="file://$PROJECT_DIR$/caption.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="49" lean-forward="false" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+        <state relative-caret-position="370">
+          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbrequest/getUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seeuser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="27" column="39" lean-forward="true" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/product.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3307">
-          <caret line="384" column="36" lean-forward="false" selection-start-line="384" selection-start-column="36" selection-end-line="384" selection-end-column="36" />
+        <state relative-caret-position="207">
+          <caret line="74" column="9" lean-forward="false" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
           <folding>
             <element signature="n#!!block;n#getShoppingCartLength#0" expanded="false" />
             <element signature="n#!!block;n#showWallet#0" expanded="false" />
             <element signature="n#!!block;n#showBill#0" expanded="false" />
             <element signature="n#!!block;n#confirmInfo#0" expanded="false" />
-            <marker date="1528643638000" expanded="true" signature="1312:1329" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="1414:1439" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="1600:1664" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="1756:1781" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="2098:2122" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="2240:2264" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="3099:3141" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="3261:3286" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="3696:3722" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="4120:4144" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="4606:4612" ph=" " />
-            <marker date="1528643638000" expanded="true" signature="4612:4618" ph=" " />
-            <marker date="1528643638000" expanded="true" signature="4618:4624" ph=" " />
-            <marker date="1528643638000" expanded="true" signature="5535:5560" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="5608:5633" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="7489:7526" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="7658:7706" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="11928:11954" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="13083:13107" ph="..." />
-            <marker date="1528643638000" expanded="true" signature="13414:13439" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="1312:1329" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="1414:1439" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="1600:1664" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="1756:1781" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="2098:2122" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="2240:2264" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="3099:3127" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="3247:3272" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="3682:3708" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="4106:4130" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="4592:4598" ph=" " />
+            <marker date="1528644332000" expanded="true" signature="4598:4604" ph=" " />
+            <marker date="1528644332000" expanded="true" signature="4604:4610" ph=" " />
+            <marker date="1528644332000" expanded="true" signature="5521:5546" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="5594:5619" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="7475:7512" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="7644:7692" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="11914:11940" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="13069:13093" ph="..." />
+            <marker date="1528644332000" expanded="true" signature="13400:13425" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/jsrequest.js">
+    <entry file="file://$PROJECT_DIR$/class/DAL/ProductDAL.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="90" column="5" lean-forward="false" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+        <state relative-caret-position="540">
+          <caret line="109" column="22" lean-forward="true" selection-start-line="102" selection-start-column="8" selection-end-line="109" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbrequest/removeUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="48" column="48" lean-forward="false" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class/DAL/UserDAL.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="173" column="32" lean-forward="false" selection-start-line="173" selection-start-column="32" selection-end-line="173" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class/BLL/UserBLL.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbrequest/resetDefaultPwd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbrequest/updateUserlevel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="59" lean-forward="false" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbrequest/updateInfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+          <folding>
+            <marker date="1528647642000" expanded="true" signature="427:433" ph=" " />
+            <marker date="1528647642000" expanded="true" signature="433:439" ph=" " />
+            <marker date="1528647642000" expanded="true" signature="545:551" ph=" " />
+            <marker date="1528647642000" expanded="true" signature="551:557" ph=" " />
+            <marker date="1528647642000" expanded="true" signature="666:672" ph=" " />
+            <marker date="1528647642000" expanded="true" signature="672:678" ph=" " />
+            <marker date="1528647642000" expanded="true" signature="782:788" ph=" " />
+            <marker date="1528647642000" expanded="true" signature="788:794" ph=" " />
+            <marker date="1528647642000" expanded="true" signature="1183:1209" ph="..." />
+            <marker date="1528647642000" expanded="true" signature="1371:1382" ph="..." />
+            <marker date="1528647642000" expanded="true" signature="1444:1470" ph="..." />
+            <marker date="1528647642000" expanded="true" signature="2119:2143" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

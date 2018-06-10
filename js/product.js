@@ -76,7 +76,7 @@ function viewProductInfo(pid)
 {
     var product = findProduct(pid);
     var list = "";
-    list += '<div class="row" style="background:#eee;height: 350px; width:auto;"><div class="col-md-4 col-xs-4">';
+    list += '<div class="row" style="background:#eee; width:auto;"><div class="col-md-4 col-xs-4">';
     list += '<img src="'+product["image"]+'" alt="..." class="img-thumbnail" style="height: 100%; width:100%;"></div>';
     list += '<form  action="" name="InfoForm" method="post" onsubmit="return false;">';
     list += '<div class="col-md-8 col-xs-8"> <div class="row-md-3 row-xs-3" >';

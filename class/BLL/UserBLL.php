@@ -101,4 +101,19 @@ class UserBLL extends BLLBase
         return $this->dal->getAllUsers();
     }
 
+    public function removeUser($uid)
+    {
+        return $this->dal->removeUser($uid);
+    }
+
+    public function resetPassword($uid)
+    {
+        return $this->dal->updatePassword($uid, hash('sha256', "0000"));
+    }
+
+    public function updateUserlevel($uid, $level)
+    {
+        return $this->dal->updateUserlevel($uid, $level);
+    }
+
 }
