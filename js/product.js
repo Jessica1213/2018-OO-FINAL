@@ -210,7 +210,7 @@ function getShoppingCartLength()
 function showBill()
 {
     var productslist = getPersonalShoppingList(0);
-    var list='<tr><td>商品</td><td>價格</td></tr>';
+    var list='<tr><td>商品</td><td>數量</td><td>價格</td></tr>';
     var totalcost = 0;
     for (var i = 0;i < productslist.length; i++) {
         var product = findProduct(productslist[i]["PID"]);
@@ -219,7 +219,7 @@ function showBill()
         }
         else list += '<tr style="background-color: #FFE5FF">';
 
-        for(var j = 0; j < 2; j++)
+        for(var j = 0; j < 3; j++)
         {
             switch(j){
                 case 0:
@@ -227,14 +227,14 @@ function showBill()
                     list += product["name"];
                     break;
                 case 1:
+                    list += '<td class="amount">';
+                    list += productslist[i]["amount"];
+                    break;
+                case 2:
                     list += '<td class="smallTotal">';
                     list += (product["price"] * productslist[i]["amount"]).toString();
                     totalcost += product["price"] * productslist[i]["amount"];
                     break;
-                /*case 4:
-                    list += '<td class="trash">';
-                    list += '<input class="trashButton" type="image" onclick="removeProduct('+product["PID"]+'); window.location.reload();" img src="./resource/trash.png">';
-                    break;*/
                 default:
                     break;
             }
