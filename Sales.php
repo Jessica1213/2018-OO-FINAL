@@ -30,21 +30,10 @@ $bll = new BLL\UserBLL();
                     <div class="col" style="width:auto;background:#eee">
                         <section class=" text-left " >
                             <div class="container">
-                                <h2 align="top"><?=$bll->getUsername(SessionManager::get("UID"))?>的銷售</h2>
-
+                                <h2 align="top"><?=$bll->getUsername(SessionManager::get("UID"))?>的銷售紀錄</h2>
                             </div>
                         </section>
                         <HR style="width:auto;" size="10">
-                        <label type="text" >開始日期</label>
-                        <input  type="date"  required="required"
-                                min="<?php echo date ("y-m-d",strtotime("-1months"));?>"
-                                max="<?php echo date ("y-m-d",strtotime("+1months"));?>">
-                        <label type="text" > 到 </label>
-                        <label type="text" >截止時間</label>
-                        <input  type="date"  required="required"
-                                min="<?php echo date ("y-m-d",strtotime("-1months"));?>"
-                                max="<?php echo date ("y-m-d",strtotime("+1months"));?>">
-                        <button> 查詢 </button>
                     </div>
 
                 </div>
@@ -54,65 +43,15 @@ $bll = new BLL\UserBLL();
                         <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">交易時間</th>
+                            <th scope="col">訂購時間</th>
                             <th scope="col">物品</th>
-                            <th scope="col">完成與否</th>
-                            <th scope="col">確認</th>
+                            <th scope="col">數量</th>
+                            <th scope="col">商品進度</th>
+                            <th scope="col">訂單確認</th>
                             <th scope="col">評價</th>
-
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>time</td>
-                            <td>thing</td>
-                            <td>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">
-                                    </label>
-                                </div>
-                            </td>
-                            <td>
-                            <button type="button" class="btn " style="background-color:#FF8076"> 確認 </button>
-                            </td>
-                            <td>評價</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>time</td>
-                            <td>thing</td>
-                            <td>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">
-                                    </label>
-                                </div>
-                            </td>
-                            <td>
-                            <button type="button" class="btn " style="background-color:#FF8076"> 確認 </button>
-                            </td>
-                            <td>評價</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>time</td>
-                            <td>thing</td>
-                            <td>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">
-                                    </label>
-                                </div>
-                            </td>
-                            <td>
-                            <button type="button" class="btn " style="background-color:#FF8076"> 確認 </button>
-                            </td>
-                            <td>評價</td>
-                        </tr>
-                        </tbody>
+                        <tbody id="selllist"></tbody>
                     </table>
 
                 </div>
@@ -123,6 +62,9 @@ $bll = new BLL\UserBLL();
 
     </div>
 </div>
-<script type="text/javascript">showOptions();</script>
+<script type="text/javascript">
+    showOptions();
+    document.getElementById("selllist").innerHTML += showSelllist();
+</script>
 </body>
 </html>

@@ -57,24 +57,25 @@ class ProductDAL extends DALBase
     public function getShoppingCart($uid, $paid)
     {
         $query = "select ";
-        $query.= "UID, PID, amount, time, checked from shoppingCart A ";
+        $query.= "UID, PID, SID, amount, time, checked, comment from shoppingCart A ";
         $query.= "where A.uid=? and A.paid=?";
         $result = $this->exec($query, [$uid, $paid], true);
         return $result;
     }
 
-    public function addtoShoppingCart($uid, $pid, $amount, $time, $paid)
+    public function addtoShoppingCart($uid, $pid, $sid, $amount, $time, $paid)
     {
         $comment = "";
         $checked = 0;
         $query = "insert ";
         $query.= "into ";
         $query.= "shoppingCart ";
-        $query.= "(UID, PID, amount, time, paid, checked, comment)";
-        $query.= " VALUES ('".$uid."','".$pid."','".$amount."','". $time."','".$paid."','".$checked."','".$comment."')";
+        $query.= "(UID, PID, SID, amount, time, paid, checked, comment)";
+        $query.= " VALUES ('".$uid."','".$pid."','".$sid."','".$amount."','". $time."','".$paid."','".$checked."','".$comment."')";
         $this->exec($query, [
             "UID"=>$uid,
-            "productID"=>$pid,
+            "PID"=>$pid,
+            "SID"=>$sid,
             "amount"=>$amount,
             "time"=>$time,
             "paid"=>$paid,
@@ -120,6 +121,39 @@ class ProductDAL extends DALBase
             ":pid"=>$pid,
             ":paid"=>$paid,
             ":time"=>$time
+        ],false,true);
+    }
+
+    public function getSoldRecord($sid)
+    {
+        $query = "select ";
+        $query.= "UID, PID, SID, amount, time, checked, comment from shoppingCart A ";
+        $query.= "where A.sid=?";
+        $result = $this->exec($query, [$sid], true);
+        return $result;
+    }
+
+    public function productChecked($sid, $pid, $checked)
+    {
+        $query="";
+        $query.="update shoppingCart ";
+        $query.="SET checked=:checked ";
+        $query.="WHERE sid=:sid and pid=:pid";
+        $result=$this->exec($query,[
+            ":sid"=>$sid,
+            ":pid"=>$pid,
+            ":checked"=>$checked
+        ],false,true);
+    }
+
+    public function updateStock($pid, $amount)
+    {
+        $query="update product ";
+        $query.="SET amount=:amount ";
+        $query.="WHERE pid=:pid";
+        $result=$this->exec($query,[
+            ":pid"=>$pid,
+            ":amount"=>$amount
         ],false,true);
     }
 }

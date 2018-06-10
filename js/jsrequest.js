@@ -77,20 +77,24 @@ function getPersonalShoppingList(paid) {
     return products;
 }
 
-function addToShoppingCart(pid)
+function addToShoppingCart(pid, sid)
 {
     var productslist = getPersonalShoppingList(0);
+    if(findProduct(pid)["amount"]==='0')
+    {
+        alert("尚無庫存，等待賣家進貨");
+        return false;
+    }
     for (var i = 0; i < productslist.length; i++)
     {
         if(productslist[i]["PID"]===pid.toString()) {
             alert("購物車已經有這個商品囉！請在購物車中修改數量！");
             return false;
         }
-        else if(findProduct(pid)["UID"] === getUserID()) {
+        if(findProduct(pid)["UID"] === getUserID()) {
             alert("此商品為個人商品，不提供購買服務！");
             return false;
         }
-
     }
     var http = new XMLHttpRequest();
     var products = "";
@@ -106,7 +110,7 @@ function addToShoppingCart(pid)
             window.location.href = "login.php";
         }
     };
-    http.send("PID="+pid+"&amount=1");
+    http.send("PID="+pid+"&amount=1"+"&SID="+sid);
 }
 
 function updateShopAmount(pid, amount)
@@ -156,4 +160,49 @@ function orderlistPaid(pid, paid)
         }
     };
     http.send("PID="+pid+"&paid="+paid);
+}
+
+function getSellingRecord()
+{
+    var http = new XMLHttpRequest();
+    var products = "";
+    http.open("POST", "./dbrequest/getSellRecord.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            products = http.responseText;
+            products = JSON.parse(products);
+        }
+    };
+    http.send();
+    return products;
+}
+
+function productSold(pid, check)
+{
+    var http = new XMLHttpRequest();
+    var products = "";
+    http.open("POST", "./dbrequest/updateOrderlist.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            products = http.responseText;
+        }
+    };
+    http.send("PID="+pid+"&checked="+check);
+}
+
+function updateStock(pid, amount)
+{
+    console.log(pid, amount);
+    var http = new XMLHttpRequest();
+    var products = "";
+    http.open("POST", "./dbrequest/updateStock.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            products = http.responseText;
+        }
+    };
+    http.send("PID="+pid+"&amount="+amount);
 }
