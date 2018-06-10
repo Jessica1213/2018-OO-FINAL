@@ -66,9 +66,9 @@ class ProductBLL extends BLLBase
         return $this->dal->getSoldRecord($uid);
     }
 
-    public function productChecked($sid, $pid, $checked)
+    public function productChecked($uid, $sid, $pid, $checked)
     {
-        return $this->dal->productChecked($sid, $pid, $checked);
+        return $this->dal->productChecked($uid, $sid, $pid, $checked);
     }
 
     public function updateStock($pid, $amount)

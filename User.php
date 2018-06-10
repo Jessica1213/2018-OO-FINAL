@@ -12,6 +12,8 @@ SessionManager::start();
     <meta http-equiv="imagetoolbar" content="no" />
     <script type="text/javascript" src="js/user.js"></script>
     <script type="text/javascript" src="js/product.js"></script>
+    <script type="text/javascript" src="js/function.js"></script>
+    <script type="text/javascript" src="js/jsrequest.js"></script>
 </head>
 <body>
 
@@ -19,18 +21,17 @@ SessionManager::start();
 <?php require_once ("navbar.php")?>
 
 <div class="album py-5 ">
-    <div class="container " align="center" style="margin-top: 15vh">
+    <div class="container " align="center" style="margin-top: 5em">
         <div class="row">
-            <div class="col-md-2  col-xs-2">      
-                <a href="Offer.php" class="list-group-item list-group-item-action list-group-item-info" style="width:auto;">優惠訊息</a>
-                <a href="User.php" class="list-group-item list-group-item-action list-group-item-danger" style="width:auto;">使用者資訊</a>
+            <div id="functions" class="col-md-2  col-xs-2">
+
             </div>
             <div class="col-md-10 col-xs-10">
                 <div class="row">
                     <div class="col" style="width:auto;background:#eee">
                         <section class=" text-left " >
                             <div class="container">
-                                <h2 valign="top">所有使用者資料</h2>
+                                <h2 align="top">所有使用者資料</h2>
                             </div>
                         </section> 
                         <HR style="width:auto;" size="10">
@@ -114,13 +115,10 @@ SessionManager::start();
             </div>
            
         </div>
-
- </div>
-
-        
-    </div>  
-</div> 
-</div> 
-    
+    </div>
+</div>
+<script type="text/javascript">
+    showAdminOptions();
+</script>
 </body>
 </html>

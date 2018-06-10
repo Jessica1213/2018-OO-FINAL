@@ -127,19 +127,20 @@ class ProductDAL extends DALBase
     public function getSoldRecord($sid)
     {
         $query = "select ";
-        $query.= "UID, PID, SID, amount, time, checked, comment from shoppingCart A ";
+        $query.= "UID, PID, SID, paid, amount, time, checked, comment from shoppingCart A ";
         $query.= "where A.sid=?";
         $result = $this->exec($query, [$sid], true);
         return $result;
     }
 
-    public function productChecked($sid, $pid, $checked)
+    public function productChecked($uid, $sid, $pid, $checked)
     {
         $query="";
         $query.="update shoppingCart ";
         $query.="SET checked=:checked ";
-        $query.="WHERE sid=:sid and pid=:pid";
+        $query.="WHERE uid=:uid and sid=:sid and pid=:pid";
         $result=$this->exec($query,[
+            ":uid"=>$uid,
             ":sid"=>$sid,
             ":pid"=>$pid,
             ":checked"=>$checked

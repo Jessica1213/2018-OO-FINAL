@@ -46,6 +46,7 @@ $bll = new BLL\UserBLL();
                             <th scope="col">#</th>
                             <th scope="col">訂購時間</th>
                             <th scope="col">物品</th>
+                            <th scope="col">買家</th>
                             <th scope="col">數量</th>
                             <th scope="col">商品進度</th>
                             <th scope="col">訂單確認</th>

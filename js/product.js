@@ -317,36 +317,42 @@ function showSelllist()
 {
     var soldRecord = getSellingRecord();
     var list = "";
-
+    var count = 0;
     for (var i = 0; i < soldRecord.length; i++)
     {
-        list += '<tr>';
-        var product = findProduct(soldRecord[i]["PID"]);
-        list += '<th scope="row">'+(i+1).toString()+'</th>';
-        list += '<td>'+soldRecord[i]["time"]+'</td>';
-        list += '<td>'+product["name"]+'</td>';
-        list += '<td>'+soldRecord[i]["amount"]+'</td>';
-        if (soldRecord[i]["checked"]==='0')
-        {
-            list += '<td>尚未送出</td>';
-            list += '<td><button type="button" class="btn " style="background-color:#FF8076" onclick="confirmSold('+soldRecord[i]["PID"]+','+soldRecord[i]["amount"]+');window.location.reload();"> 確認 </button></td>';
+        if(soldRecord[i]["paid"]==='1') {
+            list += '<tr>';
+            var product = findProduct(soldRecord[i]["PID"]);
+            list += '<th scope="row">'+(count+1).toString()+'</th>';
+            count++;
+            list += '<td>'+soldRecord[i]["time"]+'</td>';
+            list += '<td>'+product["name"]+'</td>';
+            list += '<td>'+soldRecord[i]["UID"]+'</td>';
+            list += '<td>'+soldRecord[i]["amount"]+'</td>';
+
+            if (soldRecord[i]["checked"]==='0')
+            {
+                list += '<td>尚未送出</td>';
+                list += '<td><button type="button" class="btn " style="background-color:#FF8076" onclick="confirmSold('+soldRecord[i]["UID"]+','+soldRecord[i]["PID"]+','+soldRecord[i]["amount"]+');window.location.reload();"> 確認 </button></td>';
+            }
+            else
+            {
+                list += '<td>商品寄出</td>';
+                list += '<td><button type="button" class="btn " style="background-color:#5e5d5d " onclick="" disabled> 確認 </button></td>';
+            }
+
+
+            list += '<td>'+soldRecord[i]["comment"]+'</td>';
+
+            list += '</tr>';
         }
-        else
-        {
-            list += '<td>商品寄出</td>';
-            list += '<td><button type="button" class="btn " style="background-color:#5e5d5d " onclick="" disabled> 確認 </button></td>';
-        }
 
-
-        list += '<td>'+soldRecord[i]["comment"]+'</td>';
-
-        list += '</tr>';
     }
     return list;
 }
 
-function confirmSold(pid, amount) {
+function confirmSold(uid, pid, amount) {
     updateStock(pid, parseInt(amount)*(-1));
-    productSold(pid, 1);
+    productSold(uid, pid, 1);
     updateWallet(findProduct(pid)["price"]*amount);
 }

@@ -13,9 +13,9 @@ if(isset($_POST["PID"]) && isset($_POST["paid"])) {
     $bll = new BLL\ProductBLL();
     echo $bll->paidOrderlist(SessionManager::get("UID"), $_POST["PID"], $_POST["paid"], date("Y/m/d H:i:s"));
 }
-else if(isset($_POST["PID"]) && isset($_POST["checked"])){
+else if(isset($_POST["UID"]) && isset($_POST["PID"]) && isset($_POST["checked"])){
     $bll = new BLL\ProductBLL();
-    echo $bll->productChecked(SessionManager::get("UID"), $_POST["PID"], $_POST["checked"]);
+    echo $bll->productChecked($_POST["UID"], SessionManager::get("UID"), $_POST["PID"], $_POST["checked"]);
 }
 else {
     header("HTTP/1.1 500 error");

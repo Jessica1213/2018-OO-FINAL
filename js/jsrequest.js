@@ -178,7 +178,7 @@ function getSellingRecord()
     return products;
 }
 
-function productSold(pid, check)
+function productSold(uid, pid, check)
 {
     var http = new XMLHttpRequest();
     var products = "";
@@ -189,7 +189,7 @@ function productSold(pid, check)
             products = http.responseText;
         }
     };
-    http.send("PID="+pid+"&checked="+check);
+    http.send("UID="+uid+"&PID="+pid+"&checked="+check);
 }
 
 function updateStock(pid, amount)

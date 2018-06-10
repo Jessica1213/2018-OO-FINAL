@@ -11,8 +11,7 @@ function checkLogin(){
           if(this.readyState === 4 && this.status === 200) {
               login = http.responseText;
               if(login==="true") {
-
-                  window.location.href = "index.php";
+                  checkUserLevel();
               }
           }
       };
@@ -116,10 +115,13 @@ function checkRegisterName(name) {
 //check user level
 function checkUserLevel() {
     var http = new XMLHttpRequest();
-    http.open("POST", "./dbrequest/checkUserLevel.php", false);
+    var state = "";
+    http.open("POST", "./checkUserLevel.php", false);
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     http.onreadystatechange=function() {
         if(this.readyState === 4 && this.status === 200) {
+            state = http.responseText;
+            console.log(state);
             if (state ==='member') {
                 window.location.href='index.php';
             }
@@ -129,7 +131,7 @@ function checkUserLevel() {
         }
     };
 
-    http.send("userstate="+state);
+    http.send();
 }
 
 function UpdatePersonalInfo() {
@@ -234,4 +236,20 @@ function updateUserImage()
     };
 
     http.send("image="+image);
+}
+
+function getUsernameByID(id)
+{
+    var http = new XMLHttpRequest();
+    var name = "";
+    http.open("POST", "./dbrequest/getUsername.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            name = http.responseText;
+        }
+    };
+
+    http.send("UID="+id);
+    return name;
 }
