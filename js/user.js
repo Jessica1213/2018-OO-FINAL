@@ -167,3 +167,54 @@ function getUserID() {
     http.send();
     return id;
 }
+
+function getWallet()
+{
+    var http = new XMLHttpRequest();
+    var money = "";
+    http.open("POST", "./dbrequest/getWallet.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            money = http.responseText;
+        }
+    };
+
+    http.send();
+    return money;
+}
+
+function updateWallet(money)
+{
+    var http = new XMLHttpRequest();
+
+    http.open("POST", "./dbrequest/updateWallet.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            money = http.responseText;
+        }
+    };
+
+    http.send("money="+money);
+}
+
+function topUpWallet()
+{
+    var money = 10000;
+    var cashCode1 = document.topUpForm.cashCode1.value;
+    var cashCode2 = document.topUpForm.cashCode2.value;
+    if(cashCode1.length===0 || cashCode2.length===0)
+    {
+        alert("請完整輸入兩行序號");
+        return false;
+    }
+    else
+    {
+        updateWallet(money);
+        alert("加值成功");
+        history.back();
+    }
+
+
+}

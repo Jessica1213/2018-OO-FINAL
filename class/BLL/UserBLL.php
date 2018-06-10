@@ -68,14 +68,14 @@ class UserBLL extends BLLBase
         return $this->isLogIn()?$this->dal->getImage($uid):false;
     }
 
-    public function getClass($uid)
+    public function getWallet($uid)
     {
-        return $this->isLogIn()?$this->dal->getClass($uid):false;
+        return $this->isLogIn()?$this->dal->getWallet($uid):false;
     }
 
-    public function getStudentList($classno)
+    public function updateWallet($uid, $money)
     {
-        return $this->isLogIn()?$this->dal->getStudentlist($classno):false;
+        return $this->isLogIn()?$this->dal->updateWallet($uid, $money):false;
     }
 
     public function checkUserLevel($uid) {
@@ -90,6 +90,7 @@ class UserBLL extends BLLBase
     public function getState() {
         return $this->islogIn()?$this->dal->getState(SessionManager::get("UID")):false;
     }
+
     public function updateState($uid,$state)
     {
         return $this->dal->updateState($uid,$state);

@@ -46,9 +46,9 @@ class ProductBLL extends BLLBase
         return $this->dal->updatedShopAmount($uid, $pid, $paid, $amount);
     }
 
-    public function updatedShoppingCart($uid, $pid, $paid)
+    public function paidOrderlist($uid, $pid, $paid)
     {
-        return $this->dal->updatedShoppingCart($uid, $pid, $paid);
+        return $this->dal->paidOrderlist($uid, $pid, $paid);
     }
 
     public function getShoppingCart($uid, $paid)

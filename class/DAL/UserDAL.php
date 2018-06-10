@@ -56,6 +56,25 @@ class UserDAL extends DALBase
         return $result[0]["userlevel"];
     }
 
+    public function getWallet($uid)
+    {
+        $query="select ";
+        $query.="wallet from user where uid=?";
+        $result=$this->exec($query, [$uid], true);
+        return $result[0]["wallet"];
+    }
+
+    public function updateWallet($uid, $money)
+    {
+        $query="update user ";
+        $query.="SET wallet=:wallet ";
+        $query.="WHERE uid=:uid";
+        $result=$this->exec($query, [
+            ":uid"=>$uid,
+            ":wallet"=>$money
+        ], false, true);
+    }
+
     public function updateInfo($uid, $newpwd, $email, $name)
     {
         $query="update user ";
@@ -67,14 +86,6 @@ class UserDAL extends DALBase
             ":email"=>$email,
             ":name"=>$name
         ],false,true);
-
-    }
-
-    public function getStudentlist($classno) {
-        $query = "select ";
-        $query.= "UID, account, name from user where class=?";
-        $result=$this->exec($query, [$classno], true);
-        return $result;
 
     }
 

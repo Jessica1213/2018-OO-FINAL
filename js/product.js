@@ -173,7 +173,7 @@ function showShoppingCart()
                     break;
                 case 5:
                     list += '<td class='+headerclass[j]+'>';
-                    list += '<input class="trashButton" type="image" onclick="removeProduct('+product["PID"]+'); window.location.reload();" img src="./resource/trash.png">';
+                    list += '<input class="trashButton" type="image" onclick="removeProduct('+product["PID"]+',0); window.location.reload();" img src="./resource/trash.png">';
                     break;
                 default:
                     break;
@@ -245,11 +245,34 @@ function showBill()
         list += '</tr>';
     }
     list += '<tr><td colspan="5" style="text-align:right; padding-right: 2em;"><label>Total Price：</label>'+totalcost.toString()+'</td></tr>';
-    list +='<tr><td colspan="5" style="text-align:right; padding-right: 2em;"><label>錢包餘額：</label>'+/*account.toString()*/+'</td></tr>';
+    list +='<tr><td colspan="5" style="text-align:right; padding-right: 2em;"><label>錢包餘額：</label>'+getWallet()+'</td></tr>';
     list += '<tr id="decisionRow"><td colspan="5" style="background-color: #f9f2f4; align-content: right;">' +
         '<input class="button" type="submit" name=""  onclick="location.href=\'topUp.php\'" value="加值" >' +
-        '<input class="button" type="submit" onclick="location.href=\'index.php\'" value="取消">' + /*刪除商品，如上222行*/
-        '<input class="button" type="submit" name="" onclick="location.href=\'index.php\'" value="確認">' + /*警告視窗*/
+        '<input class="button" type="submit" onclick="location.href=\'index.php\'" value="取消">' +
+        '<input class="button" type="submit" name="" onclick="confirmInfo('+totalcost+')" value="確認">' +
         '</td></tr>';
     return list;
+}
+
+function confirmInfo(price)
+{
+    var walletMoney = getWallet();
+    var productslist = getPersonalShoppingList(0);
+    if(parseInt(price) <= parseInt(walletMoney))
+    {
+        for(var i = 0; i <productslist.length; i++)
+        {
+            orderlistPaid(productslist[i]["PID"], 1);
+        }
+        alert("購買成功！賣家送出商品後，即可對商品滿意度評價！");
+        updateWallet(parseInt(price)*(-1));
+
+        window.location.href='wallet.php';
+    }
+    else
+    {
+        alert("餘額不足，請加值後購買！");
+        window.location.href='topUp.php';
+    }
+
 }

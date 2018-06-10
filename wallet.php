@@ -37,20 +37,11 @@ $bll = new BLL\UserBLL();
                         <section class=" text-left " >
                             <div class="container">
                                 <h2 valign="top"><?=$bll->getUsername(SessionManager::get("UID"))?>的錢包
-                                <button type="button" class="btn " style="background-color:#FFD23C"> + 加值 + </button></h2>
+                                <button type="button" class="btn " style="background-color:#FFD23C" onclick="window.location.href='topUp.php';"> + 加值 + </button></h2>
                             </div>
                         </section>
+                        <h4 id="money" align="left" style="padding-left:1em;">目前餘額 &nbsp;&nbsp;&nbsp;&nbsp;</h4>
                         <HR style="width:auto;" size="10">
-                        <label type="text" >開始日期</label>
-                        <input  type="date"  required="required"
-                                min="<?php echo date ("y-m-d",strtotime("-1months"));?>"
-                                max="<?php echo date ("y-m-d",strtotime("+1months"));?>">
-                        <label type="text" > 到 </label>
-                        <label type="text" >截止時間</label>
-                        <input  type="date"  required="required"
-                                min="<?php echo date ("y-m-d",strtotime("-1months"));?>"
-                                max="<?php echo date ("y-m-d",strtotime("+1months"));?>">
-                        <button> 查詢 </button>
                     </div>
 
                 </div>
@@ -109,7 +100,8 @@ $bll = new BLL\UserBLL();
 
     </div>
 </div>
-</div>
-
+<script type="text/javascript">
+    document.getElementById("money").innerHTML += ("NT. $"+getWallet());
+</script>
 </body>
 </html>

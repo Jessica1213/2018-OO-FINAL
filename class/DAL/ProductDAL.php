@@ -65,17 +65,21 @@ class ProductDAL extends DALBase
 
     public function addtoShoppingCart($uid, $pid, $amount, $time, $paid)
     {
+        $comment = "";
+        $checked = 0;
         $query = "insert ";
         $query.= "into ";
         $query.= "shoppingCart ";
-        $query.= "(UID, PID, amount, create_at, paid)";
-        $query.= " VALUES ('".$uid."','".$pid."','".$amount."','". $time."','".$paid."')";
+        $query.= "(UID, PID, amount, time, paid, checked, comment)";
+        $query.= " VALUES ('".$uid."','".$pid."','".$amount."','". $time."','".$paid."','".$checked."','".$comment."')";
         $this->exec($query, [
             "UID"=>$uid,
             "productID"=>$pid,
             "amount"=>$amount,
-            "create_at"=>$time,
-            "paid"=>$paid
+            "time"=>$time,
+            "paid"=>$paid,
+            "checked"=>$checked,
+            "comment"=>$comment
         ],  false, true);
         return "true";
     }
@@ -93,12 +97,11 @@ class ProductDAL extends DALBase
         ],false,true);
     }
 
-    public function updatedShoppingCart($uid, $pid, $paid)
+    public function removeItemfromCart($uid, $pid, $paid)
     {
-        $query="";
-        $query.="update shoppingCart ";
-        $query.="SET paid=:paid ";
-        $query.="WHERE uid=:uid and pid=:pid";
+        $query="delete ";
+        $query.="from shoppingCart ";
+        $query.="WHERE uid=:uid and pid=:pid and paid=:paid";
         $result=$this->exec($query,[
             ":uid"=>$uid,
             ":pid"=>$pid,
@@ -106,11 +109,12 @@ class ProductDAL extends DALBase
         ],false,true);
     }
 
-    public function removeItemfromCart($uid, $pid, $paid)
+    public function paidOrderlist($uid, $pid, $paid)
     {
-        $query="delete ";
-        $query.="from shoppingCart ";
-        $query.="WHERE uid=:uid and pid=:pid and paid=:paid";
+        $query="";
+        $query.="update shoppingCart ";
+        $query.="SET paid=:paid ";
+        $query.="WHERE uid=:uid and pid=:pid";
         $result=$this->exec($query,[
             ":uid"=>$uid,
             ":pid"=>$pid,

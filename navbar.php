@@ -46,6 +46,9 @@
                                 <a href="Introduce.php">
                                     使用者
                                 </a>
+                                <a id="wallet" href="wallet.php">
+                                    口袋購物金
+                                </a>
                                 <a id="cart" href="shopCart.php">
                                     購物車
                                 </a>
@@ -64,4 +67,7 @@
         </div>
     </div>
 </nav>
-<script>getShoppingCartLength()</script>
+<script>
+    getShoppingCartLength();
+    document.getElementById("wallet").innerHTML += ("NT. $"+getWallet());
+</script>

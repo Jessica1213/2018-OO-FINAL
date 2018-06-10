@@ -131,7 +131,7 @@ function updateShopAmount(pid, amount)
 
 }
 
-function removeProduct(pid) {
+function removeProduct(pid, paid) {
     var http = new XMLHttpRequest();
     var products = "";
     http.open("POST", "./dbrequest/removeProduct.php", false);
@@ -141,5 +141,19 @@ function removeProduct(pid) {
             products = http.responseText;
         }
     };
-    http.send("PID="+pid+"&paid=0");
+    http.send("PID="+pid+"&paid="+paid);
+}
+
+function orderlistPaid(pid, paid)
+{
+    var http = new XMLHttpRequest();
+    var products = "";
+    http.open("POST", "./dbrequest/updateOrderlist.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            products = http.responseText;
+        }
+    };
+    http.send("PID="+pid+"&paid="+paid);
 }
