@@ -356,3 +356,34 @@ function confirmSold(uid, pid, amount) {
     productSold(uid, pid, 1);
     updateWallet(findProduct(pid)["price"]*amount);
 }
+
+function listCateOptions()
+{
+    var categories = findAllCategory();
+    var list = "";
+    for (var i = 0; i < categories.length; i++)
+    {
+        list += '<option>'+categories[i]["category"]+'</option>';
+    }
+    return list;
+}
+
+function addNewProduct() {
+    var image = document.getElementById("image").value;
+    var name = document.getElementById("name").value;
+    var description = document.getElementById("description").value;
+    var price = document.productForm.price.value;
+    var amount = document.productForm.amount.value;
+    var e = document.getElementById("options");
+    var cate = e.options[e.selectedIndex].value;
+    if (image.length===0 || name.length===0 || description.length===0 || price <=0 || amount <= 0) {
+        alert("請檢查是否每個選項都有輸入！");
+        return false;
+    }
+    else {
+        addProduct(name, image, description, price, amount, cate);
+        var id = getProductID(name);
+        window.location.href = "caption.php?PID="+id;
+    }
+
+}

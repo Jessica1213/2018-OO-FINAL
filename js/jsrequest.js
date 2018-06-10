@@ -85,6 +85,10 @@ function addToShoppingCart(pid, sid)
         alert("尚無庫存，等待賣家進貨");
         return false;
     }
+    if(findProduct(pid)["UID"] === getUserID()) {
+        alert("此商品為個人商品，不提供購買服務！");
+        return false;
+    }
     for (var i = 0; i < productslist.length; i++)
     {
         if(productslist[i]["PID"]===pid.toString()) {
@@ -210,7 +214,6 @@ function updateComment(bid, pid, i)
 {
     var id = "comment_"+i.toString();
     var comment = document.getElementById(id).value;
-    console.log(comment);
     var http = new XMLHttpRequest();
     var products = "";
     http.open("POST", "./dbrequest/updateComment.php", false);
@@ -221,4 +224,33 @@ function updateComment(bid, pid, i)
         }
     };
     http.send("BID="+bid+"&PID="+pid+"&comment="+comment);
+}
+
+function addProduct(name, image, des, price, amount, cate)
+{
+    var http = new XMLHttpRequest();
+    var products = "";
+    http.open("POST", "./dbrequest/addNewProduct.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            products = http.responseText;
+        }
+    };
+    http.send("name="+name+"&image="+image+"&des="+des+"&price="+price+"&amount="+amount+"&cate="+cate);
+}
+
+function getProductID(name)
+{
+    var http = new XMLHttpRequest();
+    var id = "";
+    http.open("POST", "./dbrequest/getProductID.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            id = http.responseText;
+        }
+    };
+    http.send("name="+name);
+    return id;
 }

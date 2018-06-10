@@ -38,7 +38,7 @@ class ProductDAL extends DALBase
         return $result?$result[0]:false;
     }
 
-    public function getProductByUseID($uid)
+    public function getProductByUserID($uid)
     {
         $query = "select ";
         $query.= "PID, UID, name, price, description, image, amount, category from product where UID=?";
@@ -168,5 +168,32 @@ class ProductDAL extends DALBase
             ":pid"=>$pid,
             ":comment"=>$comment
         ],false,true);
+    }
+
+    public function addNewProduct($uid, $name, $image, $des, $price, $amount, $cate)
+    {
+        $query = "insert ";
+        $query.= "into ";
+        $query.= "product ";
+        $query.= "(UID, name, price, description, image, amount, category)";
+        $query.= " VALUES ('".$uid."','".$name."','".$price."','". $des."','".$image."','". $amount."','". $cate."')";
+        $this->exec($query, [
+            "UID"=>$uid,
+            "name"=>$name,
+            "price"=>$price,
+            "description"=>$des,
+            "image"=>$image,
+            "amount"=>$amount,
+            "category"=>$cate
+        ],  false, true);
+        return "true";
+    }
+
+    public function getProductID($name)
+    {
+        $query = "select ";
+        $query.= "PID from product where name=?";
+        $result=$this->exec($query, [$name], true);
+        return $result?$result[0]:false;
     }
 }

@@ -57,7 +57,7 @@ function checkRegister(){
                     register = http.responseText;
                     console.log(register);
                     if(register==="true") {
-                        checkUserLevel();
+                        window.location.href='index.php';
                     }
                     else {
                         alert("這個帳號已經註冊過，請使用新的帳號");

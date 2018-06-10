@@ -33,7 +33,7 @@ class ProductBLL extends BLLBase
     }
 
     public function getProductByUserID($uid) {
-        return $this->dal->getProductByUseID($uid);
+        return $this->dal->getProductByUserID($uid);
     }
 
     public function addtoShoppingCart($uid, $pid, $sid, $amount, $time, $paid)
@@ -81,4 +81,13 @@ class ProductBLL extends BLLBase
         return $this->dal->updateComment($uid, $pid, $comment);
     }
 
+    public function addNewProduct($uid, $name, $image, $des, $price, $amount, $cate)
+    {
+        return $this->dal->addNewProduct($uid, $name, $image, $des, $price, $amount, $cate);
+    }
+
+    public function getProductID($name)
+    {
+        return $this->dal->getProductID($name);
+    }
 }
