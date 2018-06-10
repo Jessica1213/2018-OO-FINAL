@@ -40,12 +40,10 @@ SessionManager::start();
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="button" onclick="searchItemMain();">search</button>
                         </span>
-                        <div class="input-group-btn" >
                         <select  id="sort" class="form-control"  style = "width: auto;" onchange="showItems(keyword, cate);">
                             <option value="1">價格少到多</option>
                             <option value="2">價格多到少</option>
                         </select>
-                        </div>
                     </div>
                 </div>
             </form>

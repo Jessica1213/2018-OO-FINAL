@@ -1,13 +1,13 @@
 function sortIncreased(array, key) {
     return array.sort(function(a, b) {
-        var x = a[key]; var y = b[key];
+        var x = parseInt(a[key]); var y = parseInt(b[key]);
         return ((x < y) ? -1 : ((x > y) ? 1 : 0));
     });
 }
 
 function sortDecreased(array, key) {
     return array.sort(function(a, b) {
-        var x = a[key]; var y = b[key];
+        var x = parseInt(a[key]); var y = parseInt(b[key]);
         return ((x > y) ? -1 : ((x < y) ? 1 : 0));
     });
 }
@@ -58,7 +58,6 @@ function showItems(keyword, cate) {
     var e = document.getElementById("sort");
     var index = e.options[e.selectedIndex].value;
     e.options[e.options.selectedIndex].selected = true;
-    console.log(index);
     return showProduct(products, index);
 }
 
@@ -115,7 +114,10 @@ function listAllCategory()
 function showPersonalItems()
 {
     var products = findPersonalProduct();
-    return showProduct(products);
+    var e = document.getElementById("sort");
+    var index = e.options[e.selectedIndex].value;
+    e.options[e.options.selectedIndex].selected = true;
+    return showProduct(products, index);
 }
 
 var header = ["商品", "單價", "庫存","數量", "價格", "取消購買"];

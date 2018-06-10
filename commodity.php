@@ -21,30 +21,7 @@ $bll = new BLL\UserBLL();
 <?php require_once ("navbar.php")?>
 
 <div class="album py-5 ">
-    <div class="container " align="center" style="margin-top: 15vh">
-
-        <section class="col-xs-12 col-xs-offset-3">
-            <form class="form-horizo​​ntal" role="form">
-                <div class="col-xs-6">
-                    <div class="input-group">
-                    <div class="input-group-btn" >
-                            <select  class="form-control" style = "width: auto;" >
-                                <option selected>Choose...</option>
-                                <option value="">種類</option>
-                                <option value="">名稱</option>
-                                <option value="">登刊時間</option>
-                            </select>
-                        </div>
-                        <input type="text" class="form-control" placeholder="尋找自己的商品">
-                        <span class="input-group-btn"> 
-                            <button class="btn btn-default" type="button">search</button> 
-                        </span>
-                    </div>
-                </div>
-            </form> 
-        </section>
-        <br>
-        <br>
+    <div class="container " align="center" style="margin-top: 5em">
         <div class="row">
             <div class="col-md-2 col-xs-2">
                         <a href="Introduce.php" class="list-group-item list-group-item-action" style="width:auto;" >介紹</a>
@@ -62,15 +39,29 @@ $bll = new BLL\UserBLL();
                             </div>
                         </section>
                         <HR style="width:auto;" size="10">
+                        <section class="col-xs-12 col-xs-offset-3">
+                            <form class="form-horizo​​ntal" role="form">
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <select  id="sort" class="form-control"  style = "width: auto;" onchange="showPersonalItems();">
+                                            <option value="1">價格少到多</option>
+                                            <option value="2">價格多到少</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
                     </div>
                 </div>
-                <div id = "personalItems"></div>
+                <div id = "itemlist"></div>
             </div>
+
         </div>
+
     </div>
  </div>
 <script type="text/javascript">
-    document.getElementById("personalItems").innerHTML += showPersonalItems();
+    showPersonalItems();
 </script>
     
 </body>
