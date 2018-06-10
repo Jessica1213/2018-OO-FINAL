@@ -218,3 +218,20 @@ function topUpWallet()
 
 
 }
+
+function updateUserImage()
+{
+    var image = document.getElementById("profile").value;
+    var http = new XMLHttpRequest();
+
+    http.open("POST", "./dbrequest/updateProfileImage.php", false);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange=function() {
+        if(this.readyState === 4 && this.status === 200) {
+            http.responseText;
+            window.location.href = 'Introduce.php';
+        }
+    };
+
+    http.send("image="+image);
+}

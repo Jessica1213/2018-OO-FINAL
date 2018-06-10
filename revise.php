@@ -81,7 +81,9 @@ $bll = new BLL\UserBLL();
                     </form>
                     <div class="col-md-4">
                         <img src="<?=$bll->getImage(SessionManager::get("UID"))?>" class="img-fluid" alt="Responsive image" width="250" height="250">
-                        <button> 更換頭貼 </button>
+                        <label ></label>
+                        <input id="profile" name="image" type="text" placeholder="輸入照片網址">
+                        <button onclick="updateUserImage()"> 更換頭貼 </button>
                     </div>
                 </div>    
  

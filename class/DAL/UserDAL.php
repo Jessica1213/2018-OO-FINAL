@@ -89,6 +89,17 @@ class UserDAL extends DALBase
 
     }
 
+    public function updateImage($uid, $image)
+    {
+        $query="update user ";
+        $query.="SET profile=:profile ";
+        $query.="WHERE uid=:uid";
+        $result=$this->exec($query,[
+            ":uid"=>$uid,
+            ":profile"=>$image
+        ],false,true);
+    }
+
     public function setUser($acoount, $password, $username, $email) {
         $userlevel = "member";
         $profile = "none";
