@@ -11,7 +11,7 @@ require_once ("../checkLogin.php");
 
 if(isset($_POST["PID"]) && isset($_POST["paid"])) {
     $bll = new BLL\ProductBLL();
-    echo $bll->paidOrderlist(SessionManager::get("UID"), $_POST["PID"], $_POST["paid"], date("Y/m/d H:i"));
+    echo $bll->paidOrderlist(SessionManager::get("UID"), $_POST["PID"], $_POST["paid"], date("Y/m/d H:i:s"));
 }
 else if(isset($_POST["PID"]) && isset($_POST["checked"])){
     echo "";

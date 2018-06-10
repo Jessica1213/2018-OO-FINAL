@@ -69,5 +69,5 @@
 </nav>
 <script>
     getShoppingCartLength();
-    document.getElementById("wallet").innerHTML += ("NT. $"+getWallet());
+    showWallet();
 </script>

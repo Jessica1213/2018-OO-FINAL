@@ -209,6 +209,11 @@ function getShoppingCartLength()
     }
 }
 
+function showWallet()
+{
+    document.getElementById("wallet").innerHTML += ("NT. $"+getWallet());
+}
+
 function showBill()
 {
     var productslist = getPersonalShoppingList(0);
