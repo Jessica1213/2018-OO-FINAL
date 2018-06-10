@@ -30,18 +30,18 @@ SessionManager::start();
                 <div class="form-group col-xs-6">
                     <div class="input-group col-xs-12 ">
                         <div class="input-group-btn" >
-                            <select  id="choice" class="form-control" onchange="a = chooseType();" style = "width: auto;" >
+                            <select  id="choice" class="form-control" onchange="chooseType();" style = "width: auto;" >
                                 <option value="1">Choose...</option>
                                 <option value="2">名稱</option>
                                 <option value="3">種類</option>
                             </select>
                         </div>
-                        <input id="search" type="text" class="form-control " placeholder="請輸入...">
+                        <input id="search" type="text" class="form-control " placeholder="請輸入..." style="width: auto;">
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="button" onclick="searchItemMain();">search</button>
                         </span>
                         <div class="input-group-btn" >
-                        <select  id="choice" class="form-control"  style = "width: auto;" >
+                        <select  id="sort" class="form-control"  style = "width: auto;" onchange="showItems(keyword, cate);">
                             <option value="1">價格少到多</option>
                             <option value="2">價格多到少</option>
                         </select>
@@ -57,7 +57,7 @@ SessionManager::start();
 <script type="text/javascript">
     var keyword = "<?= $_GET["keyword"]?>";
     var cate = "<?= $_GET["searchby"]?>";
-    document.getElementById("itemlist").innerHTML += showItems(keyword, cate);
+    showItems(keyword, cate);
 </script>
 </body>
 </html>

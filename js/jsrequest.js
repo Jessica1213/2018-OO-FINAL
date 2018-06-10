@@ -112,7 +112,7 @@ function addToShoppingCart(pid)
 function updateShopAmount(pid, amount)
 {
     var product = findProduct(pid);
-    if (amount.toString() > product["amount"]) {
+    if (parseInt(amount) > parseInt(product["amount"])) {
         alert("超過庫存數量，請重新選擇");
         return false;
     }

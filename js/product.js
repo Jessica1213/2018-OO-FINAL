@@ -1,3 +1,17 @@
+function sortIncreased(array, key) {
+    return array.sort(function(a, b) {
+        var x = a[key]; var y = b[key];
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
+}
+
+function sortDecreased(array, key) {
+    return array.sort(function(a, b) {
+        var x = a[key]; var y = b[key];
+        return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+    });
+}
+
 function searchItemIndex() {
     var key = document.getElementById("search").value;
     if(key.length===0) return false;
@@ -18,7 +32,9 @@ function searchItemMain() {
     }
 }
 
-function showProduct(products) {
+function showProduct(products, index) {
+    if (index === '1') products = sortIncreased(products, 'price');
+    else products = sortDecreased(products, 'price');
     var list = "";
     for (var i=0; i<products.length; i++){
         list += '<div class="col-md-4" style="background:#eee; "><div class="row"><div class="col-md-6 col-xs-6" >';
@@ -33,12 +49,17 @@ function showProduct(products) {
             '<button type="button" class="btn " style="background-color:#FFD4D4" onclick="addToShoppingCart('+products[i]["PID"]+')">加入購物車</button>';
          list += '</div> </div> </div></div></div></div>';
     }
-    return list;
+    document.getElementById("itemlist").innerHTML = list;
 }
+
 
 function showItems(keyword, cate) {
     var products = findItem(keyword, cate);
-    return showProduct(products);
+    var e = document.getElementById("sort");
+    var index = e.options[e.selectedIndex].value;
+    e.options[e.options.selectedIndex].selected = true;
+    console.log(index);
+    return showProduct(products, index);
 }
 
 function chooseType()
@@ -72,8 +93,8 @@ function viewProductInfo(pid)
     list += '<div class="col-md-4 col-xs-4">';
     list += '<h4>類別  :  '+product["category"]+'</h4></div>';
     list += '<div class="btn-group" ><br>';
-    list += '<button class="btn " style="background-color:#CCBBFF"> 購買 </button>';
-    list += '<button style="background-color:#FFD4D4" class="btn "> 加入購物車 </button></div></form></div></div></div>';
+    // list += '<button class="btn " style="background-color:#CCBBFF"> 購買 </button>';
+    list += '<button style="background-color:#FFD4D4" class="btn " onclick="addToShoppingCart('+product["PID"]+')"> 加入購物車 </button></div></form></div></div></div>';
     document.getElementById("product").innerHTML+= list;
 }
 
